@@ -1,3 +1,5 @@
+import pygame
+
 class Scene:
     def __init__(self, writer):
         self.story = {}
@@ -8,6 +10,7 @@ class Scene:
             for key in item:
                 if not key == "text":
                     if key == "Nothing":
-                        self.writer.write(item[key])
+                        self.writer.write_story_text(item[key])
+                        pygame.time.wait(2000)
                     else:
                         self.writer.write(key+": "+item[key])
