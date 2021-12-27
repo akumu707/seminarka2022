@@ -13,4 +13,5 @@ class Scene:
                         self.writer.write_story_text(item[key])
                         pygame.time.wait(2000)
                     else:
-                        self.writer.write(key+": "+item[key])
+                        self.writer.write_dialogue((key,item[key]))
+                        pygame.time.wait(2000)

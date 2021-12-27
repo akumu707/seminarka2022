@@ -24,10 +24,10 @@ class Game:
                 if bool(scene["to read"]):
                     self.scene.story = scene["story"]
                     self.scene.run()
-                for event in pygame.event.get():
-                    if event.type == QUIT:
-                        pygame.quit()
-                        sys.exit()
+                #for event in pygame.event.get():
+                    #if event.type == QUIT:
+                pygame.quit()
+                sys.exit()
 
     def create_environment(self):
         constants.DISPLAYSURF.fill(constants.WHITE)
