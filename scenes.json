@@ -11,5 +11,17 @@
         {"Diana": "Promiň, ale Averilové už pořádají konkurz."}
       ]
     }
+  ],
+  "Test story": [{
+      "requirements": "none",
+      "to read": "True",
+      "story": [
+        {"background": "forest"},
+        {"Naruto": "I will never run away"},
+        {"Naruto": "Never Take my words back"},
+        {"Naruto": "'cause that's my ninja way"}
+
+      ]
+    }
   ]
 }
