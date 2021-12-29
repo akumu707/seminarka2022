@@ -18,7 +18,7 @@ class Game:
     def go_trough_story(self):
         while True:
             #tree_name = self.ui.select_tree(self.tree.file.keys())
-            self.tree.find_this_tree("Main story")
+            self.tree.find_this_tree("Test story")
             self.create_environment()
             for scene in self.tree.this_tree:
                 if bool(scene["to read"]):
