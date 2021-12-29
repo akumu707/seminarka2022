@@ -16,5 +16,7 @@ class Scene:
                     self.writer.write_story_text(item[key])
                     pygame.time.wait(2000)
                 else:
+                    person = pygame.image.load(key+".png")
+                    constants.DISPLAYSURF.blit(person, (0, 200), (0, 0, 500, 1201))
                     self.writer.write_dialogue((key,item[key]))
                     pygame.time.wait(2000)
