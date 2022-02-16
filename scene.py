@@ -9,11 +9,9 @@ class Scene:
 
     def run(self):
         app = gui.App()
+        t=gui.Table()
+        td_style = {'padding_left': 1800, 'padding-down':1500} #for next buttons
         app.connect(gui.CLICK, app.quit, None)
-        c = gui.Table(width=200, height=120)
-        c.tr()
-        e = gui.Button("Continue")
-        c.td(e)
         for item in self.story:
             for key in item:
                 if key == "background":
@@ -25,5 +23,7 @@ class Scene:
                     #person = pygame.image.load(key+".png")
                     #constants.DISPLAYSURF.blit(person, (0, 200), (0, 0, 500, 1201))
                     self.writer.write_dialogue((key,item[key]))
+            app.run(t,constants.DISPLAYSURF)
 
-                app.run(c, constants.DISPLAYSURF)
+
+
