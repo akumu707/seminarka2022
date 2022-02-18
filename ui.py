@@ -26,18 +26,18 @@ class UI:
         t.tr()
         t.td(gui.Label("Choose a story")) #haló, to nepodporuje češtinu q.q
         g = gui.Group()
+        t.tr()
+        t.td(gui.Tool(g, gui.Label("None"), value=None))
         for name in tree_names:
             t.tr()
             t.td(gui.Tool(g, gui.Label(name), value=name))
         t.tr()
         submit = gui.Button("Submit")
-        submit.connect(gui.CLICK, self._submit, g.value) #somehow nefunguje
+        submit.connect(gui.CLICK,app.quit) #somehow nefunguje
         t.td(submit)
         t.tr()
-        exit = gui.Button("Exit")
-        exit.connect(gui.CLICK,app.quit, None) #pada kvuli pygame, vyresit
-        t.td(exit)
         app.run(t, constants.DISPLAYSURF)
+        return g.value
 
 
 
