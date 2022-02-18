@@ -11,16 +11,7 @@ class UI:
     def _submit(value):
         return (value)
 
-    def select_tree(self, tree_names):
-        #tree_string = "Příběhy: "
-        #for key in tree_names:
-            #tree_string+=key+" "
-        #self.writer.write(tree_string)
-        #while True:
-            #tree_name = input("Vyberte příběh: ")
-            #for key in tree_names:
-                #if key == tree_name:
-                    #return key
+    def select(self, names):
         app=gui.Desktop()
         t = gui.Table()
         t.tr()
@@ -28,7 +19,7 @@ class UI:
         g = gui.Group()
         t.tr()
         t.td(gui.Tool(g, gui.Label("None"), value=None))
-        for name in tree_names:
+        for name in names:
             t.tr()
             t.td(gui.Tool(g, gui.Label(name), value=name))
         t.tr()

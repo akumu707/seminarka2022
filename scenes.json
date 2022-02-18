@@ -1,5 +1,6 @@
 {
   "Main story": [{
+      "name": "Episode One",
       "requirements": "none",
       "to read": "True",
       "story": [
@@ -11,9 +12,13 @@
         {"Bianka": "To se dělá, takhle mě tu nechat?"},
         {"Diana": "Promiň, ale Averilové už pořádají konkurz."}
       ]
+    },
+    {
+      "name": "Episode Two"
     }
   ],
   "Test story": [{
+      "name": "Naruto test",
       "requirements": "none",
       "to read": "True",
       "story": [
