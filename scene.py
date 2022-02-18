@@ -10,8 +10,11 @@ class Scene:
     def run(self):
         app = gui.App()
         t=gui.Table()
-        td_style = {'padding_left': 1800, 'padding-down':1500} #for next buttons
+        td_style = {'padding_left': 1800, 'padding_down':1500} #for next buttons
         app.connect(gui.CLICK, app.quit, None)
+        #quit=gui.Button("Quit")
+        #quit.connect(gui.CLICK, pygame.quit, None) #needs to be changed, if the system doesnt open new pygame window for every scene
+        #t.td(quit, style=td_style)
         for item in self.story:
             for key in item:
                 if key == "background":
