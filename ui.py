@@ -24,7 +24,7 @@ class UI:
             t.td(gui.Tool(g, gui.Label(name), value=name))
         t.tr()
         submit = gui.Button("Submit")
-        submit.connect(gui.CLICK,app.quit) #somehow nefunguje
+        submit.connect(gui.CLICK,app.quit)
         t.td(submit)
         t.tr()
         app.run(t, constants.DISPLAYSURF)

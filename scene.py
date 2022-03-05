@@ -2,6 +2,9 @@ import pygame
 import constants
 from pgu import gui
 
+import guiStuff
+from guiStuff import LogDialog
+
 class Scene:
     def __init__(self, writer):
         self.story = {}
@@ -15,6 +18,20 @@ class Scene:
         #quit=gui.Button("Quit")
         #quit.connect(gui.CLICK, pygame.quit, None) #needs to be changed, if the system doesnt open new pygame window for every scene
         #t.td(quit, style=td_style)
+        log = gui.Button("Log")
+        log_app = gui.App()
+        log_t = gui.Table()
+        log_dialog = guiStuff.LogDialog(self.story)
+        log_t.tr()
+        log_t.td(log_dialog)
+
+        log.connect(gui.CLICK, log_app.run, log_t)
+        close = gui.Button("Close")
+        close.connect(gui.CLICK, log_app.quit)
+        log_t.tr()
+        log_t.td(close)
+        t.tr()
+        t.td(log)
         for item in self.story:
             for key in item:
                 if key == "background":

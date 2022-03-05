@@ -1,17 +1,21 @@
 import pygame
-from game import Game
+from game import GameApp
 from ui import UI
 from writer import Writer
-from tree import Tree
+from GameSettings import GameSettings
 from scene import Scene
 
-pygame.init()
-FPS = pygame.time.Clock()
-FPS.tick(60)
 
-tree = Tree()
-writer = Writer()
-ui = UI(writer)
-scene = Scene(writer)
-game = Game(ui, tree, scene)
-game.start()
+#tree = Tree()
+#writer = Writer()
+#ui = UI(writer)
+#scene = Scene(writer)
+
+#if __name__ == '__main__':
+ #   app = Game()
+   # app.run()
+#game = Game(ui, tree, scene)
+#game.run()
+
+app = GameApp()
+app.run()
