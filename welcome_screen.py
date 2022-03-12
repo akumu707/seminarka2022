@@ -1,6 +1,5 @@
 import pygame
 import pygame_gui
-import sys
 
 
 class WelcomeScreen:
@@ -41,15 +40,21 @@ class WelcomeScreen:
     def _on_click_start(self):
         self.screen_options.show(self.screen_options.choice_screen)
 
+    def _on_click_player(self):
+        self.screen_options.show(self.screen_options.player_setup_screen)
+
 
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
             if event.ui_element == self.start_button:
                 self._on_click_start()
             if event.ui_element == self.player_button:
-                pass#self._on_single_player_click()
+                self._on_click_player()
             if event.ui_element == self.end_button:
-                pass#find a way to kill it finally lmao
+                #MY_QUIT = pygame.event.Event(pygame.USEREVENT+1)
+                #pygame.event.post(MY_QUIT)
+                pass
+
 
 
 

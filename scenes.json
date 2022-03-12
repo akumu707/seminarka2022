@@ -13,7 +13,10 @@
       ]
     },
     {
-      "name": "Episode Two"
+      "name": "Episode Two",
+      "story": [
+        {"Hero": "This is me"}
+      ]
     }
   ],
   "Test story": [{

@@ -10,6 +10,7 @@ from welcome_screen import WelcomeScreen
 from choice_screen import ChoiceScreen
 from GameSettings import GameSettings
 from episode_screen import EpisodeScreen
+from player_setup_screen import PlayerSetupScreen
 
 class GameApp:
     def __init__(self):
@@ -30,6 +31,7 @@ class GameApp:
         self.screen_options.welcome_screen = WelcomeScreen(self.screen_options, self.ui_manager, self.game_settings)
         self.screen_options.choice_screen = ChoiceScreen(self.screen_options, self.ui_manager, self.game_settings)
         self.screen_options.episode_screen = EpisodeScreen(self.screen_options, self.ui_manager, self.game_settings, self.background_surface)
+        self.screen_options.player_setup_screen = PlayerSetupScreen(self.screen_options, self.ui_manager, self.game_settings)
         self.screen_options.show(self.screen_options.welcome_screen)
 
     def run(self):
@@ -38,7 +40,7 @@ class GameApp:
         while is_running:    #game loop
             time_delta = clock.tick(60) / 1000.0
             for event in pygame.event.get():
-                if event.type == pygame.QUIT:
+                if event.type == pygame.QUIT: #or event.type == pygame.USEREVENT+1
                     is_running = False
                 self.screen_options.active_screen.process_event(event)
                 self.ui_manager.process_events(event)
