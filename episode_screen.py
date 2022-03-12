@@ -26,6 +26,9 @@ class EpisodeScreen:
             elif key == "Nothing":
                 self.person_name.html_text = ""
                 self.line_text.html_text = line[key]
+            elif key == "Player":
+                self.person_name.html_text = self.game_settings.player_name
+                self.line_text.html_text = line[key]
             else:
                 self.person_name.html_text = key
                 self.line_text.html_text = line[key]

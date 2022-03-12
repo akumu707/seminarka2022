@@ -21,6 +21,9 @@ class PlayerSetupScreen:
         self.player_surname_input = pygame_gui.elements.UITextEntryLine(relative_rect=pygame.Rect((200, 200), (100, 50)), manager=self.ui_manager)
         self.player_surname_submit = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((300, 200), (150, 50)),
                                                                text='Submit', manager=self.ui_manager)
+
+        self.back_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((200, 300), (150, 50)),
+                                                                  text='Back', manager=self.ui_manager)
         #self.player_surname_input.text = self.game_settings.player_surname
 
         self.hide()
@@ -33,6 +36,7 @@ class PlayerSetupScreen:
         self.surname_text.hide()
         self.player_surname_input.hide()
         self.player_surname_submit.hide()
+        self.back_button.hide()
 
     def show(self):
         self.welcome_text.show()
@@ -42,6 +46,7 @@ class PlayerSetupScreen:
         self.surname_text.show()
         self.player_surname_input.show()
         self.player_surname_submit.show()
+        self.back_button.show()
 
     def _on_click_name_submit(self):
         if self.player_name_input.text == "":
@@ -55,9 +60,14 @@ class PlayerSetupScreen:
         else:
             self.game_settings.player_surname = self.player_surname_input.get_text()
 
+    def _on_click_back(self):
+        self.screen_options.show(self.screen_options.welcome_screen)
+
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
             if event.ui_element == self.player_name_submit:
                 self._on_click_name_submit()
             if event.ui_element == self.player_surname_submit:
                 self._on_click_surname_submit()
+            if event.ui_element == self.back_button:
+                self._on_click_back()

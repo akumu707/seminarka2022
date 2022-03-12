@@ -15,7 +15,7 @@
     {
       "name": "Episode Two",
       "story": [
-        {"Hero": "This is me"}
+        {"Player": "This is me"}
       ]
     }
   ],
