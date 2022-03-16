@@ -3,10 +3,11 @@ import pygame_gui
 
 
 class WelcomeScreen:
-    def __init__(self, screen_options, ui_manager, game_settings):
+    def __init__(self, screen_options, ui_manager, game_settings, background_surface):
         self.screen_options = screen_options
         self.ui_manager = ui_manager
         self.game_settings = game_settings
+        self.background_surface = background_surface
 
 
         self.welcome_text = pygame_gui.elements.UITextBox(relative_rect=pygame.Rect((200, 10), (100, 50)), html_text="Welcome", manager=self.ui_manager)
@@ -20,6 +21,7 @@ class WelcomeScreen:
         self.end_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((200, 300),(150,50)),
                                                                 text='End',
                                                                 manager=self.ui_manager)
+        self.bg = (pygame.transform.scale(pygame.image.load("background.jpg"), self.screen_options.resolution))
 
         self.hide()
 
@@ -35,6 +37,7 @@ class WelcomeScreen:
         self.start_button.show()
         self.player_button.show()
         self.end_button.show()
+        self.background_surface.blit(self.bg, (0, 0))
 
 
     def _on_click_start(self):

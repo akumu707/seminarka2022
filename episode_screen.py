@@ -8,9 +8,10 @@ class EpisodeScreen:
         self.game_settings = game_settings
         self.episode = []
         self.line_number = 0
+        self.background_surface = background_surface
 
-        self.background = pygame_gui.elements.UIImage(relative_rect=pygame.Rect((0, 0), (800, 600)),
-                                                      image_surface=background_surface, manager=self.ui_manager)
+        #self.background = pygame_gui.elements.UIImage(relative_rect=pygame.Rect((0, 0), (800, 600)),
+                                                   #   image_surface=background_surface, manager=self.ui_manager)
         self.person_name = pygame_gui.elements.UITextBox(relative_rect=pygame.Rect((0, 450), (100, 50)), #make a percentage for fullscreen
                                                           html_text="", manager=self.ui_manager)
         self.line_text = pygame_gui.elements.UITextBox(relative_rect=pygame.Rect((0, 500), (800, 100)),
@@ -22,7 +23,7 @@ class EpisodeScreen:
         keys = line.keys()
         for key in keys:
             if key == "background":
-                self.background.original_image = pygame.image.load(line[key]+".png")
+                self.bg = (pygame.transform.scale(pygame.image.load(line[key]+".png"), self.screen_options.resolution))
             elif key == "Nothing":
                 self.person_name.html_text = ""
                 self.line_text.html_text = line[key]
@@ -32,7 +33,6 @@ class EpisodeScreen:
             else:
                 self.person_name.html_text = key
                 self.line_text.html_text = line[key]
-        self.background.rebuild()
         self.person_name.rebuild()
         self.line_text.rebuild()
 
@@ -47,10 +47,9 @@ class EpisodeScreen:
     def hide(self):
         self.person_name.hide()
         self.line_text.hide()
-        self.background.hide()
 
     def show(self):
-        self.background.show()
+        self.background_surface.blit(self.bg, (0, 0))
         self.person_name.show()
         self.line_text.show()
 
