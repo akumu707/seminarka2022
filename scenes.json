@@ -4,6 +4,7 @@
       "requirements": "none",
       "to read": "True",
       "story": [
+        {"background": "universal"},
         {"Nothing": "Na náměstí Mirii Veliké v Portvertu se okolo vývěsní tabule sešel nemalý hlouček lidí. Kdo by šel náhodou okolo, zaslechl by slova jako „konkurz“ a „už zase nabírají.“ Příčinou tohoto pozdvižení byla velká cedule, která přes noc přibyla na oné tabuli."},
         {"Nothing": "<b>Mistři Averilu přijímají nové členy</b>"},
         {"Nothing": "Tak jako každý rok, i letos se bude konat přijímací konkurz pro ty, kteří se chtějí přidat k našemu řádu a chránit mír a pořádek ve světě. Přihlásit se může každý starší šestnácti let, na pohlaví nezáleží. Zájemci projdou základním výcvikem a vedoucí tréninku poté usoudí, kdo z účastníků má na to, aby se přidal ke svým starším kolegům a získal nehynoucí slávu jako člen našeho společenství. Přihlášky si vyzvedněte v naší kanceláři a odevzdejte do konce týdne. Výcvik začíná v pondělí v 9 hodin, účastníci jsou povinni hlásit se u velitele kasáren alespoň o hodinu dříve. Strava zaručena."},
@@ -15,6 +16,7 @@
     {
       "name": "Episode Two",
       "story": [
+        {"background": "universal"},
         {"Player": "This is me"}
       ]
     }
@@ -24,7 +26,7 @@
       "requirements": "none",
       "to read": "True",
       "story": [
-        {"background": "konoha"},
+        {"background": "Konoha"},
         {"Naruto": "I will never run away"},
         {"Naruto": "Never Take my words back"},
         {"Naruto": "'cause that's my ninja way"}

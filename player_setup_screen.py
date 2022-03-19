@@ -4,10 +4,11 @@ import sys
 
 
 class PlayerSetupScreen:
-    def __init__(self, screen_options, ui_manager, game_settings):
+    def __init__(self, screen_options, ui_manager, game_settings, background_surface):
         self.screen_options = screen_options
         self.ui_manager = ui_manager
         self.game_settings = game_settings
+        self.background_surface = background_surface
 
         self.welcome_text = pygame_gui.elements.UITextBox(relative_rect=pygame.Rect((200, 10), (125, 50)),
                                                          html_text="Who are you?", manager=self.ui_manager)
@@ -24,6 +25,7 @@ class PlayerSetupScreen:
 
         self.back_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((200, 300), (150, 50)),
                                                                   text='Back', manager=self.ui_manager)
+        self.bg = (pygame.transform.scale(pygame.image.load("background.jpg"), self.screen_options.resolution))
         #self.player_surname_input.text = self.game_settings.player_surname
 
         self.hide()
@@ -39,6 +41,7 @@ class PlayerSetupScreen:
         self.back_button.hide()
 
     def show(self):
+        self.background_surface.blit(self.bg, (0, 0))
         self.welcome_text.show()
         self.name_text.show()
         self.player_name_input.show()

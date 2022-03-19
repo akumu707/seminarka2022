@@ -29,9 +29,9 @@ class GameApp:
         self.background_surface.fill(self.ui_manager.get_theme().get_colour('dark_bg')) #pozadi
 
         self.screen_options.welcome_screen = WelcomeScreen(self.screen_options, self.ui_manager, self.game_settings, self.background_surface)
-        self.screen_options.choice_screen = ChoiceScreen(self.screen_options, self.ui_manager, self.game_settings)
+        self.screen_options.choice_screen = ChoiceScreen(self.screen_options, self.ui_manager, self.game_settings, self.background_surface)
         self.screen_options.episode_screen = EpisodeScreen(self.screen_options, self.ui_manager, self.game_settings, self.background_surface)
-        self.screen_options.player_setup_screen = PlayerSetupScreen(self.screen_options, self.ui_manager, self.game_settings)
+        self.screen_options.player_setup_screen = PlayerSetupScreen(self.screen_options, self.ui_manager, self.game_settings, self.background_surface)
         self.screen_options.show(self.screen_options.welcome_screen)
 
     def run(self):

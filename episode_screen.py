@@ -23,7 +23,7 @@ class EpisodeScreen:
         keys = line.keys()
         for key in keys:
             if key == "background":
-                self.bg = (pygame.transform.scale(pygame.image.load(line[key]+".png"), self.screen_options.resolution))
+                self.bg = (pygame.transform.scale(pygame.image.load(line[key]+".jpg"), self.screen_options.resolution))
             elif key == "Nothing":
                 self.person_name.html_text = ""
                 self.line_text.html_text = line[key]
@@ -63,5 +63,9 @@ class EpisodeScreen:
             else:
                 self.line_number=0
                 self.episode = []
+                self.person_name.html_text = ""
+                self.line_text.html_text = ""
+                self.person_name.rebuild()
+                self.line_text.rebuild()
                 self.game_settings.chosen_ep = None
                 self.screen_options.show(self.screen_options.choice_screen)
