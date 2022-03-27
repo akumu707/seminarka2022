@@ -19,7 +19,9 @@ class GameApp:
         self.game_settings = GameSettings()
 
         if self.screen_options.fullscreen: #vytvoreni surface
-            self.window_surface = pygame.display.set_mode(self.screen_options.resolution,pygame.FULLSCREEN)
+            self.window_surface = pygame.display.set_mode(self.screen_options.monitor_screen,pygame.FULLSCREEN)
+        elif self.screen_options.resizable:
+            self.window_surface = pygame.display.set_mode(self.screen_options.resolution, pygame.RESIZABLE)
         else:
             self.window_surface = pygame.display.set_mode(self.screen_options.resolution)
 
@@ -40,8 +42,15 @@ class GameApp:
         while is_running:    #game loop
             time_delta = clock.tick(60) / 1000.0
             for event in pygame.event.get():
-                if event.type == pygame.QUIT: #or event.type == pygame.USEREVENT+1
+                if event.type == pygame.QUIT:
                     is_running = False
+                if event.type == pygame.VIDEORESIZE:
+                    self.screen_options.resolution = (event.w, event.h)
+                    self.window_surface = pygame.display.set_mode(self.screen_options.resolution, pygame.RESIZABLE)
+                    self.screen_options.active_screen.refresh_position()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == K_ESCAPE:
+                        is_running = False
                 self.screen_options.active_screen.process_event(event)
                 self.ui_manager.process_events(event)
 

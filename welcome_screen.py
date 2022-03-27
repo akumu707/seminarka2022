@@ -10,33 +10,40 @@ class WelcomeScreen:
         self.background_surface = background_surface
 
 
-        self.welcome_text = pygame_gui.elements.UITextBox(relative_rect=pygame.Rect((200, 10), (100, 50)), html_text="Welcome", manager=self.ui_manager)
-        self.start_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((200, 100), (100, 50)), #smh nadesignovat
+        self.welcome_text = pygame_gui.elements.UILabel(relative_rect=pygame.Rect(100, self.screen_options.resolution[1]/8, -1, -1,), text="Welcome", manager=self.ui_manager)
+        self.start_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(200, (self.screen_options.resolution[1]/8)*2, -1, -1),
                                                            text='Start',
                                                            manager=self.ui_manager)
-        self.player_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((200, 200), (150, 50)),
+        self.player_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(300, (self.screen_options.resolution[1]/8)*3, -1, -1),
                                                                  text='Player Info',
                                                                  manager=self.ui_manager)
 
-        self.end_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((200, 300),(150,50)),
+        self.end_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(400, self.screen_options.resolution[1]*(4/8),-1,-1),
                                                                 text='End',
                                                                 manager=self.ui_manager)
         self.bg = (pygame.transform.scale(pygame.image.load("background.jpg"), self.screen_options.resolution))
 
+        self.content = [self.welcome_text, self.start_button, self.player_button, self.end_button]
+        self.refresh_positions()
         self.hide()
 
+    def refresh_positions(self):
+        center_x = self.screen_options.resolution[0] / 2
+        for index, element in enumerate(self.content):
+            element.relative_rect.centerx = center_x
+            element.relative_rect.y = (self.screen_options.resolution[1]/8)*index
+            element.rebuild()
+
     def hide(self):
-        self.welcome_text.hide()
-        self.start_button.hide()
-        self.player_button.hide()
-        self.end_button.hide()
+        for element in self.content:
+            element.hide()
+
 
     def show(self):
         pygame.display.set_caption("Welcome")
-        self.welcome_text.show()
-        self.start_button.show()
-        self.player_button.show()
-        self.end_button.show()
+        self.refresh_positions()
+        for element in self.content:
+            element.show()
         self.background_surface.blit(self.bg, (0, 0))
 
 
