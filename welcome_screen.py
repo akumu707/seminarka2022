@@ -24,14 +24,14 @@ class WelcomeScreen:
         self.bg = (pygame.transform.scale(pygame.image.load("background.jpg"), self.screen_options.resolution))
 
         self.content = [self.welcome_text, self.start_button, self.player_button, self.end_button]
-        self.refresh_positions()
+        self.refresh()
         self.hide()
 
-    def refresh_positions(self):
+    def refresh(self):
         center_x = self.screen_options.resolution[0] / 2
         for index, element in enumerate(self.content):
             element.relative_rect.centerx = center_x
-            element.relative_rect.y = (self.screen_options.resolution[1]/8)*index
+            element.relative_rect.y = (self.screen_options.resolution[1]/8)*(index+1)
             element.rebuild()
 
     def hide(self):
@@ -41,7 +41,7 @@ class WelcomeScreen:
 
     def show(self):
         pygame.display.set_caption("Welcome")
-        self.refresh_positions()
+        self.refresh()
         for element in self.content:
             element.show()
         self.background_surface.blit(self.bg, (0, 0))
