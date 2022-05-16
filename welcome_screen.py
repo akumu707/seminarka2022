@@ -11,11 +11,11 @@ class WelcomeScreen:
 
 
         self.welcome_text = pygame_gui.elements.UILabel(relative_rect=pygame.Rect(100, self.screen_options.resolution[1]/8, -1, -1,), text="Welcome", manager=self.ui_manager)
-        self.start_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(200, (self.screen_options.resolution[1]/8)*2, -1, -1),
-                                                           text='Start',
+        self.start_new_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(200, (self.screen_options.resolution[1]/8)*2, -1, -1),
+                                                           text='Start new game',
                                                            manager=self.ui_manager)
-        self.player_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(300, (self.screen_options.resolution[1]/8)*3, -1, -1),
-                                                                 text='Player Info',
+        self.load_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(300, (self.screen_options.resolution[1]/8)*3, -1, -1),
+                                                                 text='Load game',
                                                                  manager=self.ui_manager)
 
         self.end_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(400, self.screen_options.resolution[1]*(4/8),-1,-1),
@@ -23,7 +23,7 @@ class WelcomeScreen:
                                                                 manager=self.ui_manager)
         self.bg = (pygame.transform.scale(pygame.image.load("background.jpg"), self.screen_options.resolution))
 
-        self.content = [self.welcome_text, self.start_button, self.player_button, self.end_button]
+        self.content = [self.welcome_text, self.start_new_button, self.load_button, self.end_button]
         self.refresh()
         self.hide()
 
@@ -48,18 +48,18 @@ class WelcomeScreen:
 
 
     def _on_click_start(self):
-        self.screen_options.show(self.screen_options.choice_screen)
-
-    def _on_click_player(self):
         self.screen_options.show(self.screen_options.player_setup_screen)
+
+    def _on_click_load(self):
+        self.screen_options.show(self.screen_options.load_screen)
 
 
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
-            if event.ui_element == self.start_button:
+            if event.ui_element == self.start_new_button:
                 self._on_click_start()
-            if event.ui_element == self.player_button:
-                self._on_click_player()
+            if event.ui_element == self.load_button:
+                self._on_click_load()
             if event.ui_element == self.end_button:
                 #MY_QUIT = pygame.event.Event(pygame.USEREVENT+1)
                 #pygame.event.post(MY_QUIT)

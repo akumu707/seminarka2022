@@ -10,14 +10,18 @@ class EpisodeScreen:
         self.line_number = 0
         self.background_surface = background_surface
 
-        #self.background = pygame_gui.elements.UIImage(relative_rect=pygame.Rect((0, 0), (800, 600)),
-                                                   #   image_surface=background_surface, manager=self.ui_manager)
         self.person_name = pygame_gui.elements.UITextBox(relative_rect=pygame.Rect((0, 450), (100, 50)), #make a percentage for fullscreen
                                                           html_text="", manager=self.ui_manager)
-        self.line_text = pygame_gui.elements.UITextBox(relative_rect=pygame.Rect((0, 500), (800, 100)),
+        self.line_text = pygame_gui.elements.UITextBox(relative_rect=pygame.Rect(0, 500, 800, 100),
                                                          html_text="", manager=self.ui_manager)
 
+        self.content = [self.person_name, self.line_text]
+        self.refresh()
         self.hide()
+
+    def refresh(self):
+        self.line_text.relative_rect.y = ((self.screen_options.resolution[1])/6)*5
+        self.line_text.rebuild()
 
     def set_elements_for_new_line(self, line: dict):
         keys = line.keys()

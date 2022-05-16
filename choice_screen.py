@@ -11,15 +11,18 @@ class ChoiceScreen:
 
         self.choice_text = pygame_gui.elements.UILabel(relative_rect=pygame.Rect(100, 200, -1, -1,),
                                                           text="Choose", manager=self.ui_manager)
-        self.choice_list = pygame_gui.elements.UISelectionList(relative_rect=pygame.Rect(100, 200, 100, 100), manager=ui_manager, item_list = self.game_settings.file.keys())
+        self.choice_list = pygame_gui.elements.UISelectionList(relative_rect=pygame.Rect(-500, -600, 100, 100), manager=ui_manager, item_list = self.game_settings.file.keys())
         self.submit_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(100, 200, -1, -1),
                                                           text='Submit',
                                                           manager=self.ui_manager)
         self.back_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(100, 200, -1, -1),
                                                           text='Back',
                                                           manager=self.ui_manager)
+        self.save_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(100, 200, -1, -1),
+                                                        text='Save',
+                                                        manager=self.ui_manager)
         self.bg = (pygame.transform.scale(pygame.image.load("background-choice.jpg"), self.screen_options.resolution))
-        self.content = [self.choice_text, self.choice_list, self.submit_button, self.back_button]
+        self.content = [ self.choice_text, self.choice_list, self.submit_button, self.back_button, self.save_button]
         self.refresh()
         self.hide()
 
@@ -56,7 +59,7 @@ class ChoiceScreen:
                 self.screen_options.episode_screen.set_episode(self.game_settings.chosen_ep)
                 self.screen_options.show(self.screen_options.episode_screen)
 
-    def _on_click_back(self):
+    def _on_click_back(self): #add warning
         if self.game_settings.chosen_story == None:
             self.screen_options.show(self.screen_options.welcome_screen)
         else:
@@ -64,11 +67,15 @@ class ChoiceScreen:
             self.set_choice_list()
             self.refresh()
 
+    def _on_click_save(self):
+        self.screen_options.show(self.screen_options.save_screen)
+
     def hide(self):
         for element in self.content:
             element.hide()
 
     def show(self):
+        self.choice_list.set_item_list(self.game_settings.file.keys())
         self.background_surface.blit(self.bg, (0, 0))
         pygame.display.set_caption("Choose")
         for element in self.content:
@@ -82,3 +89,5 @@ class ChoiceScreen:
                 self._on_click_submit()
             if event.ui_element == self.back_button:
                 self._on_click_back()
+            if event.ui_element == self.save_button:
+                self._on_click_save()

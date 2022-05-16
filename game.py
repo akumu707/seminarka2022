@@ -6,6 +6,9 @@ import pygame
 from pygame.locals import *
 from ScreenOptions import ScreenOptions
 from pygame_gui import UIManager, PackageResource
+
+from load_screen import LoadScreen
+from save_screen import SaveScreen
 from welcome_screen import WelcomeScreen
 from choice_screen import ChoiceScreen
 from GameSettings import GameSettings
@@ -25,7 +28,7 @@ class GameApp:
         else:
             self.window_surface = pygame.display.set_mode(self.screen_options.resolution)
 
-        self.ui_manager = UIManager(self.screen_options.resolution) #zalozeni managera
+        self.ui_manager = UIManager(self.screen_options.resolution, "theme.json") #zalozeni managera
 
         self.background_surface = pygame.Surface(self.screen_options.resolution)
         self.background_surface.fill(self.ui_manager.get_theme().get_colour('dark_bg')) #pozadi
@@ -34,6 +37,10 @@ class GameApp:
         self.screen_options.choice_screen = ChoiceScreen(self.screen_options, self.ui_manager, self.game_settings, self.background_surface)
         self.screen_options.episode_screen = EpisodeScreen(self.screen_options, self.ui_manager, self.game_settings, self.background_surface)
         self.screen_options.player_setup_screen = PlayerSetupScreen(self.screen_options, self.ui_manager, self.game_settings, self.background_surface)
+        self.screen_options.load_screen = LoadScreen(self.screen_options, self.ui_manager,
+                                                                    self.game_settings, self.background_surface)
+        self.screen_options.save_screen = SaveScreen(self.screen_options, self.ui_manager,
+                                                                    self.game_settings, self.background_surface)
         self.screen_options.show(self.screen_options.welcome_screen)
 
     def run(self):
