@@ -25,7 +25,7 @@
   ],
   "Test story": [{
       "name": "Naruto test",
-      "requirements": "none",
+      "requirements": {},
       "to read": "True",
       "story": [
         {"background": "Konoha"},

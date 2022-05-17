@@ -49,20 +49,29 @@
             "normal_border": "#00000000",
             "normal_text": "#c5cbd8",
             "text_shadow": "#505050"
-        },
-        "selection_list.@selection_list_item":
+        } },
+  "@selection_list_item":
         {
           "colours":
           {
-            "normal_bg": "#c5cbd8",
-            "hovered_bg": "#A020F0",
-            "normal_text": "#c5cbd8",
+            "normal_bg": "#00B4D8",
+            "hovered_bg": "#0077B6",
+            "normal_text": "#03045E",
             "text_shadow": "#505050"
           },
           "misc":
             {
               "border_width": "2"
             }
-        }
+        },
+  "#locked":
+  {
+      "colours":
+      {
+        "normal_bg": "#ADE8F4",
+        "hovered_bg": "#ADE8F4",
+        "normal_text": "#03045E",
+        "text_shadow": "#505050"
+      }
+  }
     }
-}

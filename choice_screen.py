@@ -1,6 +1,6 @@
 import pygame
 import pygame_gui
-import sys
+from pygame_gui.core import ObjectID
 
 class ChoiceScreen:
     def __init__(self, screen_options, ui_manager, game_settings, background_surface):
@@ -11,7 +11,7 @@ class ChoiceScreen:
 
         self.choice_text = pygame_gui.elements.UILabel(relative_rect=pygame.Rect(100, 200, -1, -1,),
                                                           text="Choose", manager=self.ui_manager)
-        self.choice_list = pygame_gui.elements.UISelectionList(relative_rect=pygame.Rect(-500, -600, 100, 100), manager=ui_manager, item_list = self.game_settings.file.keys())
+        self.choice_list = pygame_gui.elements.UISelectionList(relative_rect=pygame.Rect(-500, -600, 100, 100), manager=ui_manager, item_list = self.game_settings.file.keys(), object_id=ObjectID(class_id='@selection_list_item'))
         self.submit_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(100, 200, -1, -1),
                                                           text='Submit',
                                                           manager=self.ui_manager)
@@ -22,11 +22,12 @@ class ChoiceScreen:
                                                         text='Save',
                                                         manager=self.ui_manager)
         self.bg = (pygame.transform.scale(pygame.image.load("background-choice.jpg"), self.screen_options.resolution))
-        self.content = [ self.choice_text, self.choice_list, self.submit_button, self.back_button, self.save_button]
+        self.content = [self.choice_text, self.choice_list, self.submit_button, self.back_button, self.save_button]
         self.refresh()
         self.hide()
 
     def refresh(self):
+        self.set_choice_list()
         center_x = self.screen_options.resolution[0] / 2
         if not self.game_settings.chosen_story==None:
             self.submit_button.text = "Start"
@@ -38,23 +39,30 @@ class ChoiceScreen:
             element.rebuild()
 
     def set_choice_list(self):
+        no_id_item_list = []
         if self.game_settings.chosen_story==None:
-            self.choice_list.set_item_list(self.game_settings.file.keys())
+            no_id_item_list=(self.game_settings.file.keys())
         else:
-            ep_names = []
             for ep in self.game_settings.this_tree:
-                ep_names.append(ep["name"])
-            self.choice_list.set_item_list(ep_names)
+                for key in ep["requirements"]:
+                    for listed_episode in self.game_settings.file[key]:
+                        if listed_episode["name"] == ep["requirements"][key] and listed_episode["to read"]:
+                            no_id_item_list.append((ep["name"], "#locked"))
+                if not (ep["name"], "#locked")in no_id_item_list:
+                    no_id_item_list.append(ep["name"])
+        self.choice_list.set_item_list(no_id_item_list)
 
     def _on_click_submit(self):
         if self.submit_button.text == "Submit":
             self.game_settings.chosen_story = self.choice_list.get_single_selection()
             if not self.game_settings.chosen_story==None:
                 self.game_settings.find_this_tree(self.game_settings.chosen_story)
-                self.set_choice_list()
                 self.refresh()
         else:
             self.game_settings.chosen_ep = self.choice_list.get_single_selection()
+            for ep in self.choice_list.item_list:
+                if ep["text"] == self.game_settings.chosen_ep and ep["object_id"] == "#locked":
+                    return
             if not self.game_settings.chosen_ep == None:
                 self.screen_options.episode_screen.set_episode(self.game_settings.chosen_ep)
                 self.screen_options.show(self.screen_options.episode_screen)
