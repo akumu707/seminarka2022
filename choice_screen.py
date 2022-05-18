@@ -83,7 +83,7 @@ class ChoiceScreen:
             element.hide()
 
     def show(self):
-        self.choice_list.set_item_list(self.game_settings.file.keys())
+        self.set_choice_list()
         self.background_surface.blit(self.bg, (0, 0))
         pygame.display.set_caption("Choose")
         for element in self.content:
