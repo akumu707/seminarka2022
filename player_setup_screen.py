@@ -46,7 +46,7 @@ class PlayerSetupScreen:
                 item.hide()
 
     def show(self):
-        # self.refresh()
+        self.refresh()
         self.background_surface.blit(self.bg, (0, 0))
         pygame.display.set_caption("Your name")
         for line_list in self.content:

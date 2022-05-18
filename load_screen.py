@@ -41,7 +41,7 @@ class LoadScreen:
 
     def _on_click_continue(self):
         if not self.choice_list.get_single_selection()==None:
-            self.game_settings.load_existing_game(self.choice_list.get_single_selection()+".json")
+            self.game_settings.load_existing_game(self.choice_list.get_single_selection())
             self.screen_options.show(self.screen_options.choice_screen)
 
 
