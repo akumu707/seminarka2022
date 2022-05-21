@@ -3,7 +3,7 @@
         {
             "name": "Episode One",
             "requirements": {},
-            "to read": "True",
+            "to read": "False",
             "story": [
                 {
                     "background": "universal"
@@ -35,12 +35,10 @@
             },
             "to read": "True",
             "story": [
-                {
-                    "background": "universal"
-                },
-                {
-                    "Player": "This is me"
-                }
+                {"background": "universal"},
+                {"Player": "This is me"},
+                {"Hello": [{"Tobi": "Hiii~"},{"Ted":  "Shut up"}],
+                 "Hi": [{"Ted": "Hello!"}]}
             ]
         }
     ],

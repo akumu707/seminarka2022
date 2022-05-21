@@ -19,7 +19,9 @@
       "to read": "True",
       "story": [
         {"background": "universal"},
-        {"Player": "This is me"}
+        {"Player": "This is me"},
+        {"Hello": [{"Tobi": "Hiii~"}],
+        "Hi": [{"Ted": "Hello!"}]}
       ]
     }
   ],

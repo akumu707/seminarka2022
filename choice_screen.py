@@ -46,7 +46,7 @@ class ChoiceScreen:
             for ep in self.game_settings.this_tree:
                 for key in ep["requirements"]:
                     for listed_episode in self.game_settings.file[key]:
-                        if listed_episode["name"] == ep["requirements"][key] and listed_episode["to read"]:
+                        if (listed_episode["name"] == ep["requirements"][key] and listed_episode["to read"]=="True"): #lidi to je hnus tohle....
                             no_id_item_list.append((ep["name"], "#locked"))
                 if not (ep["name"], "#locked")in no_id_item_list:
                     no_id_item_list.append(ep["name"])
