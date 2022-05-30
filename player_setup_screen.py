@@ -53,17 +53,17 @@ class PlayerSetupScreen:
             for item in line_list:
                 item.show()
 
-
     def _on_click_next(self):
         if self.player_name_input.text == "":
             return
         else:
-            self.game_settings.player_name = self.player_name_input.get_text()
+            self.game_settings.settings["player name"] = self.player_name_input.get_text()
         if self.player_surname_input.text == "":
             return
         else:
-            self.game_settings.player_surname = self.player_surname_input.get_text()
+            self.game_settings.settings["player surname"] = self.player_surname_input.get_text()
         self.screen_options.show(self.screen_options.choice_screen)
+
 
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_PRESSED:

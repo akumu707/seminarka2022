@@ -74,10 +74,28 @@
         "text_shadow": "#505050"
       }
   },
-  "#episode_label": {
-    "colours":{"dark_bg":"#6e6e6e",
-    "normal_text": "#f8f8f8"}
+  "#episode_label":
+  {
+    "colours":
+      {
+        "dark_bg":"#414141",
+        "normal_text": "#f8f8f8"},
+    "misc":
+      {
+        "text_horiz_alignment": "left",
+        "text_vert_alignment": "top",
+        "text_horiz_alignment_padding": 50,
+        "text_vert_alignment_padding": 50
+      }
 
-  }
+  },
+  "#episode_button":
+  {
+    "colours":
+    {
+      "normal_bg": "#8e8e8e",
+      "hovered_bg": "#666"
     }
+  }
+}
 

@@ -13,18 +13,22 @@ class LoadScreen:
 
         self.choice_text = pygame_gui.elements.UILabel(relative_rect=pygame.Rect(100, 200, -1, -1, ),
                                                        text="Choose a file:", manager=self.ui_manager)
-        self.choice_list = pygame_gui.elements.UISelectionList(relative_rect=pygame.Rect(100, 200, 100, 100), manager=ui_manager, item_list = [])
+        self.choice_list = pygame_gui.elements.UISelectionList(relative_rect=pygame.Rect(100, 200, 100, 100),
+                                                               manager=ui_manager, item_list=[])
         self.continue_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(400, 300, -1, -1),
-                                                          text='Continue',
-                                                          manager=self.ui_manager)
+                                                            text='Continue',
+                                                            manager=self.ui_manager)
+        self.back_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(100, 200, -1, -1),
+                                                        text='Back',
+                                                        manager=self.ui_manager)
         self.bg = (pygame.transform.scale(pygame.image.load("background.jpg"), self.screen_options.resolution))
-        self.content = [self.choice_text, self.choice_list, self.continue_button]
+        self.content = [self.choice_text, self.choice_list, self.continue_button, self.back_button]
         self.hide()
 
     def refresh(self):
         item_list = []
         for f in os.listdir(r"Saved"):
-            item_list.append(f[:-5])
+            item_list.append(f)  # i v save screen
         self.choice_list.set_item_list(item_list)
         self.choice_list.rebuild()
 
@@ -44,9 +48,12 @@ class LoadScreen:
             self.game_settings.load_existing_game(self.choice_list.get_single_selection())
             self.screen_options.show(self.screen_options.choice_screen)
 
-
+    def _on_click_back(self):
+        self.screen_options.show(self.screen_options.welcome_screen)
 
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
             if event.ui_element == self.continue_button:
                 self._on_click_continue()
+            if event.ui_element == self.back_button:
+                self._on_click_back()

@@ -22,6 +22,7 @@ class ChoiceScreen:
                                                         text='Save',
                                                         manager=self.ui_manager)
         self.bg = (pygame.transform.scale(pygame.image.load("background-choice.jpg"), self.screen_options.resolution))
+
         self.content = [self.choice_text, self.choice_list, self.submit_button, self.back_button, self.save_button]
         self.refresh()
         self.hide()
@@ -89,7 +90,6 @@ class ChoiceScreen:
         for element in self.content:
             element.show()
         self.refresh()
-
 
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_PRESSED:

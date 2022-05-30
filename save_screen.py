@@ -42,7 +42,7 @@ class SaveScreen:
         input_text = self.file_name_input.text
         item_list = []
         for f in os.listdir(r"Saved"):
-            item_list.append(f[:-5])
+            item_list.append(f)
         if not input_text == None:
             if input_text in item_list:
                 self.confirm = pygame_gui.windows.UIConfirmationDialog(rect=pygame.Rect(300, 300, 100, 100),

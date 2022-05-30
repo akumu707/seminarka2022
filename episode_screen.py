@@ -34,9 +34,9 @@ class EpisodeScreen:
                     self.bg = (pygame.transform.scale(pygame.image.load(line[key]+".jpg"), self.screen_options.resolution))
                 elif key == "Nothing":
                     self.person_name.text = ""
-                    self.line_text.ext = line[key]
+                    self.line_text.text = line[key]
                 elif key == "Player":
-                    self.person_name.text = self.game_settings.player_name
+                    self.person_name.text = self.game_settings.settings["player name"]
                     self.line_text.text = line[key]
                 else:
                     self.person_name.text = key
@@ -48,7 +48,7 @@ class EpisodeScreen:
             for i, key in enumerate(line.keys()):
                 self.choice_buttons.append(pygame_gui.elements.UIButton(relative_rect=pygame.Rect(self.screen_options.resolution[0]/(len(line.keys())+1)*(i+1), 530, -1, -1),
                                                                     text=key,
-                                                                    manager=self.ui_manager))
+                                                                    manager=self.ui_manager, object_id=ObjectID(object_id='#episode_button')))
 
     def reset_line(self):
         self.person_name.text = ""
@@ -81,15 +81,19 @@ class EpisodeScreen:
                     self.set_elements_for_new_line(self.episode[self.next_line_number])
                     self.show()
                 else:
-                    self.line_number = 0
+                    self.next_line_number = 0
                     self.episode = []
                     self.reset_line()
+                    for i, ep in enumerate(self.game_settings.file[self.game_settings.chosen_story]):
+                        if ep["name"] == self.game_settings.chosen_ep:
+                            ep["to read"] = "False"
                     self.game_settings.chosen_ep = None
                     self.screen_options.show(self.screen_options.choice_screen)
             else:
                 line = self.option_lines[0]
                 self.option_lines.remove(line)
                 self.set_elements_for_new_line(line)
+
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
             for button in self.choice_buttons:
                 if event.ui_element == button:
