@@ -88,7 +88,7 @@ class EpisodeScreen:
                     self.reset_line()
                     for i, ep in enumerate(self.game_settings.file[self.game_settings.chosen_story]):
                         if ep["name"] == self.game_settings.chosen_ep:
-                            ep["to read"] = "False"
+                            ep["to read"] = False
                     self.game_settings.chosen_ep = None
                     self.screen_options.show(self.screen_options.choice_screen)
             else:

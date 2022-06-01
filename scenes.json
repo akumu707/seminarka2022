@@ -2,7 +2,7 @@
   "Main story": [{
       "name": "Episode One",
       "requirements": {},
-      "to read": "True",
+      "to read": true,
       "story": [
         {"background": "universal"},
         {"Nothing": "Na náměstí Mirii Veliké v Portvertu se okolo vývěsní tabule sešel nemalý hlouček lidí. Kdo by šel náhodou okolo, zaslechl by slova jako „konkurz“ a „už zase nabírají.“ Příčinou tohoto pozdvižení byla velká cedule, která přes noc přibyla na oné tabuli."},
@@ -16,7 +16,7 @@
     {
       "name": "Episode Two",
       "requirements": {"Main story": "Episode One"},
-      "to read": "True",
+      "to read": true,
       "story": [
         {"background": "universal"},
         {"Player": "This is me"},
@@ -26,7 +26,7 @@
     },
     {"name": "Episode Three",
       "requirements": {},
-      "to read": "True",
+      "to read": true,
       "story": [
         {"background": "universal"},
         {"Katrin": "This is Sean and this is Sasha"},
@@ -41,7 +41,7 @@
   "Sean's Story": [{
     "name": "Episode One",
       "requirements": {"relationship": ["Sean", 5]},
-      "to read": "True",
+      "to read": true,
       "story": [
         {"background": "universal"},
         {"Sean": "I've always been looking for ways to follow my heart."},
@@ -63,7 +63,7 @@
   "Test story": [{
       "name": "Naruto test",
       "requirements": {},
-      "to read": "True",
+      "to read": true,
       "story": [
         {"background": "Konoha"},
         {"Naruto": "I will never run away"},
