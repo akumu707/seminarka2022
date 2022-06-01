@@ -1,4 +1,10 @@
 {
   "player name": "Diana",
-  "player surname": "Falmenová"
+  "player surname": "Falmenová",
+  "relationship":{
+    "Sasha": 0,
+    "Sean": 0,
+    "Ted": 0,
+    "Tobi": 0
+  }
 }

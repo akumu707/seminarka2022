@@ -32,6 +32,8 @@ class EpisodeScreen:
             for key in keys:
                 if key == "background":
                     self.bg = (pygame.transform.scale(pygame.image.load(line[key]+".jpg"), self.screen_options.resolution))
+                elif key == "relationship":
+                    self.game_settings.settings["relationship"][line[key][0]]+=line[key][1]
                 elif key == "Nothing":
                     self.person_name.text = ""
                     self.line_text.text = line[key]

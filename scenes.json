@@ -23,8 +23,43 @@
         {"Hello": [{"Tobi": "Hiii~"}],
         "Hi": [{"Ted": "Hello!"}]}
       ]
-    }
+    },
+    {"name": "Episode Three",
+      "requirements": {},
+      "to read": "True",
+      "story": [
+        {"background": "universal"},
+        {"Katrin": "This is Sean and this is Sasha"},
+        {"Hi Sasha": [
+          {"relationship": ["Sasha", 5]},
+          {"Sasha": "Hiii"}
+        ],
+        "Hello Sean": [
+          {"relationship": ["Sean", 5]},
+          {"Sean": "Pleased to meet you, Navigator"}]}]}
   ],
+  "Sean's Story": [{
+    "name": "Episode One",
+      "requirements": {"relationship": ["Sean", 5]},
+      "to read": "True",
+      "story": [
+        {"background": "universal"},
+        {"Sean": "I've always been looking for ways to follow my heart."},
+        {"Sean": "Be it painting, travelling, you name it, I wanted to do what I felt like doing"},
+        {"Sean": "Until I met her."},
+        {"Sasha?":[{
+          "Sean": "..."
+        },
+          {"Sean": "Yes and No"},
+          {"Sean": "This little one is always causing me trouble."},
+          {"Sean": "But I'm not talking about her."}],
+        "Did you fall in love?": [{
+          "Sean": "I guess you could say so."
+        },
+          {"Sean": "She'll always have a special place in my heart."}]},
+        {"Sean": "Her name was Tamara."}
+      ]
+  }],
   "Test story": [{
       "name": "Naruto test",
       "requirements": {},
