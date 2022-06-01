@@ -47,15 +47,14 @@
         {"Sean": "I've always been looking for ways to follow my heart."},
         {"Sean": "Be it painting, travelling, you name it, I wanted to do what I felt like doing"},
         {"Sean": "Until I met her."},
-        {"Sasha?":[{
-          "Sean": "..."
-        },
+        {"Sasha?":[
+          {"relationship": ["Sasha", 5]},
+          {"Sean": "..."},
           {"Sean": "Yes and No"},
           {"Sean": "This little one is always causing me trouble."},
           {"Sean": "But I'm not talking about her."}],
-        "Did you fall in love?": [{
-          "Sean": "I guess you could say so."
-        },
+        "Did you fall in love?": [
+          {"Sean": "I guess you could say so."},
           {"Sean": "She'll always have a special place in my heart."}]},
         {"Sean": "Her name was Tamara."}
       ]
