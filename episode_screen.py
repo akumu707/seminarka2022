@@ -15,6 +15,11 @@ class EpisodeScreen:
                                                           text="", manager=self.ui_manager, object_id=ObjectID(object_id='#episode_label'))
         self.line_text = pygame_gui.elements.UILabel(relative_rect=pygame.Rect(0, 500, 800, 100),
                                                          text="", manager=self.ui_manager, object_id=ObjectID(object_id='#episode_label'))
+        self.relationship_update = pygame_gui.elements.UILabel(relative_rect=pygame.Rect((100, 100), (300, 300)),
+                                                               # make a percentage for fullscreen
+                                                               text="",
+                                                               manager=self.ui_manager,
+                                                               object_id=ObjectID(object_id='#episode_label'))
 
         self.content = [self.person_name, self.line_text]
         self.choice_buttons = []
@@ -27,13 +32,17 @@ class EpisodeScreen:
         self.line_text.rebuild()
 
     def set_elements_for_new_line(self, line: dict):
-        if len(line)==1:
-            keys = line.keys()
+        self.relationship_update.hide()
+        keys = line.keys()
+        if len(keys)==1 or "relationship" in keys:
             for key in keys:
                 if key == "background":
                     self.bg = (pygame.transform.scale(pygame.image.load(line[key]+".jpg"), self.screen_options.resolution))
                 elif key == "relationship":
                     self.game_settings.settings["relationship"][line[key][0]]+=line[key][1]
+                    #self.relationship_update.text = "Relationship with " + line[key][0] + " improved by " + str(line[key][1]) for some reason pada pri debugger
+                    #self.relationship_update.rebuild()
+                    #self.relationship_update.show()
                 elif key == "Nothing":
                     self.person_name.text = ""
                     self.line_text.text = line[key]
@@ -68,6 +77,7 @@ class EpisodeScreen:
     def hide(self):
         self.person_name.hide()
         self.line_text.hide()
+        self.relationship_update.hide()
 
     def show(self):
         self.background_surface.blit(self.bg, (0, 0))
@@ -77,6 +87,7 @@ class EpisodeScreen:
 
     def process_event(self, event):
         if event.type == pygame.MOUSEBUTTONDOWN and self.choice_buttons==[]:
+            self.relationship_update.kill()
             if self.option_lines == []:
                 self.next_line_number += 1
                 if not self.next_line_number == len(self.episode):

@@ -31,12 +31,10 @@
         {"background": "universal"},
         {"Katrin": "This is Sean and this is Sasha"},
         {"Hi Sasha": [
-          {"relationship": ["Sasha", 5]},
-          {"Sasha": "Hiii"}
+          {"Sasha": "Hiii","relationship": ["Sasha", 5]}
         ],
         "Hello Sean": [
-          {"relationship": ["Sean", 5]},
-          {"Sean": "Pleased to meet you, Navigator"}]}]}
+          {"Sean": "Pleased to meet you, Navigator","relationship": ["Sean", 5]}]}]}
   ],
   "Sean's Story": [{
     "name": "Episode One",
@@ -48,8 +46,7 @@
         {"Sean": "Be it painting, travelling, you name it, I wanted to do what I felt like doing"},
         {"Sean": "Until I met her."},
         {"Sasha?":[
-          {"relationship": ["Sasha", 5]},
-          {"Sean": "..."},
+          {"Sean": "...", "relationship": ["Sasha", 5]},
           {"Sean": "Yes and No"},
           {"Sean": "This little one is always causing me trouble."},
           {"Sean": "But I'm not talking about her."}],

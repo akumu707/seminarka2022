@@ -10,10 +10,12 @@ from pygame_gui import UIManager, PackageResource
 from load_screen import LoadScreen
 from save_screen import SaveScreen
 from welcome_screen import WelcomeScreen
-from choice_screen import ChoiceScreen
+from story_choice_screen import StoryChoiceScreen
 from GameSettings import GameSettings
 from episode_screen import EpisodeScreen
 from player_setup_screen import PlayerSetupScreen
+from exploration_screen import ExplorationScreen
+from choice_screen import ChoiceScreen
 
 class GameApp:
     def __init__(self):
@@ -34,13 +36,17 @@ class GameApp:
         self.background_surface.fill(self.ui_manager.get_theme().get_colour('dark_bg')) #pozadi
 
         self.screen_options.welcome_screen = WelcomeScreen(self.screen_options, self.ui_manager, self.game_settings, self.background_surface)
-        self.screen_options.choice_screen = ChoiceScreen(self.screen_options, self.ui_manager, self.game_settings, self.background_surface)
+        self.screen_options.story_choice_screen = StoryChoiceScreen(self.screen_options, self.ui_manager, self.game_settings, self.background_surface)
         self.screen_options.episode_screen = EpisodeScreen(self.screen_options, self.ui_manager, self.game_settings, self.background_surface)
         self.screen_options.player_setup_screen = PlayerSetupScreen(self.screen_options, self.ui_manager, self.game_settings, self.background_surface)
         self.screen_options.load_screen = LoadScreen(self.screen_options, self.ui_manager,
                                                                     self.game_settings, self.background_surface)
         self.screen_options.save_screen = SaveScreen(self.screen_options, self.ui_manager,
                                                                     self.game_settings, self.background_surface)
+        self.screen_options.exploration_screen = ExplorationScreen(self.screen_options, self.ui_manager,
+                                                     self.game_settings, self.background_surface)
+        self.screen_options.choice_screen = ChoiceScreen(self.screen_options, self.ui_manager,
+                                                                   self.game_settings, self.background_surface)
         self.screen_options.show(self.screen_options.welcome_screen)
 
     def run(self):
