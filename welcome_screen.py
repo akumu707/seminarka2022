@@ -21,7 +21,7 @@ class WelcomeScreen:
         self.end_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(400, self.screen_options.resolution[1]*(4/8),-1,-1),
                                                                 text='End',
                                                                 manager=self.ui_manager)
-        self.bg = (pygame.transform.scale(pygame.image.load("background.jpg"), self.screen_options.resolution))
+        self.bg = (pygame.transform.scale(pygame.image.load("resources/images/background.jpg"), self.screen_options.resolution))
 
         self.content = [self.welcome_text, self.start_new_button, self.load_button, self.end_button]
         self.refresh()

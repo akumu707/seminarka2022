@@ -20,7 +20,7 @@ class SaveScreen:
         self.back_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(400, 400, -1, -1),
                                                             text='Back',
                                                             manager=self.ui_manager)
-        self.bg = (pygame.transform.scale(pygame.image.load("background.jpg"), self.screen_options.resolution))
+        self.bg = (pygame.transform.scale(pygame.image.load("resources/images/background.jpg"), self.screen_options.resolution))
         self.content = [self.file_text, self.file_name_input, self.continue_button, self.back_button]
         self.hide()
 

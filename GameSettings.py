@@ -3,9 +3,9 @@ import os
 
 class GameSettings:
     def __init__(self):
-        with open("scenes.json", "r", encoding="utf-8") as file:
+        with open("resources/data/scenes.json", "r", encoding="utf-8") as file:
             self.file = json.load(file)
-        with open("game_settings.json", "r", encoding="utf-8") as file:
+        with open("resources/data/game_settings.json", "r", encoding="utf-8") as file:
             self.settings = json.load(file)
         self.this_tree = {}
         self.chosen_story = None

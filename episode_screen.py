@@ -37,10 +37,10 @@ class EpisodeScreen:
         if len(keys)==1 or "relationship" in keys:
             for key in keys:
                 if key == "background":
-                    self.bg = (pygame.transform.scale(pygame.image.load(line[key]+".jpg"), self.screen_options.resolution))
+                    self.bg = (pygame.transform.scale(pygame.image.load(r"resources/images/"+line[key]+".jpg"), self.screen_options.resolution))
                 elif key == "relationship":
                     self.game_settings.settings["relationship"][line[key][0]]+=line[key][1]
-                    #self.relationship_update.text = "Relationship with " + line[key][0] + " improved by " + str(line[key][1]) for some reason pada pri debugger
+                    #self.relationship_update.text = "Relationship with " + line[key][0] + " improved by " + str(line[key][1])
                     #self.relationship_update.rebuild()
                     #self.relationship_update.show()
                 elif key == "Nothing":

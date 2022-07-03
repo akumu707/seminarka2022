@@ -7,7 +7,9 @@
     "Ted": 0,
     "Tobi": 0
   },
-  "people": ["Player, Ted, Tobi"],
-  "locations": [["Portvert", 0]],
-  "exploring": []
+  "people": {
+    "Player": "exploring",
+    "Ted": "free"
+  },
+  "locations": [["Portvert", 0]]
 }

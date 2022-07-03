@@ -22,7 +22,7 @@ class PlayerSetupScreen:
 
         self.next_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((200, 300), (150, 50)),
                                                                   text='Next', manager=self.ui_manager)
-        self.bg = (pygame.transform.scale(pygame.image.load("background.jpg"), self.screen_options.resolution))
+        self.bg = (pygame.transform.scale(pygame.image.load("resources/images/background.jpg"), self.screen_options.resolution))
         #self.player_surname_input.text = self.game_settings.player_surname
         self.content = [[self.welcome_text], [self.name_text, self.player_name_input],
                         [self.surname_text, self.player_surname_input], [self.next_button]]

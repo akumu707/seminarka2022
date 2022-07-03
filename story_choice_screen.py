@@ -21,7 +21,7 @@ class StoryChoiceScreen:
         self.save_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(100, 200, -1, -1),
                                                         text='Save',
                                                         manager=self.ui_manager)
-        self.bg = (pygame.transform.scale(pygame.image.load("background-choice.jpg"), self.screen_options.resolution))
+        self.bg = (pygame.transform.scale(pygame.image.load("resources/images/background-choice.jpg"), self.screen_options.resolution))
 
         self.content = [self.choice_text, self.choice_list, self.submit_button, self.back_button, self.save_button]
         self.refresh()
