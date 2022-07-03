@@ -41,7 +41,7 @@ class SaveScreen:
     def _on_click_continue(self):
         input_text = self.file_name_input.text
         item_list = []
-        for f in os.listdir(r"Saved"):
+        for f in os.listdir(os.path.join("Saved")):
             item_list.append(f)
         if not input_text == None:
             if input_text in item_list:

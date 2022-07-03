@@ -27,7 +27,7 @@ class LoadScreen:
 
     def refresh(self):
         item_list = []
-        for f in os.listdir(r"Saved"):
+        for f in os.listdir(os.path.join("Saved")):
             item_list.append(f)  # i v save screen
         self.choice_list.set_item_list(item_list)
         self.choice_list.rebuild()

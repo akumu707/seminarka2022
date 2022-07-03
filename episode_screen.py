@@ -1,6 +1,7 @@
 import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID
+import os
 
 class EpisodeScreen:
     def __init__(self, screen_options, ui_manager, game_settings, background_surface):
@@ -37,7 +38,7 @@ class EpisodeScreen:
         if len(keys)==1 or "relationship" in keys:
             for key in keys:
                 if key == "background":
-                    self.bg = (pygame.transform.scale(pygame.image.load(r"resources/images/"+line[key]+".jpg"), self.screen_options.resolution))
+                    self.bg = (pygame.transform.scale(pygame.image.load(os.path.join("resources","images",line[key]+".jpg")), self.screen_options.resolution))
                 elif key == "relationship":
                     self.game_settings.settings["relationship"][line[key][0]]+=line[key][1]
                     #self.relationship_update.text = "Relationship with " + line[key][0] + " improved by " + str(line[key][1])
