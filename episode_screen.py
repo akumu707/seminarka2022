@@ -65,8 +65,8 @@ class EpisodeScreen:
     def reset_line(self):
         self.person_name.text = ""
         self.line_text.text = ""
-        self.person_name.rebuild()
-        self.line_text.rebuild()
+        # self.person_name.rebuild()
+        # self.line_text.rebuild()
 
     def set_episode(self, episode_name):  #Zatím bez kontroly dostupnosti
         for ep in self.game_settings.this_tree:
