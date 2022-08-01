@@ -18,15 +18,26 @@ class ScreenBase:
 
     def add_label(self, text, rect):
         label = pygame_gui.elements.UILabel(relative_rect=pygame.Rect(rect[0], rect[1], rect[2], rect[3]),
-                                              text=text,
-                                              manager=self.ui_manager)
-        self.widgets.append((label, None)) #to je hnus, velebnosti
+                                            text=text,
+                                            manager=self.ui_manager)
+        self.widgets.append((label, None))
         return label
 
     def add_text_entry_line(self, rect):
         text_entry_line = pygame_gui.elements.UITextEntryLine(relative_rect=pygame.Rect(rect[0], rect[1], rect[2], rect[3]), manager=self.ui_manager)
-        self.widgets.append((text_entry_line, None))  # to je hnus, velebnosti podruhe
+        self.widgets.append((text_entry_line, None))
         return text_entry_line
+
+    def add_selection_list(self, rect, item_list, object_id=None):
+        if object_id is None:
+            selection_list = pygame_gui.elements.UISelectionList(relative_rect=pygame.Rect(rect[0], rect[1], rect[2], rect[3]),
+                                                                 manager=self.ui_manager, item_list=item_list)
+        else:
+            selection_list = pygame_gui.elements.UISelectionList(
+                relative_rect=pygame.Rect(rect[0], rect[1], rect[2], rect[3]),
+                manager=self.ui_manager, item_list=item_list, object_id=object_id)
+        self.widgets.append((selection_list, None))
+        return selection_list
 
     def add_bg(self, bg_path):
         self.bg = (pygame.transform.scale(pygame.image.load(bg_path),
@@ -43,6 +54,7 @@ class ScreenBase:
             w[0].hide()
 
     def show(self):
+        self.refresh()
         self.background_surface.blit(self.bg, (0, 0))
         for w in self.widgets:
             w[0].show()

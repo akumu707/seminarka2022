@@ -9,5 +9,7 @@ class ChoiceScreen(ScreenBase):
                         lambda: self.screen_options.show(self.screen_options.exploration_screen))
         self.add_button("Story", (600, 200, -1, -1),
                         lambda: self.screen_options.show(self.screen_options.story_choice_screen))
+        self.add_button("Back", (300, 400, -1, -1),
+                        lambda: self.screen_options.show(self.screen_options.welcome_screen))
         self.add_bg("resources/images/background-choice.jpg")
         self.hide()

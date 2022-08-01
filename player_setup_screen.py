@@ -15,6 +15,8 @@ class PlayerSetupScreen(ScreenBase):
         self.add_label("Your surname:", (80, 200, 120, 50))
         self.player_surname_input = self.add_text_entry_line((200, 200, 100, 50))
         self.add_button("Next", (200, 300, -1, -1),self._on_click_next)
+        self.add_button("Back", (300, 400, -1, -1),
+                        lambda: self.screen_options.show(self.screen_options.welcome_screen))
 
         self.add_bg("resources/images/background.jpg")
 
