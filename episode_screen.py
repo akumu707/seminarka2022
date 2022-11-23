@@ -18,7 +18,7 @@ class EpisodeScreen:
                                                          text="", manager=self.ui_manager, object_id=ObjectID(object_id='#episode_label'))
         self.relationship_update = pygame_gui.elements.UILabel(relative_rect=pygame.Rect((100, 100), (300, 300)),
                                                                # make a percentage for fullscreen
-                                                               text="",
+                                                               text="Tamara",
                                                                manager=self.ui_manager,
                                                                object_id=ObjectID(object_id='#episode_label'))
 
@@ -41,9 +41,9 @@ class EpisodeScreen:
                     self.bg = (pygame.transform.scale(pygame.image.load(os.path.join("resources","images",line[key]+".jpg")), self.screen_options.resolution))
                 elif key == "relationship":
                     self.game_settings.settings["relationship"][line[key][0]]+=line[key][1]
-                    #self.relationship_update.text = "Relationship with " + line[key][0] + " improved by " + str(line[key][1])
-                    #self.relationship_update.rebuild()
-                    #self.relationship_update.show()
+                    self.relationship_update.text = "Relationship with " + line[key][0] + " improved by " + str(line[key][1])
+                    self.relationship_update.rebuild()
+                    self.relationship_update.show()
                 elif key == "Nothing":
                     self.person_name.text = ""
                     self.line_text.text = line[key]
@@ -102,7 +102,7 @@ class EpisodeScreen:
                         if ep["name"] == self.game_settings.chosen_ep:
                             ep["to read"] = False
                     self.game_settings.chosen_ep = None
-                    self.screen_options.show(self.screen_options.choice_screen)
+                    self.screen_options.show(self.screen_options.story_choice_screen)
             else:
                 line = self.option_lines[0]
                 self.option_lines.remove(line)

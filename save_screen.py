@@ -43,11 +43,8 @@ class SaveScreen(ScreenBase):
 
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
-            if event.ui_element == self.continue_button:
-                self._on_click_continue()
-            elif event.ui_element == self.back_button:
-                self._on_click_back()
-            else:
-                self.confirm.process_event(event)
+            for (ui_element, todo) in self.widgets:
+                if event.ui_element == ui_element:
+                    todo()
         if event.type == pygame_gui.UI_CONFIRMATION_DIALOG_CONFIRMED:
             self._on_click_confirm()
