@@ -68,5 +68,22 @@
 
       ]
     }
-  ]
+  ],
+  "English story": [{
+     "name": "Episode One",
+      "requirements": {},
+      "to read": true,
+      "story": [
+        {"background": "universal"},
+        {"Nothing": "It was a bright, sunny day in Portvert."},
+        {"Nothing": "You were just returning from your daily shopping, when you unexpectedly encountered a crowd."},
+        {"Nothing": "The square of Miria the Great wasn|t usually this full, unless an important anouncement was made."},
+        {"Nothing":  "You decide to: "},
+        {"Go have a look": [
+          {"Player": "Bianka, hold this for awhile, please."}
+        ],
+        "Turn back": [
+          {"Nothing": "Bad ending"}]}
+      ]
+  }]
 }

@@ -8,8 +8,8 @@
     "Tobi": 0
   },
   "people": {
-    "Player": "exploring",
-    "Ted": "free"
+    "Player": ["exploring", "player.png"],
+    "Ted": ["free", "ted.png"]
   },
-  "locations": [["Portvert", 0]]
+  "locations": [["Portvert", 0], ["Manghani", 0]]
 }

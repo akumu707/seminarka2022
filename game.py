@@ -5,6 +5,7 @@ from pygame.locals import *
 from ScreenOptions import ScreenOptions
 from pygame_gui import UIManager, PackageResource
 
+from level_screen import LevelScreen
 from load_screen import LoadScreen
 from save_screen import SaveScreen
 from welcome_screen import WelcomeScreen
@@ -45,6 +46,8 @@ class GameApp:
                                                      self.game_settings, self.background_surface)
         self.screen_options.choice_screen = ChoiceScreen(self.screen_options, self.ui_manager,
                                                                    self.game_settings, self.background_surface)
+        self.screen_options.level_screen = LevelScreen(self.screen_options, self.ui_manager,
+                                                         self.game_settings, self.background_surface)
         self.screen_options.show(self.screen_options.welcome_screen)
 
     def run(self):

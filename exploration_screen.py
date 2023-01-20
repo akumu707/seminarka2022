@@ -11,8 +11,13 @@ class ExplorationScreen:
 
         self.location_buttons = []
         for i, location in enumerate(self.game_settings.settings["locations"]):
-            self.location_buttons.append(pygame_gui.elements.UIButton(relative_rect=pygame.Rect(50*(i+1), 200, -1, -1),
+            self.location_buttons.append(pygame_gui.elements.UIButton(relative_rect=pygame.Rect(100*(i+1), 200, -1, -1),
                                                           text=location[0],
+                                                          manager=self.ui_manager))
+        self.people_buttons = []
+        for i, person in enumerate(self.game_settings.settings["people"]):
+            self.people_buttons.append(pygame_gui.elements.UIButton(relative_rect=pygame.Rect(100*(i+1), 200, -1, -1),
+                                                          text=person,
                                                           manager=self.ui_manager))
         self.people_selection_list = pygame_gui.elements.UISelectionList(relative_rect=pygame.Rect(200, 100, 100, 100), manager=ui_manager, item_list = [], object_id=ObjectID(class_id='@selection_list_item'))
         self.hide()
@@ -20,7 +25,7 @@ class ExplorationScreen:
     def refresh(self):
         for i, location in enumerate(self.game_settings["locations"]):
             self.location_buttons.append(
-                pygame_gui.elements.UIButton(relative_rect=pygame.Rect(50 * (i + 1), 200, -1, -1),
+                pygame_gui.elements.UIButton(relative_rect=pygame.Rect(100 * (i + 1), 200, -1, -1),
                                              text=location[0],
                                              manager=self.ui_manager))
 
@@ -28,15 +33,21 @@ class ExplorationScreen:
         self.people_selection_list.hide()
         for button in self.location_buttons:
             button.hide()
+        for button in self.people_buttons:
+            button.hide()
 
     def show(self):
         for button in self.location_buttons:
             button.show()
 
     def _on_click_location(self):
-        self.people_selection_list.set_item_list(self.game_settings.settings["people"].keys())
-        self.people_selection_list.rebuild()
-        self.people_selection_list.show()
+        for button in self.location_buttons:
+            button.hide()
+        for button in self.people_buttons:
+            button.show()
+
+    def _on_click_person(self):
+        self.screen_options.level_screen.start_level(self.chosen_person, self.chosen_location)
 
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
@@ -44,3 +55,7 @@ class ExplorationScreen:
                 if event.ui_element == button:
                     self.chosen_location = button.text
                     self._on_click_location()
+            for button in self.people_buttons:
+                if event.ui_element == button:
+                    self.chosen_person = button.text
+                    self._on_click_person()
