@@ -46,7 +46,7 @@ class LevelScreen(ScreenBase):
                 if char == "w":
                     self._create_wall(self.screen_options.resolution[0]/16*j, self.screen_options.resolution[1]/12*i)
                 if char == "s" and sprite:
-                    self._create_sprite(self.screen_options.resolution[0]/16*j, self.screen_options.resolution[1]/12*i)
+                    self._create_sprite(self.screen_options.resolution[0]//16*j, self.screen_options.resolution[1]//12*i)
                 if char == "e":
                     self._create_exit(self.screen_options.resolution[0]/16*j, self.screen_options.resolution[1]/12*i)
 
@@ -68,28 +68,40 @@ class LevelScreen(ScreenBase):
                 y = self.sprite.y
                 self.background_surface.blit(self.bg, (0, 0))
                 self._create_level(False)
-                self._create_sprite(x - 50, y)
+                if not self.level[y//50][x//50 - 1] == "w":
+                    self._create_sprite(x - 50, y)
+                else:
+                    self._create_sprite(x, y)
                 self.background_surface.blit(self.sprite_image, self.sprite)
             if event.key == pygame.K_RIGHT:
                 x = self.sprite.x
                 y = self.sprite.y
                 self.background_surface.blit(self.bg, (0, 0))
                 self._create_level(False)
-                self._create_sprite(x + 50, y)
+                if not self.level[y//50][x // 50 + 1] == "w":
+                    self._create_sprite(x + 50, y)
+                else:
+                    self._create_sprite(x, y)
                 self.background_surface.blit(self.sprite_image, self.sprite)
             if event.key == pygame.K_DOWN:
                 x = self.sprite.x
                 y = self.sprite.y
                 self.background_surface.blit(self.bg, (0, 0))
                 self._create_level(False)
-                self._create_sprite(x, y + 50)
+                if not self.level[y // 50 + 1][x // 50] == "w":
+                    self._create_sprite(x, y+50)
+                else:
+                    self._create_sprite(x, y)
                 self.background_surface.blit(self.sprite_image, self.sprite)
             if event.key == pygame.K_UP:
                 x = self.sprite.x
                 y = self.sprite.y
                 self.background_surface.blit(self.bg, (0, 0))
                 self._create_level(False)
-                self._create_sprite(x, y - 50)
+                if not self.level[y // 50 - 1][x // 50] == "w":
+                    self._create_sprite(x, y - 50)
+                else:
+                    self._create_sprite(x, y)
                 self.background_surface.blit(self.sprite_image, self.sprite)
             if self.sprite.colliderect(self.exit):
                 self.screen_options.show(self.screen_options.exploration_screen)
