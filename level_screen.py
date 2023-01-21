@@ -31,18 +31,35 @@ class LevelScreen(ScreenBase):
     def _create_exit(self, x, y):
         self.exit = self.exit_image.get_rect()
         self.exit.x = x
-        self.sprite.y = y
+        self.exit.y = y
         self.background_surface.blit(self.exit_image, self.exit)
 
-    def start_level(self, char, location):
+    def _create_wall(self, x, y):
+        self.wall = self.wall_image.get_rect()
+        self.wall.x = x
+        self.wall.y = y
+        self.background_surface.blit(self.wall_image, self.wall)
+
+    def _create_level(self, sprite = True):
+        for i, line in enumerate(self.level):
+            for j, char in enumerate(line):
+                if char == "w":
+                    self._create_wall(self.screen_options.resolution[0]/16*j, self.screen_options.resolution[1]/12*i)
+                if char == "s" and sprite:
+                    self._create_sprite(self.screen_options.resolution[0]/16*j, self.screen_options.resolution[1]/12*i)
+                if char == "e":
+                    self._create_exit(self.screen_options.resolution[0]/16*j, self.screen_options.resolution[1]/12*i)
+
+    def start_level(self, sp, location):
         self.screen_options.show(self.screen_options.level_screen)
-        self.sprite_image = pygame.image.load("resources/images/" + self.game_settings.settings["people"][char][1]).convert_alpha()
+        self.sprite_image = pygame.image.load(
+            "resources/images/" + self.game_settings.settings["people"][sp][1]).convert_alpha()
         self.exit_image = pygame.image.load("resources/images/exit.png").convert_alpha()
+        self.wall_image = pygame.image.load("resources/images/wall.png").convert_alpha()
+        self.level = self.game_settings.levels[location][0]["level 1"]
+        self._create_level()
+
         # Create a rect with the size of the image.
-        self._create_sprite(200, 300)
-        self.exit_x = random.randint(0, self.screen_options.resolution[0])
-        self.exit_y = random.randint(0, self.screen_options.resolution[1])
-        self._create_exit(self.exit_x, self.exit_y)
 
     def process_event(self, event):
         if event.type == pygame.KEYDOWN:
@@ -50,28 +67,28 @@ class LevelScreen(ScreenBase):
                 x = self.sprite.x
                 y = self.sprite.y
                 self.background_surface.blit(self.bg, (0, 0))
-                self._create_exit(self.exit_x, self.exit_y)
+                self._create_level(False)
                 self._create_sprite(x - 50, y)
                 self.background_surface.blit(self.sprite_image, self.sprite)
             if event.key == pygame.K_RIGHT:
                 x = self.sprite.x
                 y = self.sprite.y
                 self.background_surface.blit(self.bg, (0, 0))
-                self._create_exit(self.exit_x, self.exit_y)
+                self._create_level(False)
                 self._create_sprite(x + 50, y)
                 self.background_surface.blit(self.sprite_image, self.sprite)
             if event.key == pygame.K_DOWN:
                 x = self.sprite.x
                 y = self.sprite.y
                 self.background_surface.blit(self.bg, (0, 0))
-                self._create_exit(self.exit_x, self.exit_y)
+                self._create_level(False)
                 self._create_sprite(x, y + 50)
                 self.background_surface.blit(self.sprite_image, self.sprite)
             if event.key == pygame.K_UP:
                 x = self.sprite.x
                 y = self.sprite.y
                 self.background_surface.blit(self.bg, (0, 0))
-                self._create_exit(self.exit_x, self.exit_y)
+                self._create_level(False)
                 self._create_sprite(x, y - 50)
                 self.background_surface.blit(self.sprite_image, self.sprite)
             if self.sprite.colliderect(self.exit):
