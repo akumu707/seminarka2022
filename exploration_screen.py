@@ -12,14 +12,18 @@ class ExplorationScreen:
         self.location_buttons = []
         for i, location in enumerate(self.game_settings.settings["locations"]):
             self.location_buttons.append(pygame_gui.elements.UIButton(relative_rect=pygame.Rect(100*(i+1), 200, -1, -1),
-                                                          text=location[0],
-                                                          manager=self.ui_manager))
+                                                                      text=location[0],
+                                                                      manager=self.ui_manager))
         self.people_buttons = []
         for i, person in enumerate(self.game_settings.settings["people"]):
             self.people_buttons.append(pygame_gui.elements.UIButton(relative_rect=pygame.Rect(100*(i+1), 200, -1, -1),
                                                           text=person,
                                                           manager=self.ui_manager))
-        self.people_selection_list = pygame_gui.elements.UISelectionList(relative_rect=pygame.Rect(200, 100, 100, 100), manager=ui_manager, item_list = [], object_id=ObjectID(class_id='@selection_list_item'))
+        self.people_selection_list = pygame_gui.elements.UISelectionList(relative_rect=pygame.Rect(200, 100, 100, 100),
+                                                                         manager=ui_manager, item_list=[],
+                                                                         object_id=ObjectID(class_id='@selection_list_item'))
+        self.bg = pygame.transform.scale(pygame.image.load("resources/images/background-choice.jpg"),
+                                         self.screen_options.resolution)
         self.hide()
 
     def refresh(self):
@@ -37,6 +41,7 @@ class ExplorationScreen:
             button.hide()
 
     def show(self):
+        self.background_surface.blit(self.bg, (0, 0))
         for button in self.location_buttons:
             button.show()
 

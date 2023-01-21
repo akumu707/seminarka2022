@@ -51,29 +51,28 @@ class LevelScreen(ScreenBase):
                 y = self.sprite.y
                 self.background_surface.blit(self.bg, (0, 0))
                 self._create_exit(self.exit_x, self.exit_y)
-                self._create_sprite(x - 100, y)
-
+                self._create_sprite(x - 50, y)
                 self.background_surface.blit(self.sprite_image, self.sprite)
             if event.key == pygame.K_RIGHT:
                 x = self.sprite.x
                 y = self.sprite.y
                 self.background_surface.blit(self.bg, (0, 0))
                 self._create_exit(self.exit_x, self.exit_y)
-                self._create_sprite(x + 100, y)
-
+                self._create_sprite(x + 50, y)
                 self.background_surface.blit(self.sprite_image, self.sprite)
             if event.key == pygame.K_DOWN:
                 x = self.sprite.x
                 y = self.sprite.y
                 self.background_surface.blit(self.bg, (0, 0))
                 self._create_exit(self.exit_x, self.exit_y)
-                self._create_sprite(x, y + 100)
+                self._create_sprite(x, y + 50)
                 self.background_surface.blit(self.sprite_image, self.sprite)
             if event.key == pygame.K_UP:
                 x = self.sprite.x
                 y = self.sprite.y
                 self.background_surface.blit(self.bg, (0, 0))
                 self._create_exit(self.exit_x, self.exit_y)
-                self._create_sprite(x, y - 100)
-
+                self._create_sprite(x, y - 50)
                 self.background_surface.blit(self.sprite_image, self.sprite)
+            if self.sprite.colliderect(self.exit):
+                self.screen_options.show(self.screen_options.exploration_screen)
