@@ -28,6 +28,9 @@ class StoryChoiceScreen(ScreenBase):
                     if key == "relationship":
                         if self.game_settings.settings["relationship"][ep["requirements"][key][0]]<ep["requirements"][key][1]:
                             no_id_item_list.append((ep["name"], "#locked"))
+                    elif key == "level":
+                        if not self.game_settings.progress["levels"][ep["requirements"][key][0]][ep["requirements"][key][1]]:
+                            no_id_item_list.append((ep["name"], "#locked"))
                     else:
                         for listed_episode in self.game_settings.file[key]:
                             if listed_episode["name"] == ep["requirements"][key] and listed_episode["to read"]:

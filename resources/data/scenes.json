@@ -71,7 +71,7 @@
   ],
   "English story": [{
      "name": "Episode One",
-      "requirements": {},
+      "requirements": {"level": ["Portvert", 0]},
       "to read": true,
       "story": [
         {"background": "universal"},
@@ -80,7 +80,7 @@
         {"Nothing": "The square of Miria the Great wasn|t usually this full, unless an important anouncement was made."},
         {"Nothing":  "You decide to: "},
         {"Go have a look": [
-          {"Player": "Bianka, hold this for awhile, please."}
+          {"Player": "Bianka, hold this for a while, please."}
         ],
         "Turn back": [
           {"Nothing": "Bad ending"}]}
