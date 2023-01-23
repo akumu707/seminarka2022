@@ -22,6 +22,9 @@ class ExplorationScreen:
         self.people_selection_list = pygame_gui.elements.UISelectionList(relative_rect=pygame.Rect(200, 100, 100, 100),
                                                                          manager=ui_manager, item_list=[],
                                                                          object_id=ObjectID(class_id='@selection_list_item'))
+        self.back_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(100, 300, -1, -1),
+                                                          text="Back",
+                                                          manager=self.ui_manager)
         self.bg = pygame.transform.scale(pygame.image.load("resources/images/background-choice.jpg"),
                                          self.screen_options.resolution)
         self.hide()
@@ -39,11 +42,13 @@ class ExplorationScreen:
             button.hide()
         for button in self.people_buttons:
             button.hide()
+        self.back_button.hide()
 
     def show(self):
         self.background_surface.blit(self.bg, (0, 0))
         for button in self.location_buttons:
             button.show()
+        self.back_button.show()
 
     def _on_click_location(self):
         for button in self.location_buttons:
@@ -53,6 +58,9 @@ class ExplorationScreen:
 
     def _on_click_person(self):
         self.screen_options.level_screen.start_level(self.chosen_person, self.chosen_location)
+
+    def _on_click_back(self):
+        self.screen_options.show(self.screen_options.choice_screen)
 
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
@@ -64,3 +72,5 @@ class ExplorationScreen:
                 if event.ui_element == button:
                     self.chosen_person = button.text
                     self._on_click_person()
+            if event.ui_element == self.back_button:
+                self._on_click_back()

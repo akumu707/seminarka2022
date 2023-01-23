@@ -12,6 +12,8 @@ class GameSettings:
             self.settings = json.load(file)
         with open(os.path.join("resources","data","levels.json"), "r", encoding="utf-8") as file:
             self.levels = json.load(file)
+        with open(os.path.join("resources","data","progress.json"), "r", encoding="utf-8") as file:
+            self.progress = json.load(file)
         self.this_tree = {}
         self.chosen_story = None
 
@@ -25,6 +27,8 @@ class GameSettings:
             self.settings = json.load(file)
         with open(os.path.join(SAVED_PATH, name, "levels.json"), "r", encoding="utf-8") as file:
             self.levels = json.load(file)
+        with open(os.path.join(SAVED_PATH, name, "progress.json"), "r", encoding="utf-8") as file:
+            self.progress = json.load(file)
 
     def save_game(self, name):
         os.makedirs(os.path.join(SAVED_PATH,name), exist_ok=True)
@@ -34,3 +38,5 @@ class GameSettings:
             json.dump(self.settings, file, ensure_ascii=False, indent=4)
         with open(os.path.join(SAVED_PATH, name,"levels.json"), "w", encoding="utf-8") as file:
             json.dump(self.levels, file, ensure_ascii=False, indent=4)
+        with open(os.path.join(SAVED_PATH, name,"progress.json"), "w", encoding="utf-8") as file:
+            json.dump(self.progress, file, ensure_ascii=False, indent=4)

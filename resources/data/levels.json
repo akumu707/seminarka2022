@@ -1,18 +1,30 @@
 {
   "Portvert": [
-    {
-      "level 1": ["wwwwwwwwwwwwwwww",
-                  "w              w",
-                  "w             ew",
-                  "w              w",
-                  "w              w",
-                  "w              w",
-                  "w              w",
-                  "w              w",
-                  "w              w",
-                  "w              w",
-                  "ws             w",
-                  "wwwwwwwwwwwwwwww"]
-    }
+    [ "wwwwwwwwwwwwwwww",
+      "w              w",
+      "w             ew",
+      "w              w",
+      "w              w",
+      "w              w",
+      "w              w",
+      "w              w",
+      "w              w",
+      "w              w",
+      "ws             w",
+      "wwwwwwwwwwwwwwww"
+    ],
+    [ "wwwwwwwwwwwwwwww",
+      "w      w       w",
+      "w      w      ew",
+      "w      w       w",
+      "w      w       w",
+      "w              w",
+      "w              w",
+      "w              w",
+      "w              w",
+      "w              w",
+      "ws             w",
+      "wwwwwwwwwwwwwwww"
+    ]
   ]
 }

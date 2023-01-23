@@ -56,7 +56,12 @@ class LevelScreen(ScreenBase):
             "resources/images/" + self.game_settings.settings["people"][sp][1]).convert_alpha()
         self.exit_image = pygame.image.load("resources/images/exit.png").convert_alpha()
         self.wall_image = pygame.image.load("resources/images/wall.png").convert_alpha()
-        self.level = self.game_settings.levels[location][0]["level 1"]
+        for i, level in enumerate(self.game_settings.progress["levels"][location]): # TODO: add opening new locations
+            if not level:
+                self.location = location
+                self.level_number = i
+                self.level = self.game_settings.levels[location][i]
+                break
         self._create_level()
 
         # Create a rect with the size of the image.
@@ -104,4 +109,5 @@ class LevelScreen(ScreenBase):
                     self._create_sprite(x, y)
                 self.background_surface.blit(self.sprite_image, self.sprite)
             if self.sprite.colliderect(self.exit):
+                self.game_settings.progress["levels"][self.location][self.level_number] = True
                 self.screen_options.show(self.screen_options.exploration_screen)
