@@ -9,13 +9,18 @@ class EpisodeScreen:
         self.ui_manager = ui_manager
         self.game_settings = game_settings
         self.episode = []
-        self.next_line_number = 0
+        self.line_path = [0]
         self.background_surface = background_surface
 
         self.person_name = pygame_gui.elements.UILabel(relative_rect=pygame.Rect((0, 450), (100, 50)), #make a percentage for fullscreen
                                                           text="", manager=self.ui_manager, object_id=ObjectID(object_id='#episode_label'))
         self.line_text = pygame_gui.elements.UILabel(relative_rect=pygame.Rect(0, 500, 800, 100),
                                                          text="", manager=self.ui_manager, object_id=ObjectID(object_id='#episode_label'))
+        self.end_text = pygame_gui.elements.UILabel(relative_rect=pygame.Rect(300, 200, 100, 100),
+                                                         text="", manager=self.ui_manager) #object_id=ObjectID(object_id='#end_text_label')
+        self.end_context = pygame_gui.elements.UILabel(relative_rect=pygame.Rect(200, 300, 500, 100),
+                                                    text="",
+                                                    manager=self.ui_manager)  # object_id=ObjectID(object_id='#end_context_label')
         self.relationship_update = pygame_gui.elements.UILabel(relative_rect=pygame.Rect((100, 100), (300, 300)),
                                                                # make a percentage for fullscreen
                                                                text="Tamara",
@@ -25,6 +30,7 @@ class EpisodeScreen:
         self.content = [self.person_name, self.line_text]
         self.choice_buttons = []
         self.option_lines = []
+        self.END_EVENT = pygame.USEREVENT + 1
         self.refresh()
         self.hide()
 
@@ -50,6 +56,16 @@ class EpisodeScreen:
                 elif key == "Player":
                     self.person_name.text = self.game_settings.settings["player name"]
                     self.line_text.text = line[key]
+                elif key == "End":
+                    self.background_surface.fill(self.ui_manager.get_theme().get_colour('dark_bg'))
+                    self.person_name.hide()
+                    self.line_text.hide()
+                    self.end_text.text = line[key][0]
+                    self.end_context.text = line[key][1]
+                    self.end_text.rebuild()
+                    self.end_context.rebuild()
+                    self.end_text.show()
+                    self.end_context.show()
                 else:
                     self.person_name.text = key
                     self.line_text.text = line[key]
@@ -68,17 +84,35 @@ class EpisodeScreen:
         # self.person_name.rebuild()
         # self.line_text.rebuild()
 
+    def _get_line(self):
+        line = self.episode
+        for path_part in self.line_path:
+            line = line[path_part]
+        return line
+
+    def _get_button_path(self):
+        button_path = line = self.episode
+        for i, path_part in enumerate(self.line_path):
+            if i+1 == len(self.line_path):
+                pass
+            else:
+                button_path = line[path_part]
+        return button_path
+
     def set_episode(self, episode_name):  #Zatím bez kontroly dostupnosti
         for ep in self.game_settings.this_tree:
             if ep["name"] == episode_name:
                 self.episode = ep["story"]
                 break
-        self.set_elements_for_new_line(self.episode[self.next_line_number])
+        self.set_elements_for_new_line(self._get_line())
+
 
     def hide(self):
         self.person_name.hide()
         self.line_text.hide()
         self.relationship_update.hide()
+        self.end_text.hide()
+        self.end_context.hide()
 
     def show(self):
         self.background_surface.blit(self.bg, (0, 0))
@@ -89,24 +123,29 @@ class EpisodeScreen:
     def process_event(self, event):
         if event.type == pygame.MOUSEBUTTONDOWN and self.choice_buttons==[]:
             self.relationship_update.kill()
-            if self.option_lines == []:
-                self.next_line_number += 1
-                if not self.next_line_number == len(self.episode):
-                    self.set_elements_for_new_line(self.episode[self.next_line_number])
+            if len(self.line_path)==1:
+                self.line_path[0] += 1
+                if not self.line_path[0] == len(self.episode):
+                    self.set_elements_for_new_line(self._get_line())
                     self.show()
                 else:
-                    self.next_line_number = 0
+                    self.line_path[0] = 0
                     self.episode = []
                     self.reset_line()
-                    for i, ep in enumerate(self.game_settings.file[self.game_settings.chosen_story]):
-                        if ep["name"] == self.game_settings.chosen_ep:
-                            ep["to read"] = False
+                    for ep in self.game_settings.progress["scenes"][self.game_settings.chosen_story]:
+                        if ep[0] == self.game_settings.chosen_ep:
+                            ep[1] = True
                     self.game_settings.chosen_ep = None
                     self.screen_options.show(self.screen_options.story_choice_screen)
             else:
-                line = self.option_lines[0]
-                self.option_lines.remove(line)
-                self.set_elements_for_new_line(line)
+                self.line_path[-1]+=1
+                if not self.line_path[-1] == len(self._get_button_path()):
+                    self.set_elements_for_new_line(self._get_line())
+                    self.show()
+                else:
+                    self.line_path.pop()
+                    self.line_path.pop()
+                    pygame.event.post(pygame.event.Event(pygame.MOUSEBUTTONDOWN))
 
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
             for button in self.choice_buttons:
@@ -114,7 +153,6 @@ class EpisodeScreen:
                     for i in self.choice_buttons:
                         i.kill()
                     self.choice_buttons=[]
-                    self.option_lines = self.episode[self.next_line_number][button.text]
-                    line = self.option_lines[0]
-                    self.option_lines.remove(line)
-                    self.set_elements_for_new_line(line)
+                    self.line_path.append(button.text)
+                    self.line_path.append(0)
+                    self.set_elements_for_new_line(self._get_line())

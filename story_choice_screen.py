@@ -13,8 +13,7 @@ class StoryChoiceScreen(ScreenBase):
         self.choice_list = self.add_selection_list((350, 200, 100, 100), self.game_settings.file.keys(), ObjectID(class_id='@selection_list_item'))
         self.add_button('Submit', (350, 300, -1, -1), self._on_click_submit)
         self.add_button('Back', (200, 400, -1, -1), self._on_click_back)
-        self.add_button('Save', (600, 400, -1, -1),
-                        lambda: self.screen_options.show(self.screen_options.save_screen))
+        self.add_button('Save', (600, 400, -1, -1), self._on_click_save)
         self.add_bg("resources/images/background-choice.jpg")
         self.hide()
 
@@ -25,19 +24,25 @@ class StoryChoiceScreen(ScreenBase):
         else:
             for ep in self.game_settings.this_tree:
                 for key in ep["requirements"]:
-                    if key == "relationship":
-                        if self.game_settings.settings["relationship"][ep["requirements"][key][0]]<ep["requirements"][key][1]:
-                            no_id_item_list.append((ep["name"], "#locked"))
-                    elif key == "level":
-                        if not self.game_settings.progress["levels"][ep["requirements"][key][0]][ep["requirements"][key][1]]:
-                            no_id_item_list.append((ep["name"], "#locked"))
-                    else:
-                        for listed_episode in self.game_settings.file[key]:
-                            if listed_episode["name"] == ep["requirements"][key] and listed_episode["to read"]:
+                    if not (ep["name"], "#locked") in no_id_item_list:
+                        if key == "relationship":
+                            if self.game_settings.settings["relationship"][ep["requirements"][key][0]]<ep["requirements"][key][1]:
                                 no_id_item_list.append((ep["name"], "#locked"))
+                        elif key == "level":
+                            if not self.game_settings.progress["levels"][ep["requirements"][key][0]][ep["requirements"][key][1]]:
+                                no_id_item_list.append((ep["name"], "#locked"))
+                        else:
+                            for episode_to_read in self.game_settings.progress["scenes"][key]:
+                                if episode_to_read[0] == ep["requirements"][key] and not episode_to_read[1]:
+                                    no_id_item_list.append((ep["name"], "#locked"))
                 if not (ep["name"], "#locked") in no_id_item_list:
                     no_id_item_list.append(ep["name"])
         self.choice_list.set_item_list(no_id_item_list)
+
+    def _on_click_save(self):
+        self.game_settings.chosen_story = None
+        self.screen_options.show(self.screen_options.save_screen)
+
 
     def _on_click_submit(self):
         chosen_option = self.choice_list.get_single_selection()
@@ -68,4 +73,3 @@ class StoryChoiceScreen(ScreenBase):
         self.set_choice_list()
         for w in self.widgets:
             w[0].show()
-

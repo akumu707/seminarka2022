@@ -1,5 +1,21 @@
 {
   "levels":{
-    "Portvert": [false, false]
+    "Portvert": [false, false, false]
+  },
+  "scenes": {
+    "Main story": [
+      ["Episode One", false],
+      ["Episode Two", false],
+      ["Episode Three", false]
+    ],
+    "Sean's Story": [
+      ["Episode One", false]
+    ],
+    "Test story": [
+      ["Naruto test", false]
+    ],
+    "English story": [
+      ["Episode One", false]
+    ]
   }
 }

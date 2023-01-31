@@ -21,22 +21,14 @@ class GameSettings:
         self.this_tree = self.file[tree_name]
 
     def load_existing_game(self, name):
-        with open(os.path.join(SAVED_PATH, name, "story.json"), "r", encoding="utf-8") as file:
-            self.file = json.load(file)
         with open(os.path.join(SAVED_PATH, name, "settings.json"), "r", encoding="utf-8") as file:
             self.settings = json.load(file)
-        with open(os.path.join(SAVED_PATH, name, "levels.json"), "r", encoding="utf-8") as file:
-            self.levels = json.load(file)
         with open(os.path.join(SAVED_PATH, name, "progress.json"), "r", encoding="utf-8") as file:
             self.progress = json.load(file)
 
     def save_game(self, name):
         os.makedirs(os.path.join(SAVED_PATH,name), exist_ok=True)
-        with open(os.path.join(SAVED_PATH,name, "story.json"), "w", encoding="utf-8") as file:
-            json.dump(self.file, file, ensure_ascii=False, indent=4)
         with open(os.path.join(SAVED_PATH, name,"settings.json"), "w", encoding="utf-8") as file:
             json.dump(self.settings, file, ensure_ascii=False, indent=4)
-        with open(os.path.join(SAVED_PATH, name,"levels.json"), "w", encoding="utf-8") as file:
-            json.dump(self.levels, file, ensure_ascii=False, indent=4)
         with open(os.path.join(SAVED_PATH, name,"progress.json"), "w", encoding="utf-8") as file:
             json.dump(self.progress, file, ensure_ascii=False, indent=4)
