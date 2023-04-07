@@ -62,9 +62,11 @@ class EpisodeScreen:
         for line_label in self.line_labels:
             line_label.kill()
         keys = line.keys()
-        if len(keys) == 1 and type(line[list(keys)[0]]) == str or "relationship" in keys or "End" in keys:
+        if len(keys) == 1 and type(line[list(keys)[0]]) == str or "relationship" in keys or "End" in keys or "unlock" in keys:
             for key in keys:
-                if key == "background":
+                if key == "unlock":
+                    self.game_settings.settings["people"][line[key]][0] = True
+                elif key == "background":
                     self.bg = (pygame.transform.scale(pygame.image.load(os.path.join("resources","images",line[key]+".jpg")), self.screen_options.resolution))
                 elif key == "relationship":
                     if not self.game_settings.progress["scenes"][self.game_settings.chosen_story][self.game_settings.chosen_ep]:

@@ -160,7 +160,7 @@
           {"Player": "Thank you, sir."},
           {"Tobias": "My pleasure, soldier."},
           {"Nothing":  "He winks at you."},
-          {"Tobias": "See you in training!","relationship": ["Tobias", 5]}
+          {"Tobias": "See you in training!","relationship": ["Tobias", 5], "unlock": "Tobias"}
         ],
         "The office": [
           {"Player": "People in the office are there to help people"},
@@ -180,7 +180,7 @@
           {"Tadeas": "Then we'll see each other soon."},
           {"Tadeas": "This is your room."},
           {"Tadeas": "I'll leave your things here, I need to return to the office."},
-          {"Tadeas": "See you soon!", "relationship": ["Tadeas", 5]}
+          {"Tadeas": "See you soon!", "relationship": ["Tadeas", 5], "unlock": "Tadeas"}
         ]}
       ]
     },
