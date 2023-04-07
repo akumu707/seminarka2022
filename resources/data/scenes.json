@@ -153,7 +153,7 @@
           {"Stranger": "Well, you actually found one just now."},
           {"Stranger": "My name is Tobias Varren."},
           {"Tobias": "You're new, right?"},
-          {"Tobias": "Maybe I'be your commanding officer"},
+          {"Tobias": "Maybe I'll be your commanding officer"},
           {"Nothing": "He smiles and points to a small building."},
           {"Tobias": "That is the dorm. Head there and you'll soon find your room. Your name'll be on the door,"},
           {"Tobias": "You two, help them with their things."},
@@ -183,5 +183,18 @@
           {"Tadeas": "See you soon!", "relationship": ["Tadeas", 5]}
         ]}
       ]
-    }]
+    },
+  {
+      "name": "Episode Three",
+      "requirements": {"level": ["Portvert", 1], "English story": "Episode Two"},
+      "story": [
+        {"background": "universal"},
+        {"Nothing": "The next day is the beginning of your training."},
+        {"Nothing": "You and many other people who have joined the elections are forced out of your beds at six in the morning."},
+        {"Nothing": "You yawn, as you stand in the crowd waiting for whats to come."},
+        {"Nothing": "Quiet murmur spreads upon the entire soon-to-be command."},
+        {"Nothing": "Suddenly a loud whistle wakes everyone up."},
+        {"Nothing": "You turn around to see two practically identical officers standing at the entrance to the square."}
+      ]
+  }]
 }

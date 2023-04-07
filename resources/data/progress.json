@@ -1,21 +1,25 @@
 {
   "levels":{
-    "Portvert": [false, false, false]
+    "Portvert": [false, false, false, false]
   },
   "scenes": {
-    "Main story": [
-      ["Episode One", false],
-      ["Episode Two", false],
-      ["Episode Three", false]
-    ],
+    "Main story": {"Episode One": false,
+      "Episode Two": false,
+      "Episode Three": false},
     "Sean's Story": [
-      ["Episode One", false]
+      {"Episode One": false}
     ],
     "Test story": [
-      ["Naruto test", false]
+      {"Naruto test": false}
     ],
-    "English story": [
-      ["Episode One", false]
-    ]
+    "English story":
+      {"Episode One": false, "Episode Two": false, "Episode Three": false}
+
+  },
+  "choices": {
+    "English story":
+      {"Episode One": [],
+      "Episode Two": [],
+      "Episode Three": []}
   }
 }

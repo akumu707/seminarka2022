@@ -9,7 +9,7 @@
   },
   "people": {
     "Player": ["exploring", "player.png"],
-    "Ted": ["free", "ted.png"]
+    "Tadeas": ["free", "ted.png"]
   },
   "locations": [["Portvert", 0], ["Manghani", 0]]
 }

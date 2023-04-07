@@ -52,6 +52,7 @@ class LevelScreen(ScreenBase):
 
     def start_level(self, sp, location):
         self.screen_options.show(self.screen_options.level_screen)
+        self.sprite_name = sp
         self.sprite_image = pygame.image.load(
             "resources/images/" + self.game_settings.settings["people"][sp][1]).convert_alpha()
         self.exit_image = pygame.image.load("resources/images/exit.png").convert_alpha()
@@ -110,4 +111,6 @@ class LevelScreen(ScreenBase):
                 self.background_surface.blit(self.sprite_image, self.sprite)
             if self.sprite.colliderect(self.exit):
                 self.game_settings.progress["levels"][self.location][self.level_number] = True
+                if self.sprite_name in self.game_settings.settings["relationship"].keys():
+                    self.game_settings.settings["relationship"][self.sprite_name]+=5
                 self.screen_options.show(self.screen_options.exploration_screen)

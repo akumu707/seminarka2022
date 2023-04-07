@@ -96,6 +96,47 @@
       "normal_bg": "#8e8e8e",
       "hovered_bg": "#666"
     }
+  },
+  "#end_text_label":
+  {
+    "colours":
+    {
+      "normal_text": "#ffffff"
+    },
+    "font":
+        {
+            "name": "montserrat",
+            "size": "500",
+            "bold": "1",
+            "italic": "0"
+        },
+    "misc":
+      {
+        "text_horiz_alignment": "left",
+        "text_vert_alignment": "top",
+        "text_horiz_alignment_padding": 50,
+        "text_vert_alignment_padding": 50
+      }
+  },
+  "#end_context_label":
+  {
+    "colours":
+    {
+      "normal_text": "#ffffff"
+    },
+    "font":
+        {
+            "name": "montserrat",
+            "size": "200",
+            "bold": "0",
+            "italic": "1"
+        },
+    "misc":
+      {
+        "text_horiz_alignment": "left",
+        "text_vert_alignment": "top",
+        "text_horiz_alignment_padding": 50,
+        "text_vert_alignment_padding": 50
+      }
   }
 }
-

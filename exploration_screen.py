@@ -25,6 +25,9 @@ class ExplorationScreen:
         self.back_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(100, 300, -1, -1),
                                                           text="Back",
                                                           manager=self.ui_manager)
+        self.save_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(100, 400, -1, -1),
+                                                        text="Save",
+                                                        manager=self.ui_manager)
         self.bg = pygame.transform.scale(pygame.image.load("resources/images/background-choice.jpg"),
                                          self.screen_options.resolution)
         self.hide()
@@ -43,12 +46,14 @@ class ExplorationScreen:
         for button in self.people_buttons:
             button.hide()
         self.back_button.hide()
+        self.save_button.hide()
 
     def show(self):
         self.background_surface.blit(self.bg, (0, 0))
         for button in self.location_buttons:
             button.show()
         self.back_button.show()
+        self.save_button.show()
 
     def _on_click_location(self):
         for button in self.location_buttons:
@@ -74,3 +79,5 @@ class ExplorationScreen:
                     self._on_click_person()
             if event.ui_element == self.back_button:
                 self._on_click_back()
+            if event.ui_element == self.save_button:
+                self.screen_options.show(self.screen_options.save_screen)
