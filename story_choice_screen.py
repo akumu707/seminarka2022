@@ -69,7 +69,7 @@ class StoryChoiceScreen(ScreenBase):
                         requirements_string = ""
                         for req in self.locked_eps[ep["text"]]:
                             requirements_string += str(req[0]) + " - "+str(req[1])+"\n"
-                        self.confirm = pygame_gui.windows.UIConfirmationDialog(rect=pygame.Rect(300, 300, 500, 500),
+                        self.confirm = pygame_gui.windows.UIConfirmationDialog(rect=pygame.Rect(300, 300, -1, -1),
                                                                                manager=self.ui_manager,
                                                                                action_long_desc= "This episode is locked. The following actions are needed to proceed: \n" +requirements_string,
                                                                                action_short_name="Ok",
