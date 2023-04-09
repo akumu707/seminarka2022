@@ -109,30 +109,47 @@ class EpisodeScreen:
                                 line["Locked"]["Requirements"][key][1]:
                             added = True
                             self.line_path.append("other")
-                            self.line_path.append(0)
-                            self.set_elements_for_new_line(self._get_line())
-                            break
+                            if self._test_if_empty():
+                                self.line_path.pop()
+                                return
+                            else:
+                                self.line_path.append(0)
+                                self.set_elements_for_new_line(self._get_line())
+                                break
                     elif key == "level":
                         if not self.game_settings.progress["levels"][line["Locked"]["Requirements"][key][0]][
                          line["Locked"]["Requirements"][key][1]]:
                             added = True
                             self.line_path.append("other")
-                            self.line_path.append(0)
-                            self.set_elements_for_new_line(self._get_line())
-                            break
+                            if self._test_if_empty():
+                                self.line_path.pop()
+                                return
+                            else:
+                                self.line_path.append(0)
+                                self.set_elements_for_new_line(self._get_line())
+                                break
                     else:
                         for k in self.game_settings.progress["scenes"][key].keys():
                             if k == line["Locked"]["Requirements"][key] and not self.game_settings.progress["scenes"][key][k]:
                                 added = True
                                 self.line_path.append("other")
-                                self.line_path.append(0)
-                                self.set_elements_for_new_line(self._get_line())
-                                break
+                                if self._test_if_empty():
+                                    self.line_path.pop()
+                                    return
+                                else:
+                                    self.line_path.append(0)
+                                    self.set_elements_for_new_line(self._get_line())
+                                    break
                 if not added:
                     self.line_path.append("Locked")
                     self.line_path.append("story")
-                    self.line_path.append(0)
-                    self.set_elements_for_new_line(self._get_line())
+                    if self._test_if_empty():
+                        self.line_path.pop()
+                        self.line_path.pop()
+                        return
+                    else:
+                        self.line_path.append(0)
+                        self.set_elements_for_new_line(self._get_line())
 
             else:
                 if self.game_settings.progress["choices"][self.game_settings.chosen_story][self.game_settings.chosen_ep]:
@@ -153,6 +170,11 @@ class EpisodeScreen:
                                                                                 object_id=ObjectID(
                                                                                     object_id='#episode_button')))
 
+    def _test_if_empty(self):
+        if self._get_line() == []:
+            return True
+        return False
+
     def reset_line(self):
         self.person_name.text = ""
         for line_label in self.line_labels:
@@ -164,6 +186,7 @@ class EpisodeScreen:
         line = self.episode
         for path_part in self.line_path:
             line = line[path_part]
+        print(line)
         return line
 
     def _get_button_path(self):
