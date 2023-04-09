@@ -35,7 +35,6 @@ class StoryChoiceScreen(ScreenBase):
                         for k in self.game_settings.progress["scenes"][key].keys():
                             if k == ep["requirements"][key] and not self.game_settings.progress["scenes"][key][k]:
                                 ep_dict[ep["name"]].append((key, k))
-        print(ep_dict)
         return ep_dict
 
     def set_choice_list(self):

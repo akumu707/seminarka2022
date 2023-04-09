@@ -101,23 +101,57 @@ class EpisodeScreen:
                 line_label.show()
         else:
             self.reset_line()
-            if self.game_settings.progress["choices"][self.game_settings.chosen_story][self.game_settings.chosen_ep]:
-                for key in line.keys():
-                    if key in self.game_settings.progress["choices"][self.game_settings.chosen_story][self.game_settings.chosen_ep]:
+            if "Locked" in keys:
+                added = False
+                for key in line["Locked"]["Requirements"]:
+                    if key == "relationship":
+                        if self.game_settings.settings["relationship"][line["Locked"]["Requirements"][key][0]] < \
+                                line["Locked"]["Requirements"][key][1]:
+                            added = True
+                            self.line_path.append("other")
+                            self.line_path.append(0)
+                            self.set_elements_for_new_line(self._get_line())
+                            break
+                    elif key == "level":
+                        if not self.game_settings.progress["levels"][line["Locked"]["Requirements"][key][0]][
+                         line["Locked"]["Requirements"][key][1]]:
+                            added = True
+                            self.line_path.append("other")
+                            self.line_path.append(0)
+                            self.set_elements_for_new_line(self._get_line())
+                            break
+                    else:
+                        for k in self.game_settings.progress["scenes"][key].keys():
+                            if k == line["Locked"]["Requirements"][key] and not self.game_settings.progress["scenes"][key][k]:
+                                added = True
+                                self.line_path.append("other")
+                                self.line_path.append(0)
+                                self.set_elements_for_new_line(self._get_line())
+                                break
+                if not added:
+                    self.line_path.append("Locked")
+                    self.line_path.append("story")
+                    self.line_path.append(0)
+                    self.set_elements_for_new_line(self._get_line())
+
+            else:
+                if self.game_settings.progress["choices"][self.game_settings.chosen_story][self.game_settings.chosen_ep]:
+                    for key in line.keys():
+                        if key in self.game_settings.progress["choices"][self.game_settings.chosen_story][self.game_settings.chosen_ep]:
+                            self.choice_buttons.append(pygame_gui.elements.UIButton(relative_rect=pygame.Rect(
+                                self.screen_options.resolution[0] / 2, 530, -1, -1),
+                                                                                    text=key,
+                                                                                    manager=self.ui_manager,
+                                                                                    object_id=ObjectID(
+                                                                                        object_id='#episode_button')))
+                if not self.choice_buttons:
+                    for i, key in enumerate(line.keys()):
                         self.choice_buttons.append(pygame_gui.elements.UIButton(relative_rect=pygame.Rect(
-                            self.screen_options.resolution[0] / 2, 530, -1, -1),
+                            self.screen_options.resolution[0]/(len(line.keys())+1)*(i+1), 530, -1, -1),
                                                                                 text=key,
                                                                                 manager=self.ui_manager,
                                                                                 object_id=ObjectID(
                                                                                     object_id='#episode_button')))
-            if not self.choice_buttons:
-                for i, key in enumerate(line.keys()):
-                    self.choice_buttons.append(pygame_gui.elements.UIButton(relative_rect=pygame.Rect(
-                        self.screen_options.resolution[0]/(len(line.keys())+1)*(i+1), 530, -1, -1),
-                                                                            text=key,
-                                                                            manager=self.ui_manager,
-                                                                            object_id=ObjectID(
-                                                                                object_id='#episode_button')))
 
     def reset_line(self):
         self.person_name.text = ""
@@ -184,6 +218,8 @@ class EpisodeScreen:
                 else:
                     self.line_path.pop()
                     self.line_path.pop()
+                    if type(self.line_path[-1]) == str:
+                        self.line_path.pop()
                     #TODO: event raise
 
         if event.type == pygame_gui.UI_BUTTON_PRESSED:

@@ -8,21 +8,13 @@ class ExplorationScreen:
         self.ui_manager = ui_manager
         self.game_settings = game_settings
         self.background_surface = background_surface
-
+        self._people_buttons_refresh()
         self.location_buttons = []
         for i, location in enumerate(self.game_settings.settings["locations"]):
             self.location_buttons.append(pygame_gui.elements.UIButton(relative_rect=pygame.Rect(100*(i+1), 200, -1, -1),
                                                                       text=location[0],
                                                                       manager=self.ui_manager))
-        self.people_buttons = []
-        people_unlocked = []
-        for person in self.game_settings.settings["people"].keys():
-            if self.game_settings.settings["people"][person][0]:
-                people_unlocked.append(person)
-        for i, person in enumerate(people_unlocked):
-            self.people_buttons.append(pygame_gui.elements.UIButton(relative_rect=pygame.Rect(100*(i+1), 200, -1, -1),
-                                                          text=person,
-                                                          manager=self.ui_manager))
+
         self.people_selection_list = pygame_gui.elements.UISelectionList(relative_rect=pygame.Rect(200, 100, 100, 100),
                                                                          manager=ui_manager, item_list=[],
                                                                          object_id=ObjectID(class_id='@selection_list_item'))
@@ -35,6 +27,18 @@ class ExplorationScreen:
         self.bg = pygame.transform.scale(pygame.image.load("resources/images/background-choice.jpg"),
                                          self.screen_options.resolution)
         self.hide()
+
+    def _people_buttons_refresh(self):
+        self.people_buttons = []
+        people_unlocked = []
+        for person in self.game_settings.settings["people"].keys():
+            if self.game_settings.settings["people"][person][0]:
+                people_unlocked.append(person)
+        for i, person in enumerate(people_unlocked):
+            self.people_buttons.append(
+                pygame_gui.elements.UIButton(relative_rect=pygame.Rect(100 * (i + 1), 200, -1, -1),
+                                             text=person,
+                                             manager=self.ui_manager))
 
     def refresh(self):
         for i, location in enumerate(self.game_settings["locations"]):
@@ -62,6 +66,7 @@ class ExplorationScreen:
     def _on_click_location(self):
         for button in self.location_buttons:
             button.hide()
+        self._people_buttons_refresh()
         for button in self.people_buttons:
             button.show()
 

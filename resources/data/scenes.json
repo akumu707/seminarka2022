@@ -194,7 +194,18 @@
         {"Nothing": "You yawn, as you stand in the crowd waiting for whats to come."},
         {"Nothing": "Quiet murmur spreads upon the entire soon-to-be command."},
         {"Nothing": "Suddenly a loud whistle wakes everyone up."},
-        {"Nothing": "You turn around to see two practically identical officers standing at the entrance to the square."}
+        {"Nothing": "You turn around to see two practically identical officers standing at the entrance to the square."},
+        {"Nothing": "You already know one of them."},
+        {"Locked": {
+          "Requirements": {"relationship": ["Tobias", 5]},
+          "story": [
+            {"Nothing": "Tobias waves at you"}
+          ]
+        },
+        "other":[
+          {"Nothing": "Tadeas smiles at you"}
+        ]
+          }
+        ]}
       ]
-  }]
-}
+  }
