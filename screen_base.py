@@ -30,8 +30,10 @@ class ScreenBase:
 
     def add_selection_list(self, rect, item_list, object_id=None):
         if object_id is None:
-            selection_list = pygame_gui.elements.UISelectionList(relative_rect=pygame.Rect(rect[0], rect[1], rect[2], rect[3]),
-                                                                 manager=self.ui_manager, item_list=item_list)
+            selection_list = pygame_gui.elements.UISelectionList(relative_rect=pygame.Rect
+            (rect[0], rect[1], rect[2], rect[3]),
+                                                                 manager=self.ui_manager, item_list=item_list,
+                                                                 starting_height=150)
         else:
             selection_list = pygame_gui.elements.UISelectionList(
                 relative_rect=pygame.Rect(rect[0], rect[1], rect[2], rect[3]),

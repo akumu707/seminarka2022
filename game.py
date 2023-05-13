@@ -58,10 +58,6 @@ class GameApp:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     is_running = False
-                if event.type == pygame.VIDEORESIZE:
-                    self.screen_options.resolution = (event.w, event.h)
-                    self.window_surface = pygame.display.set_mode(self.screen_options.resolution, pygame.RESIZABLE)
-                    self.screen_options.active_screen.refresh()
                 if event.type == pygame.KEYDOWN:
                     if event.key == K_ESCAPE:
                         is_running = False

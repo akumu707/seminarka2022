@@ -18,10 +18,10 @@ class ExplorationScreen:
         self.people_selection_list = pygame_gui.elements.UISelectionList(relative_rect=pygame.Rect(200, 100, 100, 100),
                                                                          manager=ui_manager, item_list=[],
                                                                          object_id=ObjectID(class_id='@selection_list_item'))
-        self.back_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(100, 300, -1, -1),
+        self.back_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(380, 300, -1, -1),
                                                           text="Back",
                                                           manager=self.ui_manager)
-        self.save_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(100, 400, -1, -1),
+        self.save_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(380, 400, -1, -1),
                                                         text="Save",
                                                         manager=self.ui_manager)
         self.bg = pygame.transform.scale(pygame.image.load("resources/images/background-choice.jpg"),

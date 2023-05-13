@@ -1,3 +1,5 @@
+import time
+
 import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID
@@ -32,6 +34,7 @@ class EpisodeScreen:
         self.choice_buttons = []
         self.option_lines = []
         self.END_EVENT = pygame.USEREVENT + 1
+        self.end = False
         self.hide()
 
 
@@ -91,6 +94,12 @@ class EpisodeScreen:
                     self.end_context.rebuild()
                     self.end_text.show()
                     self.end_context.show()
+                    self.line_path = [0]
+                    self.episode = []
+                    self.reset_line()
+                    self.game_settings.progress["choices"][self.game_settings.chosen_story][self.game_settings.chosen_ep] = []
+                    self.end = True
+
                 else:
                     self.person_name.text = key
                     self.line_split(line[key])
@@ -217,42 +226,47 @@ class EpisodeScreen:
         self.background_surface.blit(self.bg, (0, 0))
 
     def process_event(self, event):
-        if event.type == pygame.MOUSEBUTTONDOWN and self.choice_buttons == []:
-            self.relationship_update.hide()
-            if len(self.line_path) == 1:
-                self.line_path[0] += 1
-                if not self.line_path[0] == len(self.episode):
-                    self.set_elements_for_new_line(self._get_line())
-                    self.show()
+        if self.end:
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                self.end = False
+                self.screen_options.show(self.screen_options.story_choice_screen)
+        else:
+            if event.type == pygame.MOUSEBUTTONDOWN and self.choice_buttons == []:
+                self.relationship_update.hide()
+                if len(self.line_path) == 1:
+                    self.line_path[0] += 1
+                    if not self.line_path[0] == len(self.episode):
+                        self.set_elements_for_new_line(self._get_line())
+                        self.show()
+                    else:
+                        self.line_path[0] = 0
+                        self.episode = []
+                        self.reset_line()
+                        for key in self.game_settings.progress["scenes"][self.game_settings.chosen_story].keys():
+                            if key == self.game_settings.chosen_ep:
+                                self.game_settings.progress["scenes"][self.game_settings.chosen_story][key] = True
+                        self.game_settings.chosen_ep = None
+                        self.screen_options.show(self.screen_options.story_choice_screen)
                 else:
-                    self.line_path[0] = 0
-                    self.episode = []
-                    self.reset_line()
-                    for key in self.game_settings.progress["scenes"][self.game_settings.chosen_story].keys():
-                        if key == self.game_settings.chosen_ep:
-                            self.game_settings.progress["scenes"][self.game_settings.chosen_story][key] = True
-                    self.game_settings.chosen_ep = None
-                    self.screen_options.show(self.screen_options.story_choice_screen)
-            else:
-                self.line_path[-1]+=1
-                if not self.line_path[-1] == len(self._get_button_path()):
-                    self.set_elements_for_new_line(self._get_line())
-                    self.show()
-                else:
-                    self.line_path.pop()
-                    self.line_path.pop()
-                    if type(self.line_path[-1]) == str:
+                    self.line_path[-1]+=1
+                    if not self.line_path[-1] == len(self._get_button_path()):
+                        self.set_elements_for_new_line(self._get_line())
+                        self.show()
+                    else:
                         self.line_path.pop()
+                        self.line_path.pop()
+                        if type(self.line_path[-1]) == str:
+                            self.line_path.pop()
                     #TODO: event raise
 
-        if event.type == pygame_gui.UI_BUTTON_PRESSED:
-            for button in self.choice_buttons:
-                if event.ui_element == button:
-                    if not button.text in self.game_settings.progress["choices"][self.game_settings.chosen_story][self.game_settings.chosen_ep]:
-                        self.game_settings.progress["choices"][self.game_settings.chosen_story][self.game_settings.chosen_ep].append(button.text)
-                    for i in self.choice_buttons:
-                        i.kill()
-                    self.choice_buttons = []
-                    self.line_path.append(button.text)
-                    self.line_path.append(0)
-                    self.set_elements_for_new_line(self._get_line())
+            if event.type == pygame_gui.UI_BUTTON_PRESSED:
+                for button in self.choice_buttons:
+                    if event.ui_element == button:
+                        if not button.text in self.game_settings.progress["choices"][self.game_settings.chosen_story][self.game_settings.chosen_ep]:
+                            self.game_settings.progress["choices"][self.game_settings.chosen_story][self.game_settings.chosen_ep].append(button.text)
+                        for i in self.choice_buttons:
+                            i.kill()
+                        self.choice_buttons = []
+                        self.line_path.append(button.text)
+                        self.line_path.append(0)
+                        self.set_elements_for_new_line(self._get_line())

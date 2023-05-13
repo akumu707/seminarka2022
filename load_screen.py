@@ -11,7 +11,7 @@ class LoadScreen(ScreenBase):
 
         self.add_label("Choose a file:", (100, 200, -1, -1, ))
 
-        self.choice_list = self.add_selection_list((100, 200, 100, 100), [])
+        self.choice_list = self.add_selection_list((100, 220, 200, 300), [])
         self.add_button('Continue', (400, 300, -1, -1), self._on_click_continue)
 
         self.add_button('Back', (400, 400, -1, -1),

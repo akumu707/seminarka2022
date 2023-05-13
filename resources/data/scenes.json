@@ -1,211 +1,1119 @@
 {
-  "Main story": [{
+  "Main story": [
+    {
       "name": "Episode One",
       "requirements": {},
       "story": [
-        {"background": "universal"},
-        {"Nothing": "Na náměstí Mirii Veliké v Portvertu se okolo vývěsní tabule sešel nemalý hlouček lidí. Kdo by šel náhodou okolo, zaslechl by slova jako „konkurz“ a „už zase nabírají.“ Příčinou tohoto pozdvižení byla velká cedule, která přes noc přibyla na oné tabuli."},
-        {"Nothing": "<b>Mistři Averilu přijímají nové členy</b>"},
-        {"Nothing": "Tak jako každý rok, i letos se bude konat přijímací konkurz pro ty, kteří se chtějí přidat k našemu řádu a chránit mír a pořádek ve světě. Přihlásit se může každý starší šestnácti let, na pohlaví nezáleží. Zájemci projdou základním výcvikem a vedoucí tréninku poté usoudí, kdo z účastníků má na to, aby se přidal ke svým starším kolegům a získal nehynoucí slávu jako člen našeho společenství. Přihlášky si vyzvedněte v naší kanceláři a odevzdejte do konce týdne. Výcvik začíná v pondělí v 9 hodin, účastníci jsou povinni hlásit se u velitele kasáren alespoň o hodinu dříve. Strava zaručena."},
-        {"Nothing": "Diana Falmenová se právě vracela z nákupu, když si všimla zástupu u cedule. Hned jí došlo, co se děje, a tak vrazila tašku své mladší sestře Biance s tím, ať tu na ni počká a vnořila se do moře lidí. Nedočkavě se mezi nimi propletla až k ceduli a rychle ji prolétla očima. Takže v kanceláři Mistrů Averilu, dobře, pomyslela si a vrátila se zpět k Biance. Ta už na ni netrpělivě čekala."},
-        {"Bianka": "To se dělá, takhle mě tu nechat?"},
-        {"Diana": "Promiň, ale Averilové už pořádají konkurz."}
+        {
+          "background": "universal"
+        },
+        {
+          "Nothing": "Na náměstí Mirii Veliké v Portvertu se okolo vývěsní tabule sešel nemalý hlouček lidí. Kdo by šel náhodou okolo, zaslechl by slova jako „konkurz“ a „už zase nabírají.“ Příčinou tohoto pozdvižení byla velká cedule, která přes noc přibyla na oné tabuli."
+        },
+        {
+          "Nothing": "<b>Mistři Averilu přijímají nové členy</b>"
+        },
+        {
+          "Nothing": "Tak jako každý rok, i letos se bude konat přijímací konkurz pro ty, kteří se chtějí přidat k našemu řádu a chránit mír a pořádek ve světě. Přihlásit se může každý starší šestnácti let, na pohlaví nezáleží. Zájemci projdou základním výcvikem a vedoucí tréninku poté usoudí, kdo z účastníků má na to, aby se přidal ke svým starším kolegům a získal nehynoucí slávu jako člen našeho společenství. Přihlášky si vyzvedněte v naší kanceláři a odevzdejte do konce týdne. Výcvik začíná v pondělí v 9 hodin, účastníci jsou povinni hlásit se u velitele kasáren alespoň o hodinu dříve. Strava zaručena."
+        },
+        {
+          "Nothing": "Diana Falmenová se právě vracela z nákupu, když si všimla zástupu u cedule. Hned jí došlo, co se děje, a tak vrazila tašku své mladší sestře Biance s tím, ať tu na ni počká a vnořila se do moře lidí. Nedočkavě se mezi nimi propletla až k ceduli a rychle ji prolétla očima. Takže v kanceláři Mistrů Averilu, dobře, pomyslela si a vrátila se zpět k Biance. Ta už na ni netrpělivě čekala."
+        },
+        {
+          "Bianka": "To se dělá, takhle mě tu nechat?"
+        },
+        {
+          "Diana": "Promiň, ale Averilové už pořádají konkurz."
+        }
       ]
     },
     {
       "name": "Episode Two",
-      "requirements": {"Main story": "Episode One"},
+      "requirements": {
+        "Main story": "Episode One"
+      },
       "story": [
-        {"background": "universal"},
-        {"Player": "This is me"},
-        {"Hello": [{"Tobi": "Hiii~"}],
-        "Hi": [{"Ted": "Hello!"}]}
+        {
+          "background": "universal"
+        },
+        {
+          "Player": "This is me"
+        },
+        {
+          "Hello": [
+            {
+              "Tobi": "Hiii~"
+            }
+          ],
+          "Hi": [
+            {
+              "Ted": "Hello!"
+            }
+          ]
+        }
       ]
     },
-    {"name": "Episode Three",
+    {
+      "name": "Episode Three",
       "requirements": {},
       "story": [
-        {"background": "universal"},
-        {"Katrin": "This is Sean and this is Sasha"},
-        {"Hi Sasha": [
-          {"Sasha": "Hiii","relationship": ["Sasha", 5]}
-        ],
-        "Hello Sean": [
-          {"Sean": "Pleased to meet you, Navigator","relationship": ["Sean", 5]}]}]}
-  ],
-  "Sean's Story": [{
-    "name": "Episode One",
-      "requirements": {"relationship": ["Sean", 5]},
-      "story": [
-        {"background": "universal"},
-        {"Sean": "I've always been looking for ways to follow my heart."},
-        {"Sean": "Be it painting, travelling, you name it, I wanted to do what I felt like doing"},
-        {"Sean": "Until I met her."},
-        {"Sasha?":[
-          {"Sean": "...", "relationship": ["Sasha", 5]},
-          {"Sean": "Yes and No"},
-          {"Sean": "This little one is always causing me trouble."},
-          {"Sean": "But I'm not talking about her."}],
-        "Did you fall in love?": [
-          {"Sean": "I guess you could say so."},
-          {"Sean": "She'll always have a special place in my heart."}]},
-        {"Sean": "Her name was Tamara."}
-      ]
-  }],
-  "Test story": [{
-      "name": "Naruto test",
-      "requirements": {},
-      "story": [
-        {"background": "Konoha"},
-        {"Naruto": "I will never run away"},
-        {"Naruto": "Never Take my words back"},
-        {"Naruto": "'cause that's my ninja way"}
-
+        {
+          "background": "universal"
+        },
+        {
+          "Katrin": "This is Sean and this is Sasha"
+        },
+        {
+          "Hi Sasha": [
+            {
+              "Sasha": "Hiii",
+              "relationship": [
+                "Sasha",
+                5
+              ]
+            }
+          ],
+          "Hello Sean": [
+            {
+              "Sean": "Pleased to meet you, Navigator",
+              "relationship": [
+                "Sean",
+                5
+              ]
+            }
+          ]
+        }
       ]
     }
   ],
-  "English story": [{
-     "name": "Episode One",
-      "requirements": {},
-      "story": [
-        {"background": "universal"},
-        {"Nothing": "It was a bright, sunny day in Portvert."},
-        {"Nothing": "You were just returning from your daily shopping, when you unexpectedly encountered a crowd."},
-        {"Nothing": "The square of Miria the Great wasn't usually this full, unless an important anouncement was made."},
-        {"Nothing":  "You decide to: "},
-        {"Go have a look": [
-          {"Player": "Bianka, hold this for a while, please."},
-          {"Nothing": "You hand your shopping bag to your little sister."},
-          {"Nothing": "Despite her complains, you throw yourself into the crowd."},
-          {"Nothing": "After a while, you manage to reach the anouncement wall."},
-          {"The wall": "<b>Members auditions for the order of Masters of Averil</b>"},
-          {"The wall": "Like last year, the auditions are open for everyone above 16 of age. Those who wish to join the order shall submit their applications until midnight."},
-          {"The wall": "Basic training will be provided to those interested and later it will be decided who is worthy of joining our ranks."},
-          {"The wall": "Food and a place to stay guaranteed for the duration of the training."},
-          {"Nothing": "When you finished reading the sign, you return to your sister."},
-          {"Bianka":  "Did you just really leave me here?"},
-          {"Player":  "Sorry, I just wanted to read that sign."},
-          {"Bianka":  "Well, what was it about then?"},
-          {"Player": "The Averils are having member auditions again!"},
-          {"Bianka":  "Really?"},
-          {"Bianka":  "Wait, you're 16 now, right? Will you join?"},
-          {"Nothing":  "You think about her question."},
-          {"Yes, I want to join": [
-            {"Bianka": "Great, go hand them your application!"},
-            {"Hand application": [
-                {"Nothing": "A response comes the next day in the morning."},
-                {"Nothing": "You have been accepted for the tryouts to the Order of Masters of Averil."},
-                {"Nothing": "Please move in to the dorms bz the end of the week."},
-                {"Nothing": "Yours sincerely"},
-                {"Nothing": "<i>Tadeas Varren</i>"}
-            ]}
-          ],
-          "I have to think about it": [
-            {"Nothing": "You and Bianka returned home with your shopping bags."},
-            {"Nothing":  "You cooked lunch together, waited for your parents to return home, just spent normal day."},
-            {"Nothing": "In the evening, Bianka asks you again."},
-            {"Bianka":  "Have you decided? Do you wish to join the order?"},
-            {"Yes":[
-              {"Bianka": "Great, go hand them your application!"},
-              {"Hand application": [
-                {"Nothing": "A response comes the next day in the morning."},
-                {"Nothing": "You have been accepted for the tryouts to the Order of Masters of Averil."},
-                {"Nothing": "Please move in to the dorms by the end of the week."},
-                {"Nothing": "Yours sincerely"},
-                {"Nothing": "<i>Tobias Varren</i>"}
-              ]}
-            ],
-            "No": [
-              {"End": ["Normal ending", "You continue to live on with your life"]}
-            ]}
-          ],
-          "No, it's nothing for me": [
-            {"End": ["Normal ending", "You continue to live on with your life"]}
-          ]}
-        ],
-        "Turn back": [
-          {"End": ["Normal ending", "You continue to live on with your life"]}]}
-      ]
-
-  },
+  "Sean's Story": [
     {
-      "name": "Episode Two",
-      "requirements": {"level": ["Portvert", 0], "English story": "Episode One"},
+      "name": "Episode One",
+      "requirements": {
+        "relationship": [
+          "Sean",
+          5
+        ]
+      },
       "story": [
-        {"background": "universal"},
-        {"Nothing":  "On Friday you finally have all your things packed."},
-        {"Player":  "Its time to move in to the dorm!"},
-        {"Nothing": "Your parents help you carry all of your things to the headquarters."},
-        {"Nothing":  "Then they bid you farewell."},
-        {"Nothing":  "Suddenly you|re left alone."},
-        {"Player": "I need to find the dorm."},
-        {"Player": "Where should I go?"},
-        {"The tavern": [
-          {"Player":  "People in the tavern are usually more friendlier"},
-          {"Player": "Surely there|ll be someone to help me"},
-          {"Nothing": "With that you enter to the tavern."},
-          {"Nothing": "Its pretty lively in there, yet you still try to find someone to help you."},
-          {"Stranger": "Do you need something, dear?"},
-          {"Nothing": "You turn around and see a tall man with black hair and blue eyes in front of you"},
-          {"Nothing": "He looks like an officer."},
-          {"Player":  "Im sorry, sir, I was just trying to find my new dorm."},
-          {"Player": "I thought I'd find someone to help me here."},
-          {"Stranger": "Well, you actually found one just now."},
-          {"Stranger": "My name is Tobias Varren."},
-          {"Tobias": "You're new, right?"},
-          {"Tobias": "Maybe I'll be your commanding officer"},
-          {"Nothing": "He smiles and points to a small building."},
-          {"Tobias": "That is the dorm. Head there and you'll soon find your room. Your name'll be on the door,"},
-          {"Tobias": "You two, help them with their things."},
-          {"Player": "Thank you, sir."},
-          {"Tobias": "My pleasure, soldier."},
-          {"Nothing":  "He winks at you."},
-          {"Tobias": "See you in training!","relationship": ["Tobias", 5], "unlock": "Tobias"}
-        ],
-        "The office": [
-          {"Player": "People in the office are there to help people"},
-          {"Player": "I'll find help there for sure"},
-          {"Nothing": "When you enter the office, you're met with an empty room"},
-          {"Nothing": "Only one man is sitting at the desk"},
-          {"Nothing": "He's got black hair and when he raises his head, you find out his eyes are a beautiful hue of green"},
-          {"Man": "Good morning, what do you need<"},
-          {"Player": "Ah, well, I was trying to find my new dorm."},
-          {"Player": "I was wondering, if you could help me find it."},
-          {"Man": "Of course, that's why I'm here."},
-          {"Man": "I'll lead you there."},
-          {"Nothing": "The two of you walk out of the door and head towards a small building"},
-          {"Nothing": "The man, who introduced himself as Tadeas Varren, helps you with your things"},
-          {"Tadeas": "You're there for the training, right?"},
-          {"Player": "Yeah"},
-          {"Tadeas": "Then we'll see each other soon."},
-          {"Tadeas": "This is your room."},
-          {"Tadeas": "I'll leave your things here, I need to return to the office."},
-          {"Tadeas": "See you soon!", "relationship": ["Tadeas", 5], "unlock": "Tadeas"}
-        ]}
-      ]
-    },
-  {
-      "name": "Episode Three",
-      "requirements": {"level": ["Portvert", 1], "English story": "Episode Two"},
-      "story": [
-        {"background": "universal"},
-        {"Nothing": "The next day is the beginning of your training."},
-        {"Nothing": "You and many other people who have joined the elections are forced out of your beds at six in the morning."},
-        {"Nothing": "You yawn, as you stand in the crowd waiting for whats to come."},
-        {"Nothing": "Quiet murmur spreads upon the entire soon-to-be command."},
-        {"Nothing": "Suddenly a loud whistle wakes everyone up."},
-        {"Nothing": "You turn around to see two practically identical officers standing at the entrance to the square."},
-        {"Nothing": "You already know one of them."},
-        {"Locked": {
-          "Requirements": {"relationship": ["Tobias", 5]},
-          "story": [
-            {"Nothing": "Tobias waves at you"}
+        {
+          "background": "universal"
+        },
+        {
+          "Sean": "I've always been looking for ways to follow my heart."
+        },
+        {
+          "Sean": "Be it painting, travelling, you name it, I wanted to do what I felt like doing"
+        },
+        {
+          "Sean": "Until I met her."
+        },
+        {
+          "Sasha?": [
+            {
+              "Sean": "...",
+              "relationship": [
+                "Sasha",
+                5
+              ]
+            },
+            {
+              "Sean": "Yes and No"
+            },
+            {
+              "Sean": "This little one is always causing me trouble."
+            },
+            {
+              "Sean": "But I'm not talking about her."
+            }
+          ],
+          "Did you fall in love?": [
+            {
+              "Sean": "I guess you could say so."
+            },
+            {
+              "Sean": "She'll always have a special place in my heart."
+            }
           ]
         },
-        "other":[
-          {"Nothing": "Tadeas smiles at you"}
-        ]
-          }
-        ]}
+        {
+          "Sean": "Her name was Tamara."
+        }
       ]
-  }
+    }
+  ],
+  "Test story": [
+    {
+      "name": "Naruto test",
+      "requirements": {},
+      "story": [
+        {
+          "background": "Konoha"
+        },
+        {
+          "Naruto": "I will never run away"
+        },
+        {
+          "Naruto": "Never Take my words back"
+        },
+        {
+          "Naruto": "'cause that's my ninja way"
+        }
+      ]
+    }
+  ],
+  "English story": [
+    {
+      "name": "Episode One",
+      "requirements": {},
+      "story": [
+        {
+          "background": "universal"
+        },
+        {
+          "Nothing": "It was a bright, sunny day in Portvert."
+        },
+        {
+          "Nothing": "You were just returning from your daily shopping, when you unexpectedly encountered a crowd."
+        },
+        {
+          "Nothing": "The square of Miria the Great wasn't usually this full, unless an important anouncement was made."
+        },
+        {
+          "Nothing": "You decide to: "
+        },
+        {
+          "Go have a look": [
+            {
+              "Player": "Bianka, hold this for a while, please."
+            },
+            {
+              "Nothing": "You hand your shopping bag to your little sister."
+            },
+            {
+              "Nothing": "Despite her complains, you throw yourself into the crowd."
+            },
+            {
+              "Nothing": "After a while, you manage to reach the anouncement wall."
+            },
+            {
+              "The wall": "<b>Members auditions for the order of Masters of Averil</b>"
+            },
+            {
+              "The wall": "Like last year, the auditions are open for everyone above 16 of age. Those who wish to join the order shall submit their applications until midnight."
+            },
+            {
+              "The wall": "Basic training will be provided to those interested and later it will be decided who is worthy of joining our ranks."
+            },
+            {
+              "The wall": "Food and a place to stay guaranteed for the duration of the training."
+            },
+            {
+              "Nothing": "When you finished reading the sign, you return to your sister."
+            },
+            {
+              "Bianka": "Did you just really leave me here?"
+            },
+            {
+              "Player": "Sorry, I just wanted to read that sign."
+            },
+            {
+              "Bianka": "Well, what was it about then?"
+            },
+            {
+              "Player": "The Averils are having member auditions again!"
+            },
+            {
+              "Bianka": "Really?"
+            },
+            {
+              "Bianka": "Wait, you're 16 now, right? Will you join?"
+            },
+            {
+              "Nothing": "You think about her question."
+            },
+            {
+              "Yes, I want to join": [
+                {
+                  "Bianka": "Great, go hand them your application!"
+                },
+                {
+                  "Hand application": [
+                    {
+                      "Nothing": "A response comes the next day in the morning."
+                    },
+                    {
+                      "Nothing": "You have been accepted for the tryouts to the Order of Masters of Averil."
+                    },
+                    {
+                      "Nothing": "Please move in to the dorms bz the end of the week."
+                    },
+                    {
+                      "Nothing": "Yours sincerely"
+                    },
+                    {
+                      "Nothing": "<i>Tadeas Varren</i>"
+                    }
+                  ]
+                }
+              ],
+              "I have to think about it": [
+                {
+                  "Nothing": "You and Bianka returned home with your shopping bags."
+                },
+                {
+                  "Nothing": "You cooked lunch together, waited for your parents to return home, just spent normal day."
+                },
+                {
+                  "Nothing": "In the evening, Bianka asks you again."
+                },
+                {
+                  "Bianka": "Have you decided? Do you wish to join the order?"
+                },
+                {
+                  "Yes": [
+                    {
+                      "Bianka": "Great, go hand them your application!"
+                    },
+                    {
+                      "Hand application": [
+                        {
+                          "Nothing": "A response comes the next day in the morning."
+                        },
+                        {
+                          "Nothing": "You have been accepted for the tryouts to the Order of Masters of Averil."
+                        },
+                        {
+                          "Nothing": "Please move in to the dorms by the end of the week."
+                        },
+                        {
+                          "Nothing": "Yours sincerely"
+                        },
+                        {
+                          "Nothing": "<i>Tobias Varren</i>"
+                        }
+                      ]
+                    }
+                  ],
+                  "No": [
+                    {
+                      "End": [
+                        "Normal ending",
+                        "You continue to live on with your life"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "No, it's nothing for me": [
+                {
+                  "End": [
+                    "Normal ending",
+                    "You continue to live on with your life"
+                  ]
+                }
+              ]
+            }
+          ],
+          "Turn back": [
+            {
+              "End": [
+                "Normal ending",
+                "You continue to live on with your life"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Episode Two",
+      "requirements": {
+        "level": [
+          "Portvert",
+          0
+        ],
+        "English story": "Episode One"
+      },
+      "story": [
+        {
+          "background": "universal"
+        },
+        {
+          "Nothing": "On Friday you finally have all your things packed."
+        },
+        {
+          "Player": "Its time to move in to the dorm!"
+        },
+        {
+          "Nothing": "Your parents help you carry all of your things to the headquarters."
+        },
+        {
+          "Nothing": "Then they bid you farewell."
+        },
+        {
+          "Nothing": "Suddenly you|re left alone."
+        },
+        {
+          "Player": "I need to find the dorm."
+        },
+        {
+          "Player": "Where should I go?"
+        },
+        {
+          "The tavern": [
+            {
+              "Player": "People in the tavern are usually more friendlier"
+            },
+            {
+              "Player": "Surely there|ll be someone to help me"
+            },
+            {
+              "Nothing": "With that you enter to the tavern."
+            },
+            {
+              "Nothing": "Its pretty lively in there, yet you still try to find someone to help you."
+            },
+            {
+              "Stranger": "Do you need something, dear?"
+            },
+            {
+              "Nothing": "You turn around and see a tall man with black hair and blue eyes in front of you"
+            },
+            {
+              "Nothing": "He looks like an officer."
+            },
+            {
+              "Player": "Im sorry, sir, I was just trying to find my new dorm."
+            },
+            {
+              "Player": "I thought I'd find someone to help me here."
+            },
+            {
+              "Stranger": "Well, you actually found one just now."
+            },
+            {
+              "Stranger": "My name is Tobias Varren."
+            },
+            {
+              "Tobias": "You're new, right?"
+            },
+            {
+              "Tobias": "Maybe I'll be your commanding officer"
+            },
+            {
+              "Nothing": "He smiles and points to a small building."
+            },
+            {
+              "Tobias": "That is the dorm. Head there and you'll soon find your room. Your name'll be on the door,"
+            },
+            {
+              "Tobias": "You two, help them with their things."
+            },
+            {
+              "Player": "Thank you, sir."
+            },
+            {
+              "Tobias": "My pleasure, soldier."
+            },
+            {
+              "Nothing": "He winks at you."
+            },
+            {
+              "Tobias": "See you in training!",
+              "relationship": [
+                "Tobias",
+                5
+              ],
+              "unlock": "Tobias"
+            }
+          ],
+          "The office": [
+            {
+              "Player": "People in the office are there to help people"
+            },
+            {
+              "Player": "I'll find help there for sure"
+            },
+            {
+              "Nothing": "When you enter the office, you're met with an empty room"
+            },
+            {
+              "Nothing": "Only one man is sitting at the desk"
+            },
+            {
+              "Nothing": "He's got black hair and when he raises his head, you find out his eyes are a beautiful hue of green"
+            },
+            {
+              "Man": "Good morning, what do you need<"
+            },
+            {
+              "Player": "Ah, well, I was trying to find my new dorm."
+            },
+            {
+              "Player": "I was wondering, if you could help me find it."
+            },
+            {
+              "Man": "Of course, that's why I'm here."
+            },
+            {
+              "Man": "I'll lead you there."
+            },
+            {
+              "Nothing": "The two of you walk out of the door and head towards a small building"
+            },
+            {
+              "Nothing": "The man, who introduced himself as Tadeas Varren, helps you with your things"
+            },
+            {
+              "Tadeas": "You're there for the training, right?"
+            },
+            {
+              "Player": "Yeah"
+            },
+            {
+              "Tadeas": "Then we'll see each other soon."
+            },
+            {
+              "Tadeas": "This is your room."
+            },
+            {
+              "Tadeas": "I'll leave your things here, I need to return to the office."
+            },
+            {
+              "Tadeas": "See you soon!",
+              "relationship": [
+                "Tadeas",
+                5
+              ],
+              "unlock": "Tadeas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Episode Three",
+      "requirements": {
+        "level": [
+          "Portvert",
+          1
+        ],
+        "English story": "Episode Two"
+      },
+      "story": [
+        {
+          "background": "universal"
+        },
+        {
+          "Nothing": "The next day is the beginning of your training."
+        },
+        {
+          "Nothing": "You and many other people who have joined the elections are forced out of your beds at six in the morning."
+        },
+        {
+          "Nothing": "You yawn, as you stand in the crowd waiting for whats to come."
+        },
+        {
+          "Nothing": "Quiet murmur spreads upon the entire soon-to-be command."
+        },
+        {
+          "Nothing": "Suddenly a loud whistle wakes everyone up."
+        },
+        {
+          "Nothing": "You turn around to see two practically identical officers standing at the entrance to the square."
+        },
+        {
+          "Nothing": "You already know one of them."
+        },
+        {
+          "Locked": {
+            "Requirements": {
+              "relationship": [
+                "Tobias",
+                5
+              ]
+            },
+            "story": [
+              {
+                "Nothing": "Tobias waves at you"
+              }
+            ]
+          },
+          "other": [
+            {
+              "Nothing": "Tadeas smiles at you"
+            }
+          ]
+        },
+        {
+          "Nothing": "You've already met one of them yesterday...but which one?"
+        },
+        {
+          "Player": "What is going on?"
+        },
+        {
+          "Nothing": "At first you're really confused, but since you stand close to them, you quickly figure it out."
+        },
+        {
+          "Player": "Ah, I get it now. The both have different eye colours!"
+        },
+        {
+          "Nothing": "Suddenly one of them speaks."
+        },
+        {
+          "Tadeas": "Hello everyone. I'm pleased to welcome you all today for the anual Averil tryouts. My name is Tadeas Varren, this is my brother Tobias..."
+        },
+        {
+          "Nothing": "Tadeas points to the other officer, who smiles and waves at the crowd."
+        },
+        {
+          "Tadeas": "...and we're going to be your commanding officers from now on. "
+        },
+        {
+          "Tadeas": "Now, I'm sure you all know we're supposed to train you to become worthy of joining the order, so I won't explain that. Instead, we'll split you into two groups each led by one of us to train in."
+        },
+        {
+          "Tadeas": "The groups were formed based on your age, gender, occupation and previous fight experiences, which we took from the town's chronicle, to make them somewhat balanced."
+        },
+        {
+          "Tadeas": "You can find the group you've been assigned to in your common room in the building behind you. We've also put there the places for your first training session. We'll meet there in fifteen minutes."
+        },
+        {
+          "Tadeas": "I wish you all good luck"
+        }
+      ]
+    },
+    {
+      "name": "Episode Four",
+      "requirements": {
+        "level": [
+          "Portvert",
+          2
+        ],
+        "English story": "Episode Three"
+      },
+      "story": [
+        {
+          "background": "universal"
+        },
+        {
+          "Nothing": "After you've reached the common room, you find out you've been assigned to Tadeas, the more polite looking officer."
+        },
+        {
+          "Nothing": "How do you feel about it?"
+        },
+        {
+          "Relieved": [
+            {
+              "Nothing": "You feel a strong sense of relief."
+            },
+            {
+              "Nothing": "Tadeas seems more mature than Tobias does, so his lessons will propably be more useful than his brother's.", "relationship": [
+                "Tadeas",
+                5
+              ]
+            }
+          ],
+          "Disappointed": [
+            {
+              "Nothing": "You do not agree with your assignment."
+            },
+            {
+              "Nothing": "Tobias looked like the more fun brother, you thought you'd enjoy his lessons more.", "relationship": [
+                "Tobias",
+                5
+              ]
+            },
+            {
+              "Nothing": "Despite this, you decide not to complain."
+            },
+            {
+              "Nothing": "You don't want trouble on the first day of training."
+            }
+          ]
+        },
+        {
+          "Nothing": "After reading the board carefully again, you find out you're supposed to start your lesson at the town's outskirts."
+        },
+        {
+          "Nothing": "There was a little plain next to the border river and that was were your first lesson was to be given."
+        },
+        {
+          "Nothing": "You quickly take your uniform and head there. "
+        },
+        {
+          "Nothing": "A crowd quickly gathers on the training plain. Tadeas is here as well, patiently waiting for everyone to arrive."
+        },
+        {
+          "Nothing": "When everyone gathers, he stands in front of his new trainees."
+        },
+        {
+          "Tadeas": "Good morning again!"
+        },
+        {
+          "Tadeas": "As I said earlier, I'll be your commanding officer from now on."
+        },
+        {
+          "Tadeas": "That means I require absolute obedience from all of you."
+        },
+        {
+          "Tadeas": "who will not listen to my orders will be immediately fired from this program."
+        },
+        {
+          "Tadeas": "Understood?"
+        },
+        {
+          "Yes, sir!": [
+            {
+              "Nothing": "You and the rest of your command declare your allegiance to your officer."
+            },
+            {
+              "Nothing": "He smiles at all of you.",
+              "unlock": "Tadeas", "relationship": [
+                "Tadeas",
+                5
+              ]
+            }
+          ],
+          "(keep quiet)": [
+            {
+              "Nothing": "You and few other people do not respond like the rest of the crowd."
+            },
+            {
+              "Nothing": "Tadeas shots you a glance but says nothing."
+            }
+          ]
+        },
+        {
+          "Nothing": "After Tadeas's welcoming speech, the training starts. "
+        },
+        {
+          "Nothing": "Soon your team is seen running around the whole place."
+        },
+        {
+          "Nothing": "Among the many excercises you're told to do is to climb a nearby wall with your sword as fast as you can."
+        },
+        {
+          "Nothing": "You quickly figure out a way to attach your sword to you with your belt and are among the first people done."
+        },
+        {
+          "Nothing": "However, other people aren't as lucky."
+        },
+        {
+          "Nothing": "You see a girl around your age trying really hard while still holding her sword in hand."
+        },
+        {
+          "Go help her": [
+            {
+              "Player": "Um, excuse me?"
+            },
+            {
+              "Player": "I'll go easier for you if you attach it like this."
+            },
+            {
+              "Girl": "Oh!"
+            },
+            {
+              "Girl": "Thank you! I wouldn't have figured this out."
+            },
+            {
+              "Player": "It's fine. We're in the same command, we should help each other, right?"
+            },
+            {
+              "Girl": "Yeah! Oh, I'm Jenny, by the way. Jenny Kraus.",
+              "unlock": "Jenny", "relationship": [
+                "Jenny",
+                5
+              ]
+            },
+            {
+              "Nothing": "You tell her your name."
+            },
+            {
+              "Nothing": "You spend the rest of the training together."
+            },
+            {
+              "Nothing": "After a while, a rest is ordered and the entire command heads to the tavern in town for lunch."
+            },
+            {
+              "Nothing": "You and Jenny sit together and soon you're joined by someone else."
+            },
+            {
+              "Tadeas": "Hey, girls, can I join you?"
+            },
+            {
+              "Player": "Ah, yes sir!"
+            },
+            {
+              "Nothing": "Tadeas softly laughs."
+            },
+            {
+              "Tadeas": "It's fine, we're just hanging out. You can call me Ted.",
+              "unlock": "Tadeas", "relationship": [
+                "Tadeas",
+                2
+              ]
+            },
+            {
+              "Nothing": "The three of you enjoy your lunch together, until a swarm of muddy human-like creatures joins you in the tavern. "
+            },
+            {
+              "Nothing": "You stare at them in disbelief. Ted next to you sighs. "
+            },
+            {
+              "Tadeas": "So he really did take them to Tirana."
+            },
+            {
+              "Nothing": "Tirana? you think. Isn't that the port town with swamps all around?"
+            },
+            {
+              "Tobias": "You're damn right I did! If I can do it, they should as well."
+            },
+            {
+              "Nothing": "Tobias, seemingly the only clean one from his group suddenly appears next to your table. Tadeas only quietly rolls his eyes."
+            },
+            {
+              "Tobias": "Anyway, why are you sitting here? Come join us officers!"
+            },
+            {
+              "Tadeas": "No, thanks, I'd like to spend some time with my command."
+            },
+            {
+              "Tobias": "Really? With ...them?"
+            },
+            {
+              "Nothing": "Tobias eyes you up and down. You feel embarassed under his gaze."
+            },
+            {
+              "Tadeas": "Yes. Now if you excuse us, we've got lunch to eat."
+            },
+            {
+              "Nothing": "Tobias just raises his eyebrows in disbelief, but then leaves you alone. Recalling your embarassment, you gratefully smile at Ted. He smiles back."
+            }
+          ],
+          "Ignore her": [
+            {
+              "Nothing": "This is army, no time for those that can't help themselves, you think."
+            },
+            {
+              "Nothing": "You finish your training quietly and swiftly and then head to lunch."
+            }
+          ]
+        },
+        {
+          "Nothing": "Then the training contines until evening."
+        },
+        {
+          "Nothing": "when you reach your room, you're as tires as you've never been."
+        },
+        {
+          "Nothing": "You think about your day."
+        },
+        {
+          "I've done well": [
+            {
+              "Nothing": "You feel proud of yourself for lasting this long."
+            },
+            {
+              "Nothing": "As long as you'll keep this up, you'll definitely pass the test later."
+            },
+            {
+              "Nothing": "And with this thought you quickly go to sleep."
+            }
+          ],
+          "I should work harder": [
+            {
+              "Nothing": "You think your work wasn't good enough."
+            },
+            {
+              "Nothing": "When thinking of ways to improve, the thought extra training comes to your mind."
+            },
+            {
+              "Nothing": "No one really forbade you from going outside, after all."
+            },
+            {
+              "Nothing": "With that, you quietly take your wooden sword and head to the practice grounds."
+            },
+            {
+              "Nothing": "After a few practice swings a voice sounds beside you."
+            },
+            {
+              "Tadeas": "Raise it a bit higher, it will work with more force. "
+            },
+            {
+              "Nothing": "You turn around to your officer. He's smilling at you."
+            },
+            {
+              "Player": "Yes sir!",
+              "unlock": "Tadeas",
+              "relationship": [
+                "Tadeas",
+                2
+              ]
+            },
+            {
+              "Nothing": "You smile back. For the next hour Tadeas helps you with your private training. "
+            },
+            {
+              "Nothing": "When you go to sleep, you feel a lot stronger than before. Tadeas's words linger in your mind."
+            },
+            {
+              "Tadeas": "You're a lot stronger than you think."
+            },
+            {
+              "Tadeas": "I'm proud of you for working this hard"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Episode Five",
+      "requirements": {
+        "level": [
+          "Portvert",
+          3
+        ],
+        "English story": "Episode Four"
+      },
+      "story": [
+        {
+          "background": "universal"
+        },
+        {
+        "Nothing": "After months of training, you're finally ready to take your entrance exam."
+    },
+    {
+        "Nothing": "Nervousness spreads through the entire command."
+    },
+    {
+        "Nothing": "But even though you're nervous, you all are united by one thought: Be better than Tobias's command."
+    },
+    {
+        "Nothing": "It wasn't hard to notice the way he acted towards Ted, constantly pushing him down and belittleing his achievements.¨"
+    },
+    {
+        "Nothing": "You all really liked your commander - he was kind to you and always explained things in a way you all could understand."
+    },
+    {
+        "Nothing": "Which is why you all decided to avenge him - you aimed to be the only ones accepted to the order to prove Tadeas was the better instructor."
+    },
+    {
+        "Nothing": "And then the day of the exam came."
+    },
+    {
+        "Locked": {"Requirements": {
+              "relationship": [
+                "Jenny",
+                5
+              ]
+            },
+            "story": [
+            {
+                "Nothing": "You and Jenny were sitting at the training grounds as people from the committee were building their desks."
+            },
+            {
+                "Nothing": "You were talking about how likely were you to get accepted."
+            },
+            {
+                "Jenny": "Ah, I really can't do this! Why does it have to be swordfighting? I'm teribble at that!"
+            },
+            {
+                "Player": "Well, unlike me you can at least swing the sword properly!"
+            },
+            {
+                "Jenny": "Yeah, but I always mess up the tactics!"
+            },
+            {
+                "Nothing": "Your arguing would go on forever if Tadeas didn't come at that moment."
+            },
+            {
+                "Tadeas": "Oh come on, you two, you're not terrible at all. "
+            },
+            {
+                "Tadeas": "But since you're so nervous, I'll give you a quick reminder of our lesson."
+            },
+            {
+                "Tadeas": "When in doubt, you can use Miria the Great's feint, remember?"
+            },
+            {
+                "Tadeas": "It works like 90 percent of the time and you're both really good at it. "
+            },
+            {
+                "Tadeas": "But remember not to use it too often, your opponent would notice the pattern and defeat you easily, alright?"
+            },
+            {
+                "Nothing": "You and Jenny smile at each other."
+            },
+            {
+                "Player": "Yes, sir!"
+            }]},
+
+        "other": [
+            {
+                "Nothing": "You were helping people from the committee build their desks. "
+            },
+            {
+                "Nothing": "As you were assembling one, you noticed a desk with papers from one of the jury."
+            },
+            {
+                "Nothing": "It had a chart with grading of various sword fighting moves."
+            },
+            {
+                "Nothing": "Ranked highest was Miria the Great's feint."
+            },
+            {
+                "Player": "Oh, I can work with this."
+            },
+            {
+                "Player": "As long as I use this feint, I can deffinitely pass."
+            }]},
+    {
+        "Nothing": "After a while, the auditions begun."
+    },
+    {
+        "Nothing": "It was decided to be swordfighting match-off against commands, since there was lower propability you'd know each other's fighting style, but it didn't actually matter who won."
+    },
+    {
+        "Nothing": "The catch was to show you're better at swordfighting than your opponent."
+    },
+    {
+        "Nothing": "Pairs of two would stand in front of the committee which would rank them based on their performance. "
+    },
+    {
+        "Nothing": "The best of you would be accepted to the order."
+    },
+    {
+        "Nothing": "Finally it was your turn."
+    },
+    {
+        "Nothing": "In front of you was a pale man with sharp black eyes."
+    },
+    {
+        "Player": "Okay, let's do this!"
+    },
+    {
+        "Nothing": "The match begins and your opponent starts with a strong swing from left."
+    },
+    {
+        "Nothing": "You decide to"
+    },
+    {
+        "Swing the same direction": [
+            {
+                "Nothing": "As you do this, your opponent's sword hits your hands and your weapon leaps from your hands."
+            },
+            {
+                "Nothing": "You didn't exactly leave the best impression on the committee."
+            },
+            {
+                "Nothing": "You pick up your sword again, but the whole fight just continues terribly for you and eventually ends with your defeat."
+            },
+            {
+                "Nothing": "In the end, you weren't picked to enter the order."
+            },
+            {
+                "End": [
+
+                        "Normal ending", "Try again next year."
+
+                ]
+            }
+
+        ],
+
+        "Swing the opposite direction": [
+            {
+                "Nothing": "You counter-attack and are able to maintain your posture."
+            },
+            {
+                "Nothing": "The fight continues."
+            },
+            {
+                "Nothing": "Your opponent raises his hands to strike you from above."
+            },
+            {
+                "Nothing": "What do you do?"
+            },
+            {
+                "Hit his uncovered body": [
+                    {
+                        "Nothing": "The pale man jumps back trying to dodge you and falls to the ground."
+                    },
+                    {
+                        "Nothing": "You decide to:"
+                    },
+                    {"Point the sword at him and demand he gives up": [
+                        {"Nothing": "Your oppponent quickly agrees to your suggestion."},
+                        {"Nothing": "You are victorious."}
+                    ],
+                        "Wait for him to get back up": [
+                            {"Nothing": "You have missed your best opportunity."},
+                            {"Nothing": "Your opponent quickly finds your weakness and defeats you."},
+                            {"Nothing": "You lose the match and aren't chosen to enter the order."},
+                            {"Nothing": "In the order there is no place for those who wait."},
+                            {
+                "End": [
+
+                        "Normal ending", "Try again next year."
+
+                ]
+            }
+                        ]
+                    }
+                ]
+            }],
+        "Do Miria the Great's feint": [
+            {
+                "Nothing": "You move quickly and are able to get your opponent's sword out of his hand."
+            },
+            {
+                "Nothing": "It gives you the confidence you needed. Soon you find yourself victorious."
+            }]},
+
+    {
+        "Nothing": "Later you even find out you've been accepted to the Order."
+    },
+    {
+        "Locked": {"Requirements": {
+              "relationship": [
+                "Jenny",
+                5
+              ]
+            },
+            "story": [
+            {
+                "Nothing": "You and Jenny, who also got in, go out to celebrate."
+            },
+            {
+                "Nothing": "You spend the whole night chatting in a nearby tavern."
+            },
+            {
+                "Nothing": "You've got bright future ahead of you with your friends there to support you."
+            },
+            {
+                "Nothing": "At least for now..."
+            }
+
+
+        ]
+    },
+        "other": [
+            {
+                "Nothing": "Soon after the results are out, Tobias aproachs you."
+            },
+            {
+                "Tobias": "So you got in, huh..."
+            },
+            {
+                "Tobias": "Guess we can expect many things from you."
+            },
+            {
+                "Nothing": "If only he knew.."
+            }
+        ]
+    }
+
+      ]
+}]}

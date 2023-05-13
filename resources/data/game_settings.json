@@ -5,12 +5,14 @@
     "Sasha": 0,
     "Sean": 0,
     "Tadeas": 0,
-    "Tobias": 0
+    "Tobias": 0,
+    "Jenny": 0
   },
   "people": {
     "Player": [true, "player.png"],
     "Tadeas": [false, "ted.png"],
-    "Tobias": [false, "tobi.png"]
+    "Tobias": [false, "tobi.png"],
+    "Jenny": [false, "jenny.png"]
   },
   "locations": [["Portvert", 0], ["Manghani", 0]]
 }

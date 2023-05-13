@@ -10,6 +10,7 @@ class LevelScreen(ScreenBase):
 
         self.sprite = pygame.Rect(200, 200, 50, 50)
         self.add_bg("resources/images/universal.jpg")
+        self.level = None
         self.hide()
 
     def hide(self):
@@ -63,6 +64,8 @@ class LevelScreen(ScreenBase):
                 self.level_number = i
                 self.level = self.game_settings.levels[location][i]
                 break
+        if self.level is None:
+            self.level = self.game_settings.levels[location][0]
         self._create_level()
 
         # Create a rect with the size of the image.
@@ -110,7 +113,8 @@ class LevelScreen(ScreenBase):
                     self._create_sprite(x, y)
                 self.background_surface.blit(self.sprite_image, self.sprite)
             if self.sprite.colliderect(self.exit):
-                self.game_settings.progress["levels"][self.location][self.level_number] = True
-                if self.sprite_name in self.game_settings.settings["relationship"].keys():
+                if self.sprite_name in self.game_settings.settings["relationship"].keys() and self.game_settings.progress["levels"][self.location][self.level_number] != True:
                     self.game_settings.settings["relationship"][self.sprite_name]+=5
+                self.game_settings.progress["levels"][self.location][self.level_number] = True
+                self.level = None
                 self.screen_options.show(self.screen_options.exploration_screen)
