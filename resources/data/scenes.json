@@ -1,168 +1,5 @@
 {
-  "Main story": [
-    {
-      "name": "Episode One",
-      "requirements": {},
-      "story": [
-        {
-          "background": "universal"
-        },
-        {
-          "Nothing": "Na náměstí Mirii Veliké v Portvertu se okolo vývěsní tabule sešel nemalý hlouček lidí. Kdo by šel náhodou okolo, zaslechl by slova jako „konkurz“ a „už zase nabírají.“ Příčinou tohoto pozdvižení byla velká cedule, která přes noc přibyla na oné tabuli."
-        },
-        {
-          "Nothing": "<b>Mistři Averilu přijímají nové členy</b>"
-        },
-        {
-          "Nothing": "Tak jako každý rok, i letos se bude konat přijímací konkurz pro ty, kteří se chtějí přidat k našemu řádu a chránit mír a pořádek ve světě. Přihlásit se může každý starší šestnácti let, na pohlaví nezáleží. Zájemci projdou základním výcvikem a vedoucí tréninku poté usoudí, kdo z účastníků má na to, aby se přidal ke svým starším kolegům a získal nehynoucí slávu jako člen našeho společenství. Přihlášky si vyzvedněte v naší kanceláři a odevzdejte do konce týdne. Výcvik začíná v pondělí v 9 hodin, účastníci jsou povinni hlásit se u velitele kasáren alespoň o hodinu dříve. Strava zaručena."
-        },
-        {
-          "Nothing": "Diana Falmenová se právě vracela z nákupu, když si všimla zástupu u cedule. Hned jí došlo, co se děje, a tak vrazila tašku své mladší sestře Biance s tím, ať tu na ni počká a vnořila se do moře lidí. Nedočkavě se mezi nimi propletla až k ceduli a rychle ji prolétla očima. Takže v kanceláři Mistrů Averilu, dobře, pomyslela si a vrátila se zpět k Biance. Ta už na ni netrpělivě čekala."
-        },
-        {
-          "Bianka": "To se dělá, takhle mě tu nechat?"
-        },
-        {
-          "Diana": "Promiň, ale Averilové už pořádají konkurz."
-        }
-      ]
-    },
-    {
-      "name": "Episode Two",
-      "requirements": {
-        "Main story": "Episode One"
-      },
-      "story": [
-        {
-          "background": "universal"
-        },
-        {
-          "Player": "This is me"
-        },
-        {
-          "Hello": [
-            {
-              "Tobi": "Hiii~"
-            }
-          ],
-          "Hi": [
-            {
-              "Ted": "Hello!"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Episode Three",
-      "requirements": {},
-      "story": [
-        {
-          "background": "universal"
-        },
-        {
-          "Katrin": "This is Sean and this is Sasha"
-        },
-        {
-          "Hi Sasha": [
-            {
-              "Sasha": "Hiii",
-              "relationship": [
-                "Sasha",
-                5
-              ]
-            }
-          ],
-          "Hello Sean": [
-            {
-              "Sean": "Pleased to meet you, Navigator",
-              "relationship": [
-                "Sean",
-                5
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "Sean's Story": [
-    {
-      "name": "Episode One",
-      "requirements": {
-        "relationship": [
-          "Sean",
-          5
-        ]
-      },
-      "story": [
-        {
-          "background": "universal"
-        },
-        {
-          "Sean": "I've always been looking for ways to follow my heart."
-        },
-        {
-          "Sean": "Be it painting, travelling, you name it, I wanted to do what I felt like doing"
-        },
-        {
-          "Sean": "Until I met her."
-        },
-        {
-          "Sasha?": [
-            {
-              "Sean": "...",
-              "relationship": [
-                "Sasha",
-                5
-              ]
-            },
-            {
-              "Sean": "Yes and No"
-            },
-            {
-              "Sean": "This little one is always causing me trouble."
-            },
-            {
-              "Sean": "But I'm not talking about her."
-            }
-          ],
-          "Did you fall in love?": [
-            {
-              "Sean": "I guess you could say so."
-            },
-            {
-              "Sean": "She'll always have a special place in my heart."
-            }
-          ]
-        },
-        {
-          "Sean": "Her name was Tamara."
-        }
-      ]
-    }
-  ],
-  "Test story": [
-    {
-      "name": "Naruto test",
-      "requirements": {},
-      "story": [
-        {
-          "background": "Konoha"
-        },
-        {
-          "Naruto": "I will never run away"
-        },
-        {
-          "Naruto": "Never Take my words back"
-        },
-        {
-          "Naruto": "'cause that's my ninja way"
-        }
-      ]
-    }
-  ],
-  "English story": [
+  "Training story": [
     {
       "name": "Episode One",
       "requirements": {},
@@ -333,7 +170,7 @@
           "Portvert",
           0
         ],
-        "English story": "Episode One"
+        "Training story": "Episode One"
       },
       "story": [
         {
@@ -499,7 +336,7 @@
           "Portvert",
           1
         ],
-        "English story": "Episode Two"
+        "Training story": "Episode Two"
       },
       "story": [
         {
@@ -591,7 +428,7 @@
           "Portvert",
           2
         ],
-        "English story": "Episode Three"
+        "Training story": "Episode Three"
       },
       "story": [
         {
@@ -609,7 +446,8 @@
               "Nothing": "You feel a strong sense of relief."
             },
             {
-              "Nothing": "Tadeas seems more mature than Tobias does, so his lessons will propably be more useful than his brother's.", "relationship": [
+              "Nothing": "Tadeas seems more mature than Tobias does, so his lessons will propably be more useful than his brother's.",
+              "relationship": [
                 "Tadeas",
                 5
               ]
@@ -620,7 +458,8 @@
               "Nothing": "You do not agree with your assignment."
             },
             {
-              "Nothing": "Tobias looked like the more fun brother, you thought you'd enjoy his lessons more.", "relationship": [
+              "Nothing": "Tobias looked like the more fun brother, you thought you'd enjoy his lessons more.",
+              "relationship": [
                 "Tobias",
                 5
               ]
@@ -670,7 +509,8 @@
             },
             {
               "Nothing": "He smiles at all of you.",
-              "unlock": "Tadeas", "relationship": [
+              "unlock": "Tadeas",
+              "relationship": [
                 "Tadeas",
                 5
               ]
@@ -722,7 +562,8 @@
             },
             {
               "Girl": "Yeah! Oh, I'm Jenny, by the way. Jenny Kraus.",
-              "unlock": "Jenny", "relationship": [
+              "unlock": "Jenny",
+              "relationship": [
                 "Jenny",
                 5
               ]
@@ -750,7 +591,8 @@
             },
             {
               "Tadeas": "It's fine, we're just hanging out. You can call me Ted.",
-              "unlock": "Tadeas", "relationship": [
+              "unlock": "Tadeas",
+              "relationship": [
                 "Tadeas",
                 2
               ]
@@ -867,7 +709,9 @@
           ]
         }
       ]
-    },
+    }
+  ],
+  "Tragedy story": [
     {
       "name": "Episode Five",
       "requirements": {
@@ -875,245 +719,1004 @@
           "Portvert",
           3
         ],
-        "English story": "Episode Four"
+        "Training story": "Episode Four"
       },
       "story": [
         {
           "background": "universal"
         },
         {
-        "Nothing": "After months of training, you're finally ready to take your entrance exam."
-    },
-    {
-        "Nothing": "Nervousness spreads through the entire command."
-    },
-    {
-        "Nothing": "But even though you're nervous, you all are united by one thought: Be better than Tobias's command."
-    },
-    {
-        "Nothing": "It wasn't hard to notice the way he acted towards Ted, constantly pushing him down and belittleing his achievements.¨"
-    },
-    {
-        "Nothing": "You all really liked your commander - he was kind to you and always explained things in a way you all could understand."
-    },
-    {
-        "Nothing": "Which is why you all decided to avenge him - you aimed to be the only ones accepted to the order to prove Tadeas was the better instructor."
-    },
-    {
-        "Nothing": "And then the day of the exam came."
-    },
-    {
-        "Locked": {"Requirements": {
+          "Nothing": "After months of training, you're finally ready to take your entrance exam."
+        },
+        {
+          "Nothing": "Nervousness spreads through the entire command."
+        },
+        {
+          "Nothing": "But even though you're nervous, you all are united by one thought: Be better than Tobias's command."
+        },
+        {
+          "Nothing": "It wasn't hard to notice the way he acted towards Ted, constantly pushing him down and belittleing his achievements.¨"
+        },
+        {
+          "Nothing": "You all really liked your commander - he was kind to you and always explained things in a way you all could understand."
+        },
+        {
+          "Nothing": "Which is why you all decided to avenge him - you aimed to be the only ones accepted to the order to prove Tadeas was the better instructor."
+        },
+        {
+          "Nothing": "And then the day of the exam came."
+        },
+        {
+          "Locked": {
+            "Requirements": {
               "relationship": [
                 "Jenny",
                 5
               ]
             },
             "story": [
-            {
+              {
                 "Nothing": "You and Jenny were sitting at the training grounds as people from the committee were building their desks."
-            },
-            {
+              },
+              {
                 "Nothing": "You were talking about how likely were you to get accepted."
-            },
-            {
+              },
+              {
                 "Jenny": "Ah, I really can't do this! Why does it have to be swordfighting? I'm teribble at that!"
-            },
-            {
+              },
+              {
                 "Player": "Well, unlike me you can at least swing the sword properly!"
-            },
-            {
+              },
+              {
                 "Jenny": "Yeah, but I always mess up the tactics!"
-            },
-            {
+              },
+              {
                 "Nothing": "Your arguing would go on forever if Tadeas didn't come at that moment."
-            },
-            {
+              },
+              {
                 "Tadeas": "Oh come on, you two, you're not terrible at all. "
-            },
-            {
+              },
+              {
                 "Tadeas": "But since you're so nervous, I'll give you a quick reminder of our lesson."
-            },
-            {
+              },
+              {
                 "Tadeas": "When in doubt, you can use Miria the Great's feint, remember?"
-            },
-            {
+              },
+              {
                 "Tadeas": "It works like 90 percent of the time and you're both really good at it. "
-            },
-            {
+              },
+              {
                 "Tadeas": "But remember not to use it too often, your opponent would notice the pattern and defeat you easily, alright?"
-            },
-            {
+              },
+              {
                 "Nothing": "You and Jenny smile at each other."
-            },
-            {
+              },
+              {
                 "Player": "Yes, sir!"
-            }]},
-
-        "other": [
+              }
+            ]
+          },
+          "other": [
             {
-                "Nothing": "You were helping people from the committee build their desks. "
+              "Nothing": "You were helping people from the committee build their desks. "
             },
             {
-                "Nothing": "As you were assembling one, you noticed a desk with papers from one of the jury."
+              "Nothing": "As you were assembling one, you noticed a desk with papers from one of the jury."
             },
             {
-                "Nothing": "It had a chart with grading of various sword fighting moves."
+              "Nothing": "It had a chart with grading of various sword fighting moves."
             },
             {
-                "Nothing": "Ranked highest was Miria the Great's feint."
+              "Nothing": "Ranked highest was Miria the Great's feint."
             },
             {
-                "Player": "Oh, I can work with this."
+              "Player": "Oh, I can work with this."
             },
             {
-                "Player": "As long as I use this feint, I can deffinitely pass."
-            }]},
-    {
-        "Nothing": "After a while, the auditions begun."
-    },
-    {
-        "Nothing": "It was decided to be swordfighting match-off against commands, since there was lower propability you'd know each other's fighting style, but it didn't actually matter who won."
-    },
-    {
-        "Nothing": "The catch was to show you're better at swordfighting than your opponent."
-    },
-    {
-        "Nothing": "Pairs of two would stand in front of the committee which would rank them based on their performance. "
-    },
-    {
-        "Nothing": "The best of you would be accepted to the order."
-    },
-    {
-        "Nothing": "Finally it was your turn."
-    },
-    {
-        "Nothing": "In front of you was a pale man with sharp black eyes."
-    },
-    {
-        "Player": "Okay, let's do this!"
-    },
-    {
-        "Nothing": "The match begins and your opponent starts with a strong swing from left."
-    },
-    {
-        "Nothing": "You decide to"
-    },
-    {
-        "Swing the same direction": [
-            {
-                "Nothing": "As you do this, your opponent's sword hits your hands and your weapon leaps from your hands."
-            },
-            {
-                "Nothing": "You didn't exactly leave the best impression on the committee."
-            },
-            {
-                "Nothing": "You pick up your sword again, but the whole fight just continues terribly for you and eventually ends with your defeat."
-            },
-            {
-                "Nothing": "In the end, you weren't picked to enter the order."
-            },
-            {
-                "End": [
-
-                        "Normal ending", "Try again next year."
-
-                ]
+              "Player": "As long as I use this feint, I can deffinitely pass."
             }
-
-        ],
-
-        "Swing the opposite direction": [
+          ]
+        },
+        {
+          "Nothing": "After a while, the auditions begun."
+        },
+        {
+          "Nothing": "It was decided to be swordfighting match-off against commands, since there was lower propability you'd know each other's fighting style, but it didn't actually matter who won."
+        },
+        {
+          "Nothing": "The catch was to show you're better at swordfighting than your opponent."
+        },
+        {
+          "Nothing": "Pairs of two would stand in front of the committee which would rank them based on their performance. "
+        },
+        {
+          "Nothing": "The best of you would be accepted to the order."
+        },
+        {
+          "Nothing": "Finally it was your turn."
+        },
+        {
+          "Nothing": "In front of you was a pale man with sharp black eyes."
+        },
+        {
+          "Player": "Okay, let's do this!"
+        },
+        {
+          "Nothing": "The match begins and your opponent starts with a strong swing from left."
+        },
+        {
+          "Nothing": "You decide to"
+        },
+        {
+          "Swing the same direction": [
             {
-                "Nothing": "You counter-attack and are able to maintain your posture."
+              "Nothing": "As you do this, your opponent's sword hits your hands and your weapon leaps from your hands."
             },
             {
-                "Nothing": "The fight continues."
+              "Nothing": "You didn't exactly leave the best impression on the committee."
             },
             {
-                "Nothing": "Your opponent raises his hands to strike you from above."
+              "Nothing": "You pick up your sword again, but the whole fight just continues terribly for you and eventually ends with your defeat."
             },
             {
-                "Nothing": "What do you do?"
+              "Nothing": "In the end, you weren't picked to enter the order."
             },
             {
-                "Hit his uncovered body": [
+              "End": [
+                "Normal ending",
+                "Try again next year."
+              ]
+            }
+          ],
+          "Swing the opposite direction": [
+            {
+              "Nothing": "You counter-attack and are able to maintain your posture."
+            },
+            {
+              "Nothing": "The fight continues."
+            },
+            {
+              "Nothing": "Your opponent raises his hands to strike you from above."
+            },
+            {
+              "Nothing": "What do you do?"
+            },
+            {
+              "Hit his uncovered body": [
+                {
+                  "Nothing": "The pale man jumps back trying to dodge you and falls to the ground."
+                },
+                {
+                  "Nothing": "You decide to:"
+                },
+                {
+                  "Point the sword at him and demand he gives up": [
                     {
-                        "Nothing": "The pale man jumps back trying to dodge you and falls to the ground."
+                      "Nothing": "Your oppponent quickly agrees to your suggestion."
                     },
                     {
-                        "Nothing": "You decide to:"
-                    },
-                    {"Point the sword at him and demand he gives up": [
-                        {"Nothing": "Your oppponent quickly agrees to your suggestion."},
-                        {"Nothing": "You are victorious."}
-                    ],
-                        "Wait for him to get back up": [
-                            {"Nothing": "You have missed your best opportunity."},
-                            {"Nothing": "Your opponent quickly finds your weakness and defeats you."},
-                            {"Nothing": "You lose the match and aren't chosen to enter the order."},
-                            {"Nothing": "In the order there is no place for those who wait."},
-                            {
-                "End": [
-
-                        "Normal ending", "Try again next year."
-
-                ]
-            }
-                        ]
+                      "Nothing": "You are victorious."
                     }
-                ]
-            }],
-        "Do Miria the Great's feint": [
+                  ],
+                  "Wait for him to get back up": [
+                    {
+                      "Nothing": "You have missed your best opportunity."
+                    },
+                    {
+                      "Nothing": "Your opponent quickly finds your weakness and defeats you."
+                    },
+                    {
+                      "Nothing": "You lose the match and aren't chosen to enter the order."
+                    },
+                    {
+                      "Nothing": "In the order there is no place for those who wait."
+                    },
+                    {
+                      "End": [
+                        "Normal ending",
+                        "Try again next year."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "Do Miria the Great's feint": [
             {
-                "Nothing": "You move quickly and are able to get your opponent's sword out of his hand."
+              "Nothing": "You move quickly and are able to get your opponent's sword out of his hand."
             },
             {
-                "Nothing": "It gives you the confidence you needed. Soon you find yourself victorious."
-            }]},
-
-    {
-        "Nothing": "Later you even find out you've been accepted to the Order."
-    },
-    {
-        "Locked": {"Requirements": {
+              "Nothing": "It gives you the confidence you needed. Soon you find yourself victorious."
+            }
+          ]
+        },
+        {
+          "Nothing": "Later you even find out you've been accepted to the Order."
+        },
+        {
+          "Locked": {
+            "Requirements": {
               "relationship": [
                 "Jenny",
                 5
               ]
             },
             "story": [
-            {
+              {
                 "Nothing": "You and Jenny, who also got in, go out to celebrate."
-            },
-            {
+              },
+              {
                 "Nothing": "You spend the whole night chatting in a nearby tavern."
-            },
-            {
+              },
+              {
                 "Nothing": "You've got bright future ahead of you with your friends there to support you."
-            },
-            {
+              },
+              {
                 "Nothing": "At least for now..."
+              }
+            ]
+          },
+          "other": [
+            {
+              "Nothing": "Soon after the results are out, Tobias aproachs you."
+            },
+            {
+              "Tobias": "So you got in, huh..."
+            },
+            {
+              "Tobias": "Guess we can expect many things from you."
+            },
+            {
+              "Nothing": "If only he knew.."
             }
-
-
-        ]
-    },
-        "other": [
-            {
-                "Nothing": "Soon after the results are out, Tobias aproachs you."
-            },
-            {
-                "Tobias": "So you got in, huh..."
-            },
-            {
-                "Tobias": "Guess we can expect many things from you."
-            },
-            {
-                "Nothing": "If only he knew.."
-            }
-        ]
-    }
-
+          ]
+        }
       ]
-}]}
+    },
+    {
+      "name": "Episode Six",
+      "requirements": {
+        "level": [
+          "Portvert",
+          4
+        ],
+        "Tragedy story": "Episode Five"
+      },
+      "story": [
+        {
+          "backround": "universal"
+        },
+        {
+          "Nothing": "The next day comes. As you move in to your new dorms, you think about your family."
+        },
+        {
+          "Nothing": "You haven't seen them since the day you got accepted to the program."
+        },
+        {
+          "Nothing": "You were writing letters to them, but still..."
+        },
+        {
+          "Nothing": "You hoped they were okay."
+        },
+        {
+          "Nothing": "After you finished packing, you went to the common room to see your tasks for the day."
+        },
+        {
+          "Nothing": "You found out you were supposed to patrol the area this evening with Tadeas, since novices shouldn't do their duty alone, until they're proven worthy."
+        },
+        {
+          "Nothing": "With anticipation, you wait for the evening."
+        },
+        {
+          "Nothing": "When everything goes dark, you wait for Tadeas outside the dorm building."
+        },
+        {
+          "Tadeas": "Ready to go?"
+        },
+        {
+          "Nothing": "You jump surprised at his sudden apperance."
+        },
+        {
+          "Player": "Yeah..."
+        },
+        {
+          "Nothing": "You quickly shake away your shock and the two of you set out on your duty.",
+          "unlock": "Tadeas"
+        },
+        {
+          "Nothing": "Everything goes smoothly until you suddenly hear a familiar voice."
+        },
+        {
+          "Voice": "I finally found you!!!"
+        },
+        {
+          "Nothing": "You turn around to see your little sister Bianka running towards you."
+        },
+        {
+          "Bianka": "I've missed you!"
+        },
+        {
+          "Nothing": "She runs towards you and hugs you tightly."
+        },
+        {
+          "Player": "Bianka, what are you doing here?"
+        },
+        {
+          "Bianka": "Mum said, you got accepted to the order so I thought I'd meet you out on patrol eventually."
+        },
+        {
+          "Bianka": "I kept watch of the order building and when I saw you exiting a while ago I sneaked out to find you."
+        },
+        {
+          "Bianka": "I would be here a lot quicker, if it wasn't for the earthquake tho."
+        },
+        {
+          "Tadeas": "What earthquake?"
+        },
+        {
+          "Nothing": "You quickly notice the seriousness in your superior's voice."
+        },
+        {
+          "Bianka": "Two streets away. You guys didn't hear it? It was reeeealy loud."
+        },
+        {
+          "Tadeas": "We should check it out."
+        },
+        {
+          "Nothing": "He then bends down to Bianka's level."
+        },
+        {
+          "Tadeas": "Could you please lead us there, sunshine?"
+        },
+        {
+          "Bianka": "Sure thing, mister!"
+        },
+        {
+          "Nothing": "The three of you quickly move to the place Bianka mentioned. Though, apart from some empty boxes scattered around, you find nothing suspitious."
+        },
+        {
+          "Player": "Are you sure this is the right place?"
+        },
+        {
+          "Bianka": "Of course I am! I-"
+        },
+        {
+          "Nothing": "Yet Bianka never got to finish her sentence. The earth shook once again and the whole place quickly became a mess."
+        },
+        {
+          "Nothing": "The earth suddenly became liquid and elektricity was felt in the air."
+        },
+        {
+          "Nothing": "You'd become part of this mess too if Tadeas didn't pull you away. However..."
+        },
+        {
+          "Player": "BIANKA!!!"
+        },
+        {
+          "Nothing": "From safe distance you saw your little sister getting sucked into the liquid ground..."
+        },
+        {
+          "Nothing": "When she disappeared, the place became solid once again."
+        },
+        {
+          "Player": "What...just happened?"
+        },
+        {
+          "Tadeas": "I don't know. Let's tell that to the higher-ups. They'll know what to do."
+        },
+        {
+          "Nothing": "You quietly reach the Averil's headquarters. However, when you tell your chief what happened, he just tells you to let that be."
+        },
+        {
+          "Tadeas": "What do you mean?"
+        },
+        {
+          "Chief": "Disapearances like this happen pretty often, they're the reason the order was founded in the first place."
+        },
+        {
+          "Chief": "When they happen, we just announce the missing person as a criminal to cover up. Don't worry too much about it."
+        },
+        {
+          "Chief": "You can go now. I'll send someone to finish the rest of your patrol."
+        },
+        {
+          "Nothing": "And then you're left alone. Tadeas went back to his room saying he had something to think about. And it wasn't like your head was much clearer.."
+        }
+      ]
+    }
+  ],
+  "Team story": [
+    {
+      "name": "Episode Seven",
+      "requirements": {
+        "level": [
+          "Filimia",
+          0
+        ],
+        "Tragedy story": "Episode Six"
+      },
+      "story": [
+        {
+          "backround": "universal"
+        },
+        {
+          "Nothing": "After the incident with Bianka, you couldn't sleep worried about her. What really happened? How could the higher-ups just cover it up?"
+        },
+        {
+          "Nothing": "And it seemed you weren't the only one concerned about this."
+        },
+        {
+          "Tobias": "HEY, YOU!! COME HERE IMMEDIATELY!!!"
+        },
+        {
+          "Nothing": "Tadeas had gone missing. And Tobias, as his brother, was rightfully concerned about what happened."
+        },
+        {
+          "Nothing": "You quietly explain the situation to him."
+        },
+        {
+          "Tobias": "...and you just let that happen, you useless...forget it. I'm leaving. There's nothing holding me here now."
+        },
+        {
+          "Let him go": [
+            {
+              "Nothing": "You quietly watch Tobias's back leaving. You wonder if anything would change had you gone with him."
+            },
+            {
+              "End": [
+                "Bad ending",
+                "your sister is lost forever."
+              ]
+            }
+          ],
+          "Ask him to take you with him": [
+            {
+              "Tobias": "What?"
+            },
+            {
+              "Player": "My sister got lost as well. I want to find her."
+            },
+            {
+              "Blackmail him": [
+                {
+                  "Player": "If you won't let me, I'll tell the order you deserted and the direction you went in."
+                },
+                {
+                  "Player": "I can also help with anything you want. I can't get out of the town alone."
+                },
+                {
+                  "Player": "I can even help you find Ted!"
+                }
+              ],
+              "Offer to help": [
+                {
+                  "Player": "I can also help with anything you want. I can't get out of the town alone."
+                },
+                {
+                  "Player": "I can even help you find Ted!",
+                  "relationship": [
+                    "Tobias",
+                    5
+                  ]
+                }
+              ]
+            },
+            {
+              "Tobias": "Urrgh, fine, I get it. Pack your things, we're leaving in ten minutes.",
+              "unlock": "Tobias"
+            },
+            {
+              "Player": "Yes, sir!"
+            },
+            {
+              "Nothing": "In the next hour you're already far from Portvert. You're on your way to Filimia a country full of forests and swamps. "
+            },
+            {
+              "Nothing": "The order certainly won't look for you there, since no one has been able to get through the borders."
+            },
+            {
+              "Nothing": "But Tobias believes he can and as his sidekick, you have no right to complain."
+            },
+            {
+              "Nothing": "You reach the border pretty soon. The forest is as dark as night, yet you still dive in."
+            },
+            {
+              "Nothing": "You're deep in a swamp a minute later."
+            },
+            {
+              "Tobias": "Damn you, nature!!!"
+            },
+            {
+              "Female voice": "Oh, who do we have here?"
+            },
+            {
+              "Nothing": "You feel yourself getting pulled from the swamp. In front of you are three pale skinned men and one woman, all of them with white hair and reddish eyes."
+            },
+            {
+              "Nothing": "For some reason, they share a lot of features wih you."
+            },
+            {
+              "Nothing": "Your mom told you she was from another country. That had to be Filimia!"
+            },
+            {
+              "Tobias": "Let me go, idiot!"
+            },
+            {
+              "Nothing": "You turn around to see Tobi struggling with two other men. "
+            },
+            {
+              "Female": "I'm curious - what is a Filiminian like you doing in a swamp? Shouldn't you know how to get around them? And who is this guy?"
+            },
+            {
+              "Nothing": "You find the woman pretty kind. You tell her your story."
+            },
+            {
+              "Tobias": "Dude, didn't Ted teach you anything about trusting an unknown individual?"
+            },
+            {
+              "Female": "Well, lucky for you, I know a way to help you. My name is Niagi."
+            },
+            {
+              "Niagi": "Welcome to Filimia."
+            },
+            {
+              "Niagi": "Normally outsiders aren't allowed in, but since you're Filimian, we'll let this pass."
+            },
+            {
+              "Niagi": "Now, I'll lead you to our ghost. She'll propably know the answer you seek."
+            },
+            {
+              "Nothing": "Ghost? Aren't those only in legends?"
+            },
+            {
+              "Nothing": "In your world people believe in ghosts as guardians of the gods's will. It's said there is one residing in and guarding each region."
+            },
+            {
+              "Nothing": "No one has ever seen one though. And now you're going to meet one?"
+            },
+            {
+              "Nothing": "Niagi quickly dances through the swamps. You have hard time folloving her, but finally you arrive at a glade."
+            },
+            {
+              "Niagi": "Lady Lilliana? Are you here?"
+            },
+            {
+              "Lilliana": "Yes, what do you need from me?"
+            },
+            {
+              "Nothing": "A pale ghost-like figure appears in front of you. It looks just like you had imagined, with one exeption..."
+            },
+            {
+              "Tobias": "A child?"
+            },
+            {
+              "Lilliana": "Yes. I was once human, you know? But I was killed yound and since then I'm Filimia's ghost."
+            },
+            {
+              "Lilliana": "Now then..."
+            },
+            {
+              "Nothing": "She turns to you, knowingly."
+            },
+            {
+              "Lilliana": "What do you want to know?"
+            },
+            {
+              "Nothing": "For the third time that day, you explain your situation."
+            },
+            {
+              "Lilliana": "I think I know what happened."
+            },
+            {
+              "Lilliana": "Have you head the story of the Library?"
+            },
+            {
+              "Nothing": "YOu nod. The Library is a legendary place built by the gods to study humans. There are even books about every human and their future."
+            },
+            {
+              "Lilliana": "Well, the gods still reside in the Library, yet they're not satisfied with studying humans just from books. Sometimes they just pull a human dow there as well."
+            },
+            {
+              "Lilliana": "I think that's what happened to your sister."
+            },
+            {
+              "Tobias": "...and my mother..."
+            },
+            {
+              "Lilliana": "What did you say?"
+            },
+            {
+              "Tobias": "Oh, nothing."
+            },
+            {
+              "Player": "So how do we get to the Library?"
+            },
+            {
+              "Lilliana": "That I don't know. But I know about someone that should know."
+            },
+            {
+              "Lilliana": "Go to Laverna and seek a girl named Katrin Spierce. She has long wanted to go to the Library and is just lacking the manpower to do so. She should be in a small town called Daria now."
+            },
+            {
+              "Lilliana": "There's also good swordsmith there so you can buy yourself some weapons."
+            },
+            {
+              "Nothing": "And with that, the two of you set out on a journey again"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Episode Eight",
+      "requirements": {
+        "level": [
+          "Filimia",
+          1
+        ],
+        "Team story": "Episode Seven"
+      },
+      "story": [
+        {
+          "backround": "universal"
+        },
+        {
+          "Nothing": "Just as Lilliana told you, you immediately set off to Laverna."
+        },
+        {
+          "Nothing": "The walk there is in complete silence since both of you have many things to think about."
+        },
+        {
+          "Nothing": "Finally you reach the town you wanted to go to."
+        },
+        {
+          "Tobias": "Well, here's the swordsmith."
+        },
+        {
+          "Locked": {
+            "Requirements": {
+              "relationship": [
+                "Tobias",
+                7
+              ]
+            },
+            "story": [
+              {
+                "Tobias": "Let's go, we'll pick you a suitable weapon, since you're that bad with sword."
+              },
+              {
+                "Nothing": "You and Tobi enter the shop. Your companion doesn't let you touch anything but picks a beautiful polearm for you."
+              },
+              {
+                "Tobias": "This should work better for you."
+              },
+              {
+                "Player": "Thank you..."
+              },
+              {
+                "Tobias": "Don't mention it."
+              }
+            ]
+          },
+          "other": [
+            {
+              "Nothing": "Tobias enters the shop alone and haves you wait for him outside."
+            },
+            {
+              "Nothing": "You don't need a weapon anyway, according to him."
+            }
+          ]
+        },
+        {
+          "Nothing": "After you're done shopping, you set out to the market. If there is any place to find this Katrin, its here."
+        },
+        {
+          "Nothing": "You meaninglessly walk around, until you hear someone mention the Library."
+        },
+        {
+          "Nothing": "You and Tobias look at each other and then listen in."
+        },
+        {
+          "Female voice": "...and is this girl skilled enough that her inventions would last in the Library?"
+        },
+        {
+          "Male voice": "Yes, they say so, Miss Katrin. She's a genious apparently."
+        },
+        {
+          "Katrin": "Good. Then I'll go meet her. Thank you, Alejandro."
+        },
+        {
+          "Nothing": "At this cue Tobias gets out from your disguise."
+        },
+        {
+          "Tobias": "Hold on for a moment, Miss Katrin~"
+        },
+        {
+          "Katrin": "Who the hell are you?"
+        },
+        {
+          "Tobias": "Relax, We're here to help you. We heard you're also interested in the Library."
+        },
+        {
+          "Katrin": "And if I was?"
+        },
+        {
+          "Tobias": "Then we'd like to offer our services. I'm a really good fighter and my companion here...uh..."
+        },
+        {
+          "Player": "I am really good at orientation! I don't get lost, even underground."
+        },
+        {
+          "Nothing": "That wasn't half a lie. You've always had a sharp sense of direction and as Niagi explained to you earlier that day, this sense is shared among every Filimian."
+        },
+        {
+          "Katrin": "Oh...and what would you like as a reward for joining us?"
+        },
+        {
+          "Tobias": "We would just like to enter the Library, nothing more."
+        },
+        {
+          "Tobias": "We can also offer you a secret base, well sheltered."
+        },
+        {
+          "Katrin": "And where would that base be?"
+        },
+        {
+          "Tobias": "Filimia"
+        },
+        {
+          "Katrin": "Filimia?!? YOu can get there?"
+        },
+        {
+          "Tobias": "Yes, or at least they can."
+        },
+        {
+          "Katrin": "Well, you hear that Alejandro? Looks like we'll have a company now."
+        },
+        {
+          "Alejandro": "Yes, miss."
+        },
+        {
+          "Katrin": "Now, before you two stepped out to me, I was on my way to meet another of our future companions."
+        },
+        {
+          "Katrin": "Come with me. Let's meet them."
+        },
+        {
+          "Alejandro": "I'll lead the way then."
+        },
+        {
+          "Nothing": "The four of you then find yourselves in an old hotel. Alejandro takes you to the dining room. There you see a little girl and an old man, tough he's not as old as Alejandro."
+        },
+        {
+          "Little girl": "COme on, Sean, one more dohnut, pleeeeease-"
+        },
+        {
+          "Sean": "I've told you no already!"
+        },
+        {
+          "Alejandro": "Excuse us, Mister Sean."
+        },
+        {
+          "Sean": "Ah, sorry. Well you must be Katrin then? And they are-?"
+        },
+        {
+          "Katrin": "Other members of our party. "
+        },
+        {
+          "Nothing": "You and Tobias quickly introduce yourselves."
+        },
+        {
+          "Katrin": "Well then, since you're both here, I assume you agreed to my offer?"
+        },
+        {
+          "Sean": "Yeah, we...really need the money and a place to stay. And I'm sure Sasha wouldn't mind helping you if she can get few more dohnuts out of that."
+        },
+        {
+          "Katrin": "Then it's settled."
+        },
+        {
+          "Nothing": "Katrin and Sean shake hands. And then your group takes off to your new base in Filimia."
+        }
+      ]
+    },
+    {
+      "name": "Episode Nine",
+      "requirements": {
+        "level": [
+          "Filimia",
+          2
+        ],
+        "Team story": "Episode Eight"
+      },
+      "story": [
+        {
+          "backround": "universal"
+        },
+        {
+          "Nothing": "And than a few years pass."
+        },
+        {
+          "Nothing": "Even though you wanted to enter the Library as soon as possible, Katrin wanted to find the most suitable spot."
+        },
+        {
+          "Nothing": "It turned out there was an entrance near every Averil base, so you had to scout them all. "
+        },
+        {
+          "Nothing": "During the years Niagi taught you everything about being a Filimian, so now you were super knowledgeable about orientation in nature and even all kinds of poisonous flowers."
+        },
+        {
+          "Nothing": "Tobias taught you how to fight as well, so you considered yourself pretty strong."
+        },
+        {
+          "Nothing": "You were even known as the Navigator in the underworld."
+        },
+        {
+          "Nothing": "In front of you was the last base. Because Katrin didn't want anybody to find out your goal, you had to be secretive about it."
+        },
+        {
+          "Nothing": "So you got into an agreement with another party to rob this base. You were now waiting for them."
+        },
+        {
+          "Voice": "Who is this Navigator anyway?"
+        },
+        {
+          "Nothing": "You heard someone coming your way. You quickly hide behind a tree. It may the party you're looking for, but better be safe than sorry."
+        },
+        {
+          "Another voice": "The most famous thief! I'm sure they'll be able to help us!"
+        },
+        {
+          "Voice": "And how do you know they won't betray us?"
+        },
+        {
+          "Player": "That voice...it sounds familiar..."
+        },
+        {
+          "Nothing": "You quickly hid behind a tree. "
+        },
+        {
+          "Another voice": "Come on, it'll be easy, Ted. Everything is safe and we'll be loaded after this."
+        },
+        {
+          "Player": "Ted...Tadeas?!? Tadeas Varren? Could that be?"
+        },
+        {
+          "Nothing": "You quickly peek from behind the tree. An unknown person's back is facing you, but behind them..."
+        },
+        {
+          "Nothing": "Tadeas's eyes widen as he sees you behind the tree. "
+        },
+        {
+          "Player": "Ah, shit, I've been caught...well, time to act natural, I guess."
+        },
+        {
+          "Nothing": "As the other person notices Ted staring behind his back and turns around, you seemingly calmly step out from behind the tree. "
+        },
+        {
+          "Other person": "Ah...Navigator...right?"
+        },
+        {
+          "Player": "Yes."
+        },
+        {
+          "Other person": "Well then, I'm Brian and this is Tadeas."
+        },
+        {
+          "Brian": "I believe we've agreed on the terms of today's actions, right?"
+        },
+        {
+          "Player": "Yes. So let's get going."
+        },
+        {
+          "Nothing": "Clearing the base was easy for you with your new companions. Ted didn't say a word to you, event hough he clearly recognised you."
+        },
+        {
+          "Nothing": "You even quickly found the entrance to the Library, but it was narrow and not worth using."
+        },
+        {
+          "Nothing": "After the action was over, Brian was quick to take his money and disappear. "
+        },
+        {
+          "Nothing": "However, Ted didn't."
+        },
+        {
+          "Tadeas": "What are you doing here?"
+        },
+        {
+          "None of your business": [
+            {
+              "Player": "You left a long time ago? Why should you care now?"
+            },
+            {
+              "Player": "And with that you leave a confused Tadeas where he was and return to the base."
+            },
+            {
+              "Nothing": "It was time to venture into the depths of the Library."
+            }
+          ],
+          "Saving my sister": [
+            {
+              "Player": "I am saving my sister from the hands of gods.", "relationship": ["Tadeas", 5]
+            },
+            {
+              "Nothing": "You explain to Ted everything that happened."
+            },
+            {
+              "Nothing": "He doesn't take long. He immediately agrees to go with you."
+            },
+            {
+              "Nothing": "When you arrive to the base, you just indroduce him to everyone else as a new companion. Nobody actually minds that - you were in need of another fighter."
+            },
+            {
+              "Nothing": "Just Tobias eyes his brother up and down, but doesn't say a thing."
+            },
+            {
+              "Nothing": "And the next day is the time to venture into the depths of the Library"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Character story": [
+    {
+      "name": "Tadeas",
+      "requirements": {
+        "relationship": [
+          "Tadeas",
+          5
+        ]
+      },
+      "story": [
+
+    {
+        "Nothing": "A young boy stands in front of an old house."
+    },
+    {
+        "Tadeas": "What do you mean, mum is a wanted criminal?"
+    },
+    {
+        "Officer": "It is what it is, kid. She comitted great crimes and is now locked in the deepest part of the prison."
+    },
+    {
+        "Tadeas": "Can I see her?"
+    },
+    {
+        "Officers": "Only the highest ranking officers have access there, sorrz kid."
+    },
+    {
+        "Tadeas": "Then'll become one. I'll join the Masters of Averil and then I'll ask mum myself what happened."
+    },
+    {
+        "Tadeas": "She's innocent, you'll see!"
+    }
+]
+
+
+    },
+    {
+      "name": "Tobias",
+      "requirements": {
+        "relationship": [
+          "Tobias",
+          5
+        ]
+      },
+      "story": [
+        {
+        "Nothing": "A group of young bozs beats up another, who used to be part of the group."
+    },
+    {
+        "Nothing": "But then his mother became a criminal...and they turned against him..."
+    },
+    {
+        "Tobias": "I'll be better than any of you, I swear..."
+    },
+    {
+        "Tobias": "Deffinitely better"
+    }
+]}
+  ]
+}

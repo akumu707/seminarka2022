@@ -10,7 +10,7 @@ class StoryChoiceScreen(ScreenBase):
         ScreenBase.__init__(self, screen_options, ui_manager, game_settings, background_surface)
 
         self.add_label("Choose", (350, 100, -1, -1,))
-        self.choice_list = self.add_selection_list((320, 200, 120, 200), self.game_settings.file.keys(), ObjectID(class_id='@selection_list_item'))
+        self.choice_list = self.add_selection_list((320, 200, 130, 100), self.game_settings.file.keys(), ObjectID(class_id='@selection_list_item'))
         self.add_button('Submit', (350, 350, -1, -1), self._on_click_submit)
         self.add_button('Back', (290, 350, -1, -1), self._on_click_back)
         self.add_button('Save', (430, 350, -1, -1), self._on_click_save)

@@ -1,28 +1,35 @@
 {
   "levels":{
-    "Portvert": [false, false, false, false, false]
+    "Portvert": [false, false, false, false, false, false],
+    "Filimia": [false, false, false, false, false, false]
   },
   "scenes": {
-    "Main story": {"Episode One": false,
+    "Training story": {
+      "Episode One": false,
       "Episode Two": false,
-      "Episode Three": false},
-    "Sean's Story": [
-      {"Episode One": false}
-    ],
-    "Test story": [
-      {"Naruto test": false}
-    ],
-    "English story":
-      {"Episode One": false, "Episode Two": false, "Episode Three": false, "Episode Four": false, "Episode Five": false}
+      "Episode Three": false,
+      "Episode Four": false
+    },
+    "Tragedy story":
+    {"Episode Five": false, "Episode Six": false},
+    "Team story":
+    { "Episode Seven": false, "Episode Eight": false, "Episode Nine": false},
+    "Character story":
+    {"Tadeas":  false, "Tobias": false}
 
   },
   "choices": {
-    "English story":
-      {"Episode One": [],
+    "Training story": {
+      "Episode One": [],
       "Episode Two": [],
       "Episode Three": [],
-      "Episode Four": [],
-      "Episode Five": []
-      }
+      "Episode Four": []
+    },
+    "Tragedy story":
+    {"Episode Five": [], "Episode Six": []},
+    "Team story":
+    { "Episode Seven": [], "Episode Eight": [], "Episode Nine": []},
+    "Character story":
+    {"Tadeas": [], "Tobias": []}
   }
 }

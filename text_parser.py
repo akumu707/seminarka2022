@@ -23,7 +23,7 @@ def parse_lines(lines):
 
 
 with open(os.path.join("resources", "data", "try.json"), "w", encoding="utf-8") as w_file:
-    with open(os.path.join("try.txt"), "r", encoding="utf-8") as r_file:
+    with open(os.path.join("tobi.txt"), "r", encoding="utf-8") as r_file:
         """
         for line in r_file:
             if number_of_tabs == 0:
