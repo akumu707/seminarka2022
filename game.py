@@ -29,25 +29,25 @@ class GameApp:
         else:
             self.window_surface = pygame.display.set_mode(self.screen_options.resolution)
 
-        self.ui_manager = UIManager(self.screen_options.resolution, "theme.json") #zalozeni managera
+        self.manager = UIManager(self.screen_options.resolution, "theme.json") #zalozeni managera
 
         self.background_surface = pygame.Surface(self.screen_options.resolution)
-        self.background_surface.fill(self.ui_manager.get_theme().get_colour('dark_bg')) #pozadi
+        self.background_surface.fill(self.manager.get_theme().get_colour('dark_bg')) #pozadi
 
-        self.screen_options.welcome_screen = WelcomeScreen(self.screen_options, self.ui_manager, self.game_settings, self.background_surface)
-        self.screen_options.story_choice_screen = StoryChoiceScreen(self.screen_options, self.ui_manager, self.game_settings, self.background_surface)
-        self.screen_options.episode_screen = EpisodeScreen(self.screen_options, self.ui_manager, self.game_settings, self.background_surface)
-        self.screen_options.player_setup_screen = PlayerSetupScreen(self.screen_options, self.ui_manager, self.game_settings, self.background_surface)
-        self.screen_options.load_screen = LoadScreen(self.screen_options, self.ui_manager,
-                                                                    self.game_settings, self.background_surface)
-        self.screen_options.save_screen = SaveScreen(self.screen_options, self.ui_manager,
-                                                                    self.game_settings, self.background_surface)
-        self.screen_options.exploration_screen = ExplorationScreen(self.screen_options, self.ui_manager,
+        self.screen_options.welcome_screen = WelcomeScreen(self.screen_options, self.manager, self.game_settings, self.background_surface)
+        self.screen_options.story_choice_screen = StoryChoiceScreen(self.screen_options, self.manager, self.game_settings, self.background_surface)
+        self.screen_options.episode_screen = EpisodeScreen(self.screen_options, self.manager, self.game_settings, self.background_surface)
+        self.screen_options.player_setup_screen = PlayerSetupScreen(self.screen_options, self.manager, self.game_settings, self.background_surface)
+        self.screen_options.load_screen = LoadScreen(self.screen_options, self.manager,
                                                      self.game_settings, self.background_surface)
-        self.screen_options.choice_screen = ChoiceScreen(self.screen_options, self.ui_manager,
+        self.screen_options.save_screen = SaveScreen(self.screen_options, self.manager,
+                                                     self.game_settings, self.background_surface)
+        self.screen_options.exploration_screen = ExplorationScreen(self.screen_options, self.manager,
                                                                    self.game_settings, self.background_surface)
-        self.screen_options.level_screen = LevelScreen(self.screen_options, self.ui_manager,
+        self.screen_options.choice_screen = ChoiceScreen(self.screen_options, self.manager,
                                                          self.game_settings, self.background_surface)
+        self.screen_options.level_screen = LevelScreen(self.screen_options, self.manager,
+                                                       self.game_settings, self.background_surface)
         self.screen_options.show(self.screen_options.welcome_screen)
 
     def run(self):
@@ -62,12 +62,13 @@ class GameApp:
                     if event.key == K_ESCAPE:
                         is_running = False
                 self.screen_options.active_screen.process_event(event)
-                self.ui_manager.process_events(event)
+                self.manager.process_events(event)
+
+            self.manager.update(time_delta)
 
             self.window_surface.blit(self.background_surface, (0, 0))
-            self.ui_manager.draw_ui(self.window_surface)
+            self.manager.draw_ui(self.window_surface)
 
-            self.ui_manager.update(time_delta)
             pygame.display.update()
 
 
