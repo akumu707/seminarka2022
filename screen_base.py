@@ -8,24 +8,31 @@ class ScreenBase:
         self.ui_manager = ui_manager
         self.game_settings = game_settings
         self.background_surface = background_surface
-        self.widgets = []
+        self.buttons = []
+        self.other_widgets = []
+        self.w_rects = []
 
     def add_button(self, text, rect, on_click):
-        button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(rect[0], rect[1], rect[2], rect[3]),
+        rect = pygame.Rect(rect[0], rect[1], rect[2], rect[3])
+        button = pygame_gui.elements.UIButton(relative_rect=rect,
                                               text=text,
                                               manager=self.ui_manager)
-        self.widgets.append((button, on_click))
+        self.buttons.append((button, on_click))
+        self.w_rects.append(rect)
 
     def add_label(self, text, rect):
-        label = pygame_gui.elements.UILabel(relative_rect=pygame.Rect(rect[0], rect[1], rect[2], rect[3]),
+        rect = pygame.Rect(rect[0], rect[1], rect[2], rect[3])
+        label = pygame_gui.elements.UILabel(relative_rect=rect,
                                             text=text,
                                             manager=self.ui_manager)
-        self.widgets.append((label, None))
+        self.other_widgets.append(label)
+        self.w_rects.append(rect)
         return label
 
     def add_text_entry_line(self, rect):
         text_entry_line = pygame_gui.elements.UITextEntryLine(relative_rect=pygame.Rect(rect[0], rect[1], rect[2], rect[3]), manager=self.ui_manager)
-        self.widgets.append((text_entry_line, None))
+        self.other_widgets.append(text_entry_line)
+        self.w_rects.append(rect)
         return text_entry_line
 
     def add_selection_list(self, rect, item_list, object_id=None):
@@ -38,7 +45,7 @@ class ScreenBase:
             selection_list = pygame_gui.elements.UISelectionList(
                 relative_rect=pygame.Rect(rect[0], rect[1], rect[2], rect[3]),
                 manager=self.ui_manager, item_list=item_list, object_id=object_id)
-        self.widgets.append((selection_list, None))
+        self.other_widgets.append(selection_list)
         return selection_list
 
     def add_bg(self, bg_path):
@@ -47,19 +54,23 @@ class ScreenBase:
 
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
-            for (ui_element, todo) in self.widgets:
-                if event.ui_element == ui_element:
+            for (button, todo) in self.buttons:
+                if event.ui_element == button:
                     todo()
 
     def hide(self):
-        for w in self.widgets:
-            w[0].hide()
+        for b, _ in self.buttons:
+            b.hide()
+        for w in self.other_widgets:
+            w.hide()
 
     def show(self):
         self.refresh()
         self.background_surface.blit(self.bg, (0, 0))
-        for w in self.widgets:
-            w[0].show()
+        for b, _ in self.buttons:
+            b.show()
+        for w in self.other_widgets:
+            w.show()
 
     def refresh(self):
         pass

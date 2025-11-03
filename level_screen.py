@@ -13,16 +13,6 @@ class LevelScreen(ScreenBase):
         self.level = None
         self.hide()
 
-    def hide(self):
-        for w in self.widgets:
-            w[0].hide()
-
-    def show(self):
-        self.refresh()
-        self.background_surface.blit(self.bg, (0, 0))
-        for w in self.widgets:
-            w[0].show()
-
     def _create_sprite(self, x, y):
         self.sprite = self.sprite_image.get_rect()
         self.sprite.x = x

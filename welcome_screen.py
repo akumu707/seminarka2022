@@ -9,11 +9,11 @@ class WelcomeScreen(ScreenBase):
         ScreenBase.__init__(self, screen_options, ui_manager, game_settings, background_surface)
 
         self.add_label("Welcome", (350, 100, -1, -1,))
-        self.add_button('Start new game', pygame.Rect((310, 200), (-1, -1)),
+        self.add_button('Start new game', (310, 200, -1, -1),
                         lambda: self.screen_options.show(self.screen_options.player_setup_screen))
-        self.add_button('Load game', pygame.Rect((330, 300), (-1, -1)),
+        self.add_button('Load game', (330, 300, -1, -1),
                         lambda: self.screen_options.show(self.screen_options.load_screen))
-        self.add_button('End', pygame.Rect((350, 400), (-1, -1)), self._on_click_end)
+        self.add_button('End', (350, 400, -1, -1), self._on_click_end)
         self.add_bg("resources/images/background.jpg")
 
         self.hide()
