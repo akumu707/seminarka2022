@@ -10,9 +10,9 @@ class SaveScreen(ScreenBase):
         ScreenBase.__init__(self, screen_options, ui_manager, game_settings, background_surface)
 
         self.add_label("Name your saved game:", (1/4, 1/3, -1, -1))
-        self.file_name_input = self.add_text_entry_line((1/4, 3/6, 5/6, 1/8))
-        self.add_button('Continue', (1/4, 1/4, -1, -1), self._on_click_continue)
-        self.add_button('Back', (1/4, 1/4, -1, -1),
+        self.file_name_input = self.add_text_entry_line((1/2, 190/600, 1/8, 5/60))
+        self.add_button('Continue', (25/80, 25/60, -1, -1), self._on_click_continue)
+        self.add_button('Back', (35/80, 25/60, -1, -1),
                         lambda: self.screen_options.show(self.screen_options.choice_screen))
         self.add_bg("resources/images/background.jpg")
 
