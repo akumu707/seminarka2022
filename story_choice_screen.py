@@ -88,8 +88,5 @@ class StoryChoiceScreen(ScreenBase):
             self.refresh()
 
     def show(self):
-        self.refresh()
-        self.background_surface.blit(self.bg, (0, 0))
+        super().show()
         self.set_choice_list()
-        for w in self.widgets:
-            w[0].show()
