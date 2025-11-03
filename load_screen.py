@@ -9,12 +9,12 @@ class LoadScreen(ScreenBase):
     def __init__(self, screen_options, ui_manager, game_settings, background_surface):
         ScreenBase.__init__(self, screen_options, ui_manager, game_settings, background_surface)
 
-        self.add_label("Choose a file:", (100, 200, -1, -1, ))
+        self.add_label("Choose a file:", (1/3, 1/4, -1, -1, ))
 
-        self.choice_list = self.add_selection_list((100, 220, 200, 300), [])
-        self.add_button('Continue', (400, 300, -1, -1), self._on_click_continue)
+        self.choice_list = self.add_selection_list((1/3, 1/4, 1/3, 1/2), [])
+        self.add_button('Continue', (2/3, 1/2, -1, -1), self._on_click_continue)
 
-        self.add_button('Back', (400, 400, -1, -1),
+        self.add_button('Back', (5/6, 3/4, -1, -1),
                         lambda: self.screen_options.show(self.screen_options.welcome_screen))
         self.add_bg("resources/images/background.jpg")
 

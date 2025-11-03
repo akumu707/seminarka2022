@@ -10,41 +10,43 @@ class ScreenBase:
         self.background_surface = background_surface
         self.buttons = []
         self.other_widgets = []
-        self.w_rects = []
+
+    def get_rect(self, rect):
+        width, height = self.screen_options.resolution
+        r1, r2, r3, r4 = rect
+        return pygame.Rect(r1*width, r2*height, -1 if r3 == -1 else r3*width, -1 if r4 == -1 else r4*height)
 
     def add_button(self, text, rect, on_click):
-        rect = pygame.Rect(rect[0], rect[1], rect[2], rect[3])
-        button = pygame_gui.elements.UIButton(relative_rect=rect,
+        p_rect = self.get_rect(rect)
+        button = pygame_gui.elements.UIButton(relative_rect=p_rect,
                                               text=text,
                                               manager=self.ui_manager)
         self.buttons.append((button, on_click))
-        self.w_rects.append(rect)
 
     def add_label(self, text, rect):
-        rect = pygame.Rect(rect[0], rect[1], rect[2], rect[3])
-        label = pygame_gui.elements.UILabel(relative_rect=rect,
+        p_rect = self.get_rect(rect)
+        label = pygame_gui.elements.UILabel(relative_rect=p_rect,
                                             text=text,
                                             manager=self.ui_manager)
         self.other_widgets.append(label)
-        self.w_rects.append(rect)
         return label
 
     def add_text_entry_line(self, rect):
-        text_entry_line = pygame_gui.elements.UITextEntryLine(relative_rect=pygame.Rect(rect[0], rect[1], rect[2], rect[3]), manager=self.ui_manager)
+        p_rect = self.get_rect(rect)
+        text_entry_line = pygame_gui.elements.UITextEntryLine(relative_rect=p_rect, manager=self.ui_manager)
         self.other_widgets.append(text_entry_line)
-        self.w_rects.append(rect)
         return text_entry_line
 
     def add_selection_list(self, rect, item_list, object_id=None):
+        p_rect = self.get_rect(rect)
         if object_id is None:
-            selection_list = pygame_gui.elements.UISelectionList(relative_rect=pygame.Rect
-            (rect[0], rect[1], rect[2], rect[3]),
+            selection_list = pygame_gui.elements.UISelectionList(relative_rect=p_rect,
                                                                  manager=self.ui_manager, item_list=item_list,
                                                                  starting_height=150)
         else:
-            selection_list = pygame_gui.elements.UISelectionList(
-                relative_rect=pygame.Rect(rect[0], rect[1], rect[2], rect[3]),
-                manager=self.ui_manager, item_list=item_list, object_id=object_id)
+            selection_list = pygame_gui.elements.UISelectionList(relative_rect=p_rect,
+                                                                 manager=self.ui_manager, item_list=item_list,
+                                                                 object_id=object_id)
         self.other_widgets.append(selection_list)
         return selection_list
 
